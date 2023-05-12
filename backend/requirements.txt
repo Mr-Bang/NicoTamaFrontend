@@ -8,3 +8,5 @@ Werkzeug==2.3.4
 sqlalchemy
 flask_smorest
 flask-sqlalchemy
+python-dotenv
+marshmallow
