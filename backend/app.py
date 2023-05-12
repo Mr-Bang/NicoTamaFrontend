@@ -3,7 +3,6 @@ from flask_smorest import Api
 
 from db import db
 
-import models
 import os
 from models import HotelModel
 
@@ -29,17 +28,6 @@ def create_app(db_url=None):
     
     with app.app_context():
         db.create_all()
-        
-        # 既存の hotel_id を持つレコードを削除する
-        existing_hotel = HotelModel.query.filter_by(hotel_id=1).first()
-        if existing_hotel:
-            db.session.delete(existing_hotel)
-            db.session.commit()
-
-        # 新しいホテルを追加する
-        hotel1 = HotelModel(hotel_id=1, name='APAHotel', description='great hotel', longitude=14.55, latitude=16.31, image="https://m.media-amazon.com/images/I/51V680RSx2L._AC_SY445_.jpg", prefecture="千葉")
-        db.session.add(hotel1)
-        db.session.commit()
         
     api.register_blueprint(HotelBlueprint)
     

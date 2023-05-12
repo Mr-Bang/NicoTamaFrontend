@@ -8,5 +8,6 @@ services:
     volumes:
       - ./app:/usr/src/app
     environment:
-      - FLASK_DEBUG=1
+      - FLASK_APP=app
+      - FLASK_DEBUG=True
     command: flask run --host=0.0.0.0
