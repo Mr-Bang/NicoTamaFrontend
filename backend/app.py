@@ -30,5 +30,6 @@ def create_app(db_url=None):
         db.create_all()
         
     api.register_blueprint(HotelBlueprint)
+    sdasd
     
     return app
