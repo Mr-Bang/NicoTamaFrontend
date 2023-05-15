@@ -11,17 +11,17 @@ class HotelSchema(Schema):
     image = fields.Str(required=False)
     region = fields.Str(required=False)
 
-
-class PlainStoreSchema(Schema):
-    id = fields.Int(dump_only=True)
-    name = fields.Str()
-
-
-
-class HotelUpdateSchema(Schema):
-    name = fields.Str()
-    price = fields.Float()
-
     
 class SearchShema(Schema):
     search_word = fields.Str(required=True)
+    
+class RoomSchema(Schema):
+    room_id = fields.Int(dump_only=True)
+    hotel_id = fields.Int(required=True)
+    room_number = fields.Int(required=True)
+    price = fields.Int(required=True)
+    available = fields.Bool(required=True)
+    image = fields.Str(required=False)
+    
+class RoomGetShema(Schema):
+    hotel_id = fields.Int(required=True)

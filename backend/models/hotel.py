@@ -11,3 +11,5 @@ class HotelModel(db.Model):
     latitude = db.Column(db.Float)
     image = db.Column(db.String(240))
     region = db.Column(db.String(80)) # 都心、副都心、北部、南部、東部
+    
+    

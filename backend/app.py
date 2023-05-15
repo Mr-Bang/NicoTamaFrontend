@@ -7,6 +7,7 @@ import os
 from models import HotelModel
 
 from resources.hotel import blp as HotelBlueprint
+from resources.room import blp as RoomBlueprint
 
 def create_app(db_url=None):
     app = Flask(__name__)
@@ -30,5 +31,6 @@ def create_app(db_url=None):
         db.create_all()
         
     api.register_blueprint(HotelBlueprint)
+    api.register_blueprint(RoomBlueprint)
     
     return app
