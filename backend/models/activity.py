@@ -1,7 +1,7 @@
 from db import db
 
 
-class HotelModel(db.Model):
+class ActivityModel(db.Model):
     __tablename__ = "hotels"
 
     hotel_id = db.Column(db.Integer, primary_key=True)

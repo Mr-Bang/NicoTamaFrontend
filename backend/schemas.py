@@ -9,7 +9,7 @@ class HotelSchema(Schema):
     longitude = fields.Float(required=True)
     latitude = fields.Float(required=True)
     image = fields.Str(required=False)
-    prefecture = fields.Str(required=False)
+    region = fields.Str(required=False)
 
 
 class PlainStoreSchema(Schema):
@@ -22,6 +22,6 @@ class HotelUpdateSchema(Schema):
     name = fields.Str()
     price = fields.Float()
 
-
-class StoreSchema(PlainStoreSchema):
-    items = fields.List(fields.Nested(HotelSchema()), dump_only=True)
+    
+class SearchShema(Schema):
+    search_word = fields.Str(required=True)
