@@ -22,9 +22,6 @@ class HotelUpdateSchema(Schema):
     name = fields.Str()
     price = fields.Float()
 
-
-class StoreSchema(PlainStoreSchema):
-    items = fields.List(fields.Nested(HotelSchema()), dump_only=True)
     
 class SearchShema(Schema):
-    serch_word = fields.Str(required=True)
+    search_word = fields.Str(required=True)

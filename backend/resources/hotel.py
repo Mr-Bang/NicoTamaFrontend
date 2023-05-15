@@ -1,5 +1,7 @@
+from flask import request
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
+from sqlalchemy import or_
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from schemas import HotelSchema, SearchShema
 
@@ -38,10 +40,11 @@ class HotelList(MethodView):
         return hotel
     
 @blp.route("/search")
-class HotelList(MethodView):
-    @blp.arguments(SearchShema)
-    @blp.response(200, HotelSchema(many=True))
-    def get(self):
-        return HotelModel.query.all()
+@blp.arguments(SearchShema)
+@blp.response(200, HotelSchema(many=True))
+def get(self):
+    search_word : str = request.get_json()["search_word"]
+    hotels = HotelModel.query.filter(or_(HotelModel.name.contains(search_word), HotelModel.region == search_word)).all()
+    return hotels
     
 
