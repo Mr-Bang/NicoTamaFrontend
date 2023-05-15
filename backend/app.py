@@ -5,7 +5,6 @@ from db import db
 
 import os
 from models import HotelModel
-from models import ActivityModel
 
 from resources.hotel import blp as HotelBlueprint
 from resources.room import blp as RoomBlueprint
