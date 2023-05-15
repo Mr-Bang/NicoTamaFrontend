@@ -45,7 +45,6 @@ class HotelList(MethodView):
 def get(self):
     search_word : str = request.get_json()["search_word"]
     hotels = HotelModel.query.filter(or_(HotelModel.name.contains(search_word), HotelModel.region == search_word)).all()
-
     return hotels
     
 
