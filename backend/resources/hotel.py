@@ -5,7 +5,7 @@ from sqlalchemy import or_
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from schemas import HotelSchema, SearchSchema
 
-from models import HotelModel
+from models import HotelModel, ActivityModel
 
 from db import db
 
@@ -45,6 +45,7 @@ class HotelList(MethodView):
 def get(self):
     search_word : str = request.get_json()["search_word"]
     hotels = HotelModel.query.filter(or_(HotelModel.name.contains(search_word), HotelModel.region == search_word)).all()
+
     return hotels
     
 

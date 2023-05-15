@@ -1,5 +1,5 @@
 from db import db
-
+from sqlalchemy import ForeignKey
 
 class ActivityModel(db.Model):
     __tablename__ = "activities"
@@ -13,4 +13,4 @@ class ActivityModel(db.Model):
     # category_id = db.Column(db.Integer, ForeignKey(''))
     description = db.Column(db.String(240))
     url = db.Column(db.String(240))
-    region = db.Column(db.String(80))  # 都心、副都心、北部、南部、東部
+    region = db.Column(db.String(80),ForeignKey('hotels.region'))  # 都心、副都心、北部、南部、東部
