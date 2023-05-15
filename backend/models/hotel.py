@@ -1,4 +1,5 @@
 from db import db
+from sqlalchemy import ForeignKey
 
 
 class HotelModel(db.Model):

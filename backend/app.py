@@ -5,9 +5,11 @@ from db import db
 
 import os
 from models import HotelModel
+from models import ActivityModel
 
 from resources.hotel import blp as HotelBlueprint
 from resources.room import blp as RoomBlueprint
+from resources.activity import blp as ActivityBlueprint
 
 def create_app(db_url=None):
     app = Flask(__name__)
@@ -32,5 +34,6 @@ def create_app(db_url=None):
         
     api.register_blueprint(HotelBlueprint)
     api.register_blueprint(RoomBlueprint)
+    api.register_blueprint(ActivityBlueprint)
     
     return app
