@@ -1,7 +1,7 @@
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
-from schemas import HotelSchema
+from schemas import HotelSchema, SearchShema
 
 from models import HotelModel
 
@@ -36,4 +36,12 @@ class HotelList(MethodView):
             abort(500, message="An error occurred while inserting the hotel.")
 
         return hotel
+    
+@blp.route("/search")
+class HotelList(MethodView):
+    @blp.arguments(SearchShema)
+    @blp.response(200, HotelSchema(many=True))
+    def get(self):
+        return HotelModel.query.all()
+    
 
