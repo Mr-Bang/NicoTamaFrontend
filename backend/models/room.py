@@ -10,3 +10,4 @@ class RoomModel(db.Model):
     price = db.Column(db.Integer, nullable=False)
     available = db.Column(db.Boolean, nullable=False)
     image = db.Column(db.String(240))
+    hotel = db.relationship("HotelModel", back_populates="rooms")

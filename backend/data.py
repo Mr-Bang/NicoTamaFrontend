@@ -1,5 +1,12 @@
 hotels = [
     {
+        "name": "hotel1",
+        "longitude": 2.0,
+        "latitude": 2.0,
+        "image": "http://......",
+        "region": "都心"
+    },
+    {
         "name": "testhotel123",
         "longitude": 2.0,
         "latitude": 2.0,
@@ -34,4 +41,29 @@ activities = [
         "url": "http:/.....",
         "region": "副都心"
     }
+]
+
+rooms = [
+    {
+        "hotel_id": 1,
+        "room_number": 102,
+        "price": 7000,
+        "available": True,
+        "image": "http://...."
+    },
+    {
+        "hotel_id": 1,
+        "room_number": 101,
+        "price": 7000,
+        "available": True,
+        "image": "http://...."
+    },
+     {
+        "hotel_id": 2,
+        "room_number": 101,
+        "price": 7000,
+        "available": True,
+        "image": "http://...."
+    },
+    
 ]

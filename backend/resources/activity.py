@@ -45,5 +45,5 @@ class ActivityList(MethodView):
 @blp.response(200, ActivitySchema(many=True))
 def get(self):
     search_word: str = request.get_json()["search_word"]
-    activities = ActivityModel.query.filter(or_(ActivityModel.name.contains(search_word), ActivityModel.region == search_word)).all()
+    activities = ActivityModel.query.filter( ActivityModel.region == search_word).all()
     return activities
