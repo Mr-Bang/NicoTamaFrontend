@@ -5,11 +5,7 @@ from db import db
 
 import os
 from models import HotelModel
-<<<<<<< HEAD
 from models import ActivityModel
-
-=======
->>>>>>> backend-yuya
 from resources.hotel import blp as HotelBlueprint
 from resources.room import blp as RoomBlueprint
 from resources.activity import blp as ActivityBlueprint
