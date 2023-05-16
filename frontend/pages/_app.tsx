@@ -5,7 +5,8 @@ import PageHeader from '@/components/PageHeader';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <MantineProvider  withGlobalStyles withNormalizeCSS>
+    //<MantineProvider  withGlobalStyles withNormalizeCSS>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
       <AppShell
         padding="md"
 	header={<PageHeader />}
