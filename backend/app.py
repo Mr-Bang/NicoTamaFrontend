@@ -15,13 +15,13 @@ def hotel_create():
     # テストデータ
     from data import hotels
     for hotel in hotels:
-        inserthotel = HotelModel(name=hotel["name"], longitude=hotel["longitude"], latitude=hotel["latitude"], image=hotel["image"], region=hotel["region"])
+        inserthotel = HotelModel(**hotel)
         db.session.add(inserthotel)
 def activity_create():
     # テストデータ 
    from data import activities
    for activity in activities:
-        insert_activity = ActivityModel(name=activity["name"],price=activity["price"], longitude=activity["longitude"], latitude=activity["latitude"], image=activity["image"], region=activity["region"], url=activity["url"])
+        insert_activity = ActivityModel(**activity)
         db.session.add(insert_activity)
         
         
@@ -29,7 +29,7 @@ def room_create():
     # テストデータ
     from data import rooms
     for room in rooms:
-        insert_room = RoomModel(hotel_id=room["hotel_id"], room_number=room["room_number"], price=room["price"], available=room["available"], image=room["image"])
+        insert_room = RoomModel(**room)
         db.session.add(insert_room)
 
 def create_app(db_url=None):
