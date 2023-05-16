@@ -1,11 +1,11 @@
-import { Header } from '@mantine/core'
+import { Box } from '@mantine/core'
 
 import resets from '@/styles/_resets.module.css';
 import classes from '@/styles/PageHeader.module.css';
 
 export default function PageHeader() {
   return  (
-    <Header height={174}>
+    <Box>
       <div className={`${resets.clapyResets} ${classes.banner}`}>
         <div className={classes.bannerPng}></div>
       </div>
@@ -17,8 +17,8 @@ export default function PageHeader() {
         <div className={classes.unnamed3}>楽天市場</div>
       </div>
       <div className={classes.divRtServiceBar}>
-        <div className={classes._170_53Jpg}></div>
-        <div className={classes.a}>
+        <div className={classes.Point}></div>
+        <div className={classes.rakutenTravel}>
           <div className={classes.unnamed4}>楽天トラベル</div>
         </div>
         <div className={classes.divRtUtility}>
@@ -61,6 +61,6 @@ export default function PageHeader() {
       </div>
       <div className={classes.x}>X</div>
     </div>
-    </Header>
+    </Box>
   );
 }
