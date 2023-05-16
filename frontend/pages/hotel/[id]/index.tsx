@@ -29,7 +29,6 @@ function Page() {
           <Button
             variant="default"
             component="a"
-            target="_blank"
             rel="noopener noreferrer"
             href="https://travel.rakuten.co.jp/HOTEL/80762/80762.html"
             styles={(theme) => ({
@@ -50,7 +49,6 @@ function Page() {
           <Button
             variant="default"
             component="a"
-            target="_blank"
             rel="noopener noreferrer"
             href="https://travel.rakuten.co.jp/HOTEL/80762/80762.html"
             styles={(theme) => ({
@@ -71,7 +69,6 @@ function Page() {
           <Button
             variant="default"
             component="a"
-            target="_blank"
             rel="noopener noreferrer"
             href="https://travel.rakuten.co.jp/HOTEL/80762/80762.html"
             styles={(theme) => ({
@@ -92,7 +89,6 @@ function Page() {
           <Button
             variant="default"
             component="a"
-            target="_blank"
             rel="noopener noreferrer"
             href="https://travel.rakuten.co.jp/HOTEL/80762/80762.html"
             styles={(theme) => ({
@@ -113,7 +109,6 @@ function Page() {
           <Button
             variant="default"
             component="a"
-            target="_blank"
             rel="noopener noreferrer"
             href="https://travel.rakuten.co.jp/HOTEL/80762/80762.html"
             styles={(theme) => ({
@@ -134,7 +129,6 @@ function Page() {
           <Button
             variant="default"
             component="a"
-            target="_blank"
             rel="noopener noreferrer"
             href="https://travel.rakuten.co.jp/HOTEL/80762/80762.html"
             styles={(theme) => ({
