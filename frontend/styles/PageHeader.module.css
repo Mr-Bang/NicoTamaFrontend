@@ -10,7 +10,7 @@
   top: 0;
   width: 950px;
   height: 40px;
-  background-image:/* webpackIgnore: true */ url('/assets/banner.png');
+  background-image:/* webpackIgnore: true */ url("/assets/grand_tamachi/banner.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,8 +35,8 @@
   color: #000;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 1531.36px;
   top: 7px;
@@ -51,8 +51,8 @@
   color: #000;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 1746.1899px;
   top: 7px;
@@ -67,8 +67,8 @@
   color: #000;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 1802.2px;
   top: 7px;
@@ -83,8 +83,8 @@
   color: #000;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 1857px;
   top: 7px;
@@ -110,7 +110,7 @@
   top: 12px;
   width: 170px;
   height: 53px;
-  background-image:/* webpackIgnore: true */ url('/assets/3000point.jpeg');
+  background-image:/* webpackIgnore: true */ url("/assets/3000point.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,7 +122,7 @@
   width: 192px;
   height: 32px;
   align-items: flex-start;
-  background-image:/* webpackIgnore: true */ url('/assets/rakuten_travel.png');
+  background-image:/* webpackIgnore: true */ url("/assets/rakuten_travel.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -131,8 +131,8 @@
   color: #1d54a7;
   font-size: 16px;
   line-height: 17.6px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: -9999px;
   top: 0;
@@ -161,8 +161,8 @@
   color: #1d54a7;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 287.03px;
   top: 3px;
@@ -177,8 +177,8 @@
   color: #1d54a7;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 423.17px;
   top: 3px;
@@ -193,8 +193,8 @@
   color: #1d54a7;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 511.31px;
   top: 3px;
@@ -209,8 +209,8 @@
   color: #1d54a7;
   font-size: 11px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 562.61px;
   top: 3px;
@@ -243,8 +243,8 @@
   color: #fff;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 4.66px;
   top: 6px;
@@ -267,8 +267,8 @@
   color: #333;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 50.66px;
   top: 6px;
@@ -292,8 +292,8 @@
 }
 .labelWrapper {
   font-size: 12px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   flex-shrink: 1;
 }
 .label {
@@ -301,23 +301,23 @@
   font-size: 12px;
   line-height: 13.2px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
 }
 .label2 {
   color: #333;
   font-size: 12px;
   line-height: 13.2px;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
 }
 .unnamed11 {
   color: #000;
   font-size: 12px;
   line-height: 13.2px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 270.88px;
   top: 6px;
@@ -360,8 +360,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   width: min-content;
   height: min-content;
   white-space: nowrap;
@@ -372,8 +372,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 87.45px;
   top: 9px;
@@ -387,8 +387,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 173.69px;
   top: 9px;
@@ -402,8 +402,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 258.36px;
   top: 9px;
@@ -417,8 +417,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 408.64px;
   top: 9px;
@@ -432,8 +432,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 479.09px;
   top: 9px;
@@ -447,8 +447,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 562.86px;
   top: 9px;
@@ -462,8 +462,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 660.23px;
   top: 9px;
@@ -477,8 +477,8 @@
   font-size: 13px;
   line-height: 14.3px;
   font-weight: bold;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 757.91px;
   top: 9px;
@@ -493,8 +493,8 @@
   line-height: 21px;
   font-weight: bold;
   font-style: italic;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
   position: absolute;
   left: 215px;
   top: 41px;
