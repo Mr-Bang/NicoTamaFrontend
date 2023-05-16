@@ -65,5 +65,23 @@ rooms = [
         "available": True,
         "image": "http://...."
     },
-    
+]
+
+
+categories = [
+    {
+        "name" : "アウトドア・スポーツ"
+    },
+    {
+        "name": "リラクゼーション"
+    },
+    {
+        "name": "コンサート"
+    },
+    {
+        "name": "アトラクション"
+    },
+    {
+        "name": "フード"
+    }
 ]
