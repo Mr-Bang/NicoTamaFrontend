@@ -1,0 +1,18 @@
+.root {
+  position: relative;
+  height: 40px;
+  align-items: flex-start;
+  background-color: #eaeaea;
+}
+.bannerPng {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 950px;
+  height: 40px;
+  background-image:/* webpackIgnore: true */ url('/assets/banner.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateX(-50%);
+}

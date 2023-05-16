@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { MantineProvider, ButtonStylesParams } from '@mantine/core';
+import { AppShell, MantineProvider, ButtonStylesParams } from '@mantine/core';
+import PageHeader from '@/components/PageHeader';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -23,7 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
         },
       }}
     >
-      <Component {...pageProps} />
+      <AppShell
+        padding="md"
+	header={<PageHeader />}
+      >
+        <Component {...pageProps} />
+      </AppShell>
     </MantineProvider>
   )
 }
