@@ -10,7 +10,7 @@ class ActivityModel(db.Model):
     image = db.Column(db.String(240))
     longitude = db.Column(db.Float)
     latitude = db.Column(db.Float)
-    # category_id = db.Column(db.Integer, ForeignKey(''))
+    category_id = db.Column(db.Integer, ForeignKey('categories.category_id'))
     description = db.Column(db.String(240))
     url = db.Column(db.String(240))
     region = db.Column(db.String(80),ForeignKey('hotels.region'))  # 都心、副都心、北部、南部、東部

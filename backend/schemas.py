@@ -48,3 +48,8 @@ class RoomSchema(Schema):
     
 class RoomGetShema(Schema):
     hotel_id = fields.Int(required=True)
+
+
+class CategorySchema(Schema):
+    category_id = fields.Int(dump_only=True)
+    name = fields.Str(required=True)

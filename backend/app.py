@@ -7,9 +7,11 @@ import os
 from models import HotelModel
 from models import ActivityModel
 from models import RoomModel
+from models import CategoryModel
 from resources.hotel import blp as HotelBlueprint
 from resources.room import blp as RoomBlueprint
 from resources.activity import blp as ActivityBlueprint
+from resources.category import blp as CategoryBlueprint
 
 def hotel_create():
     # テストデータ
@@ -31,6 +33,11 @@ def room_create():
     for room in rooms:
         insert_room = RoomModel(**room)
         db.session.add(insert_room)
+def category_create():
+    from data import categories
+    for category in categories:
+        insert_category = CategoryModel(**category)
+        db.session.add(insert_category)
 
 def create_app(db_url=None):
     app = Flask(__name__)
@@ -55,11 +62,14 @@ def create_app(db_url=None):
         hotel_create()
         activity_create()
         room_create()
+        category_create()
         db.session.commit()
+
         
     api.register_blueprint(HotelBlueprint)
     api.register_blueprint(RoomBlueprint)
     api.register_blueprint(ActivityBlueprint)
+    api.register_blueprint(CategoryBlueprint)
     
     return app
 
