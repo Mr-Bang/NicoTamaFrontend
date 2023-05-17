@@ -1,0 +1,144 @@
+.root {
+  position: relative;
+  width: 1920px;
+  height: 69.59px;
+  align-items: flex-start;
+  background-color: #fff;
+  box-shadow: inset 0px 1px 0px #ccc;
+}
+.ulRtFootNav {
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  width: 1895px;
+  height: 14.3px;
+  align-items: flex-start;
+}
+.unnamed {
+  color: #1d54a7;
+  font-size: 13px;
+  line-height: 14.3px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 4px;
+  top: -1px;
+  width: 52.2px;
+  height: 15px;
+  justify-content: center;
+  flex-direction: column;
+}
+.li {
+  position: absolute;
+  left: 64.63px;
+  top: -1px;
+  width: min-content;
+  height: min-content;
+  padding: 0 6px;
+  box-shadow: inset -1px 0px 0px #adadad;
+}
+.unnamed2 {
+  color: #1d54a7;
+  font-size: 13px;
+  line-height: 14.3px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.liRtForPc {
+  position: absolute;
+  left: 183.25px;
+  top: -1px;
+  width: min-content;
+  height: min-content;
+  padding: 0 12.67px 0 6px;
+  box-shadow: inset -1px 0px 0px #adadad;
+}
+.CSR {
+  color: #1d54a7;
+  font-size: 12px;
+  line-height: 14.3px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.liRtForPc2 {
+  position: absolute;
+  left: 297.55px;
+  top: -1px;
+  width: min-content;
+  height: min-content;
+  padding: 0 6px;
+  box-shadow: inset -1px 0px 0px #adadad;
+}
+.unnamed3 {
+  color: #1d54a7;
+  font-size: 13px;
+  line-height: 14.3px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.liRtForPc3 {
+  position: absolute;
+  left: 364.17px;
+  top: -1px;
+  width: min-content;
+  height: min-content;
+  padding: 0 6px;
+  box-shadow: inset -1px 0px 0px #adadad;
+}
+.unnamed4 {
+  color: #1d54a7;
+  font-size: 13px;
+  line-height: 14.3px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.liRtForPc4 {
+  position: absolute;
+  left: 417.8px;
+  top: -1px;
+  width: min-content;
+  height: min-content;
+  padding: 0 6px;
+  box-shadow: inset -1px 0px 0px #adadad;
+}
+.unnamed5 {
+  color: #1d54a7;
+  font-size: 13px;
+  line-height: 14.3px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.RakutenGroupInc {
+  color: #000;
+  font-size: 12px;
+  line-height: 14.3px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 15px;
+  top: 39.3px;
+  width: 129.73px;
+  height: 15px;
+  justify-content: center;
+  flex-direction: column;
+}
