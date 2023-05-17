@@ -1,5 +1,5 @@
 import MapLeftBar from "@/components/map/MapLeftBar"
-import { Button, Box, Center, Container, Grid, Group, Title, rem } from "@mantine/core"
+import { Box, Center, Container, Grid, Title } from "@mantine/core"
 import resets from "@/styles/_resets.module.css"
 import classes from "@/styles/Hotel.module.css"
 import HotelTab from "@/components/HotelTab"
