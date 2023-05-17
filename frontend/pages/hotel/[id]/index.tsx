@@ -1,5 +1,5 @@
 import MapLeftBar from "@/components/map/MapLeftBar"
-import { Button, Box, Center, Container, Grid, Group, Text, rem } from '@mantine/core';
+import { Button, Box, Center, Container, Grid, Group, Title, rem } from '@mantine/core';
 import resets from '@/styles/_resets.module.css';
 import classes from '@/styles/Hotel.module.css';
 
@@ -7,7 +7,7 @@ function Page() {
   return (
       <>
         <Container fluid>
-          <Text fz="xl" fw={700} ta="left">住友不動産ホテル ヴィラフォンテーヌグランド東京田町</Text>
+          <Title order={2}>住友不動産ホテル ヴィラフォンテーヌグランド東京田町</Title>
         </Container>
 
         <Grid>
