@@ -5,11 +5,11 @@ import { Box, Input, Title, Grid, Center, Container, Space, TextInput, Radio, Gr
 import Map from "../public/searchmap.jpg"
 import Adv from "../public/advertizements.png"
 import Register from "../public/register.jpg"
-import Adv2 from "../public/advertizements2.png"
-import Adv3 from "../public/advertizements3.jpg"
-import Adv4 from "../public/advertizements4.jpg"
-import Logo from "../public/travel_logo.svg"
-import { IconCalendar } from '@tabler/icons-react';
+// import Adv2 from "../public/advertizements2.png"
+// import Adv3 from "../public/advertizements3.jpg"
+// import Adv4 from "../public/advertizements4.jpg"
+// import Logo from "../public/travel_logo.svg"
+// import { IconCalendar } from '@tabler/icons-react';
   
 export default function A(){
 
@@ -259,7 +259,7 @@ export default function A(){
                 </Flex>
             </Grid>
 
-        <Button color="dark" radius="xl" size="xs" compact style={{position: "absolute",left: "1050px", top: "644px",height: "25px"}} onClick={() => router.push("https://travel.rakuten.co.jp/?l-id=top_navi_dh")}>
+        <Button color="dark" radius="xl" size="xs" compact style={{position: "absolute",left: "1050px", top: "644px",height: "25px"}} onClick={() => router.push("/SearchPageMetropolitan")}>
           首都圏
         </Button>
         <Button color="dark" radius="xl" size="xs" compact style={{position: "absolute",left: "1250px", top: "310px",height: "25px"}}>
