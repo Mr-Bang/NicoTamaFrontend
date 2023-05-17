@@ -1,12 +1,29 @@
 import MapLeftBar from "@/components/map/MapLeftBar"
-import { Box, Center, Container, Grid, Title } from "@mantine/core"
+import { Breadcrumbs, Anchor, Box, Center, Container, Grid, Text, Title } from "@mantine/core"
 import resets from "@/styles/_resets.module.css"
 import classes from "@/styles/Hotel.module.css"
 import HotelTab from "@/components/HotelTab"
 
+const regions = [
+  { name: '楽天トラベルトップ', href: '/' },
+  { name: '首都圏', href: '/' },
+  { name: '東京23区', href: '/' },
+  { name: '世田谷・目黒・品川・大田', href: '/' },
+  { name: '住友不動産ホテル ヴィラフォンテーヌグランド東京田町' },
+].map((region, index) => (
+  region.href ? 
+    <Anchor href={region.href} key={index}>
+      {region.name}
+    </Anchor>
+  : <Text fw={700} key={index}>
+      {region.name}
+    </Text>
+));
+
 function Page() {
   return (
     <>
+      <Breadcrumbs separator=">" mt="xs">{regions}</Breadcrumbs>
       <Container fluid>
         <Title order={2}>住友不動産ホテル ヴィラフォンテーヌグランド東京田町</Title>
       </Container>
