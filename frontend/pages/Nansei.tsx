@@ -51,19 +51,19 @@ function Nansei() {
       >
         <Title order={2}>世田谷・目黒・品川・大田</Title>
       </Box>
-        <Grid>
-	  <Grid.Col span="auto">
-            <MapLeftBar />
-	  </Grid.Col>
-	  <Grid.Col span={6}>
-	    <SimpleGrid cols={3}>
-	      {hotels}
-	    </SimpleGrid>
-	  </Grid.Col>
-	  <Grid.Col span="auto">
-	    <Box sx={{width: 600}}></Box>
-	  </Grid.Col>
-	</Grid>
+      <Grid>
+	<Grid.Col span="auto">
+          <MapLeftBar />
+	</Grid.Col>
+	<Grid.Col span={6}>
+	  <SimpleGrid cols={3}>
+	    {hotels}
+	  </SimpleGrid>
+	</Grid.Col>
+	<Grid.Col span="auto">
+	  <Box sx={{width: 600}}></Box>
+	</Grid.Col>
+      </Grid>
     </>
   );
 }

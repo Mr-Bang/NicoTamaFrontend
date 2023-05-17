@@ -24,9 +24,14 @@ function Page() {
   return (
     <>
       <Breadcrumbs separator=">" mt="xs">{regions}</Breadcrumbs>
-      <Container fluid>
+      <Box
+        sx={(theme) => ({
+        textAlign: 'left',
+        padding: theme.spacing.xl,
+      })}
+      >
         <Title order={2}>住友不動産ホテル ヴィラフォンテーヌグランド東京田町</Title>
-      </Container>
+      </Box>
       <Grid>
         <Grid.Col span='auto'>
           <MapLeftBar />
