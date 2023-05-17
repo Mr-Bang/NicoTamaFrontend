@@ -1,4 +1,5 @@
-import { Box, Breadcrumbs, Anchor, Group, Text, Title } from '@mantine/core';
+import MapLeftBar from '@/components/map/MapLeftBar';
+import { Box, Breadcrumbs, Anchor, Grid, Group, Text, Title } from '@mantine/core';
 
 const items = [
   { title: '楽天トラベルトップ', href: '/' },
@@ -27,6 +28,16 @@ function Nansei() {
       >
         <Title order={2}>世田谷・目黒・品川・大田</Title>
       </Box>
+        <Grid>
+	  <Grid.Col span="auto">
+            <MapLeftBar />
+	  </Grid.Col>
+	  <Grid.Col span={7}>
+	  </Grid.Col>
+	  <Grid.Col span="auto">
+	    <Box sx={{width: 300}}></Box>
+	  </Grid.Col>
+	</Grid>
     </>
   );
 }
