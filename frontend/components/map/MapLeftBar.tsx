@@ -6,11 +6,12 @@ export default function MapLeftBar() {
       sx={(theme: MantineTheme) => ({
         height: "100vh",
         width: 300,
-        border: `${rem(2)} solid #3cc74a`,
+        border: `${rem(2)} solid #73AB23`,
         borderRadius: theme.radius.md,
+        boxShadow: theme.shadows.md,
       })}
     >
-      <Title order={3} style={{ backgroundColor: "#3cc74a", color: "white", textAlign: "center" }}>
+      <Title order={3} style={{ backgroundColor: "#73AB23", color: "white", textAlign: "center" }}>
         日程から探す
       </Title>
       <Box px={12} py={4}>
