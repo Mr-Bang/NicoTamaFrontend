@@ -29,14 +29,14 @@ const hotels = [
   { name: 'sequence MIYASHITA PARK', href: '/', image: 'https://trvimg.r10s.jp/share/image_up/179182/origin/2ccbcfaa5812b54f3a0d75ff9a5516fb51aa269d.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none', price: 8000},
 ].map((hotel, index) => (
   <Box maw={340} mx="auto" key={index} component="a" href={hotel.href}>
-      <Image
-        radius="md"
-        src={hotel.image}
-        alt={hotel.name}
-      />
-      <Text ta="center" fw={700} fz="lg">{hotel.name}</Text>
-      <Text ta="center" fz="md">¥ {hotel.price.toLocaleString()} ~</Text>
-    </Box>
+    <Image
+      radius="md"
+      src={hotel.image}
+      alt={hotel.name}
+    />
+    <Text ta="center" fw={700} fz="lg">{hotel.name}</Text>
+    <Text ta="center" fz="md">¥ {hotel.price.toLocaleString()} ~</Text>
+  </Box>
 ));
 
 function Nansei() {
