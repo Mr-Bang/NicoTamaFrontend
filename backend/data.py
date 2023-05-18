@@ -360,31 +360,74 @@ hotels = [
     'longitude': '139.7362457'
 },
 {
+    'hotel_id': 40,
+    'room_number': 100,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/18392/LARGE/17dcd746104a7a37a9d6b98e36d1298d9b4985fd.47.9.26.3.jpg',
+    'price': '24655'
+},
+{
+    'hotel_id': 41,
+    'room_number': 101,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/70707/LARGE/09b5e263e0b1dda2c812359cb00cbe019f7c25ae.47.9.26.3.jpg',
+    'price': '16614'
+},
+{
+    'hotel_id': 42,
+    'room_number': 102,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/37928/LARGE/2a179732a1b4961f7f15d63316087cb7da1b3bcd.47.9.26.3.jpg',
+    'price': '8137'
+},
+{
+    'hotel_id': 43,
+    'room_number': 103,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/108993/LARGE/593ae456eedb86bb876c187fac0af1b1252db2a2.47.9.26.3.jpg',
+    'price': '4091'
+},
+{
+    'hotel_id': 44,
+    'room_number': 104,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/168764/LARGE/c67874c30a0b2d171a32cb91c06fb5e64e6b49d8.47.9.26.3.jpg',
+    'price': '8500'
+},
+{
+    'hotel_id': 45,
+    'room_number': 105,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/181415/LARGE/3282362ec830f0b01003a2233b777b9dc7030112.47.9.26.3.jpg',
+    'price': '18182'
+},
+{
+    'hotel_id': 46,
+    'room_number': 106,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/183777/LARGE/415b95de91bf54a1ca774f4b190b3ea449b97079.47.9.26.3.jpg',
+    'price': '6546'
+},
+{
     'hotel_id': 47,
-    'name': 'サンシャインシティプリンスホテル',
-    'image': 'https://trvimg.r10s.jp/share/image_up/18392/origin/e9d814185410835166e99ae89243106835c5347b.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': '池袋のランドマーク、サンシャインシティ内に位置するホテル。お部屋から望む東京の夜景が自慢です。',
-    'region': '副都心',
-    'latitude': '35.72955762',
-    'longitude': '139.7193985'
+    'room_number': 107,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/165554/LARGE/cb829377430065a49a1f530e126a13bf6d25ff4f.47.1.26.2.jpg',
+    'price': '9050'
 },
 {
     'hotel_id': 48,
-    'name': 'ｔｈｅ\u3000ｂ\u3000池袋（ザビー\u3000いけぶくろ）',
-    'image': 'https://trvimg.r10s.jp/share/image_up/70707/origin/620205744e3227caf40b4806bb5538b0f1428f23.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': '8路線利用可能な池袋駅東口から徒歩3分！人気のデザイナーズホテル。観光にもビジネスにも最適！コンビニもすぐ',
-    'region': '副都心',
-    'latitude': '35.73230994',
-    'longitude': '139.7142433'
+    'room_number': 108,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/172058/LARGE/cea7dafff7559048d58be5eb6d06b60a2cc91b10.47.9.26.3.jpg',
+    'price': '7999'
 },
 {
     'hotel_id': 49,
-    'name': 'ＪＲ東日本ホテルメッツ赤羽',
-    'image': 'https://trvimg.r10s.jp/share/image_up/37928/origin/a5eac9b1796efcd43a339633a18b1668c767c315.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': 'JR赤羽駅北改札・東口より徒歩1分\u3000上野、新宿、大宮へ約15分訪れるお客さまの快適を第一に考えたホテルです。',
-    'region': '北西部',
-    'latitude': '35.77862714',
-    'longitude': '139.7209242'
+    'room_number': 109,
+    'available': True,
+    'image': 'https://trvimg.r10s.jp/share/image_up/5692/LARGE/61e18a895a95c0561fd2ad64c5c580fd17a47cb0.47.1.26.2.jpg',
+    'price': '8000'
 }
 ]
 
