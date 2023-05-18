@@ -3,6 +3,9 @@ import { Breadcrumbs, Anchor, Box, Center, Grid, Text, Title } from "@mantine/co
 import HotelTab from "@/components/HotelTab"
 import SampleHotel from "@/components/hotel/SampleHotel"
 import { GetServerSidePropsContext } from "next"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
+import { HotelList } from "@/services/hotellist"
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
@@ -23,6 +26,17 @@ const regions = [
 )
 
 export default function Hotel() {
+  const router = useRouter()
+
+  const hotel = router.query
+
+  // クエリパラメータをパースしてリストに変換
+  const roomList = hotel.roomList ? JSON.parse(hotel.roomList as string) : []
+
+  useEffect(() => {
+    console.log(roomList)
+  }, [])
+
   return (
     <>
       <Breadcrumbs separator='>' mt='xs'>
@@ -43,7 +57,7 @@ export default function Hotel() {
         <Grid.Col span={7}>
           <HotelTab />
           <Center>
-            <SampleHotel />
+            <SampleHotel rooms={roomList} />
           </Center>
         </Grid.Col>
         <Grid.Col span='auto'>

@@ -30,13 +30,22 @@ type Props = {
     longitude: number
     image: string
     region: string
-    priceList: number[]
+    roomList: RoomList
   }[]
 }
 
 export default function HotelList(props: Props) {
   const { hotelList } = props
   const router = useRouter()
+
+  const getPriceList = (roomList: RoomList) => {
+    let priceList: number[] = []
+    roomList.forEach((room) => {
+      priceList.push(room.price)
+    })
+
+    return priceList
+  }
 
   return (
     <>
@@ -73,6 +82,7 @@ export default function HotelList(props: Props) {
                           longitude: hotel.description,
                           image: hotel.image,
                           region: hotel.region,
+                          roomList: JSON.stringify(hotel.roomList),
                         },
                       },
                       "/hotel/" + hotel.hotel_id
@@ -84,7 +94,7 @@ export default function HotelList(props: Props) {
                     {hotel.name}
                   </Text>
                   <Text ta='center' fz='md'>
-                    ¥ {hotel.priceList.sort()[0].toLocaleString()} ~
+                    ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
                   </Text>
                 </Card.Section>
               </Card>
@@ -99,14 +109,6 @@ export default function HotelList(props: Props) {
   )
 }
 
-const getPriceList = (roomList: RoomList) => {
-  let priceList: number[] = []
-  roomList.forEach((room) => {
-    priceList.push(room.price)
-  })
-
-  return priceList
-}
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const { area } = context.query
   const resHotelList: HotelList = await getHotelList(area as string)
@@ -119,7 +121,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     longitude: number
     image: string
     region: string
-    priceList: number[]
+    roomList: RoomList
   }[] = []
 
   // ループを `for...of` に変更
@@ -128,7 +130,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
 
     hotelList.push({
       ...hotel,
-      priceList: getPriceList(roomList),
+      roomList: roomList,
     })
   }
 
