@@ -6,7 +6,7 @@ class HotelModel(db.Model):
     __tablename__ = "hotels"
 
     hotel_id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=True, nullable=False)
+    name = db.Column(db.String(80), nullable=False)
     description = db.Column(db.String(240))
     longitude = db.Column(db.Float)
     latitude = db.Column(db.Float)
