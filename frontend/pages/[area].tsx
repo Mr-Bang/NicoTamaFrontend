@@ -4,6 +4,7 @@ import { RoomList, getRoomList } from "@/services/roomlist"
 import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
+import { useEffect } from "react"
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
@@ -33,7 +34,7 @@ type Props = {
   }[]
 }
 
-export default function Nansei(props: Props) {
+export default function HotelList(props: Props) {
   const { hotelList } = props
   const router = useRouter()
 
@@ -83,7 +84,7 @@ export default function Nansei(props: Props) {
                     {hotel.name}
                   </Text>
                   <Text ta='center' fz='md'>
-                    {/* ¥ {hotel.price.toLocaleString()} ~ */}
+                    ¥ {hotel.priceList.sort()[0].toLocaleString()} ~
                   </Text>
                 </Card.Section>
               </Card>
@@ -103,20 +104,35 @@ const getPriceList = (roomList: RoomList) => {
   roomList.forEach((room) => {
     priceList.push(room.price)
   })
-  return {
-    priceList,
-  }
-}
 
+  return priceList
+}
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const { area } = context.query
   const resHotelList: HotelList = await getHotelList(area as string)
-  const hotelList = resHotelList.forEach(async (hotel) => {
-    return {
+
+  let hotelList: {
+    hotel_id: number
+    name: string
+    description: string
+    latitude: number
+    longitude: number
+    image: string
+    region: string
+    priceList: number[]
+  }[] = []
+
+  // ループを `for...of` に変更
+  for (const hotel of resHotelList) {
+    const roomList = await getRoomList(hotel.hotel_id)
+
+    hotelList.push({
       ...hotel,
-      priceList: getPriceList(await getRoomList(hotel.hotel_id)),
-    }
-  })
+      priceList: getPriceList(roomList),
+    })
+  }
+
+  console.log(hotelList)
 
   return {
     props: {

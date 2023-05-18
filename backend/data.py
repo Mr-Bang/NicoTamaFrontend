@@ -88,14 +88,21 @@ rooms = [
     {
         "hotel_id": 1,
         "room_number": 101,
-        "price": 7000,
+        "price": 6000,
+        "available": True,
+        "image": "http://...."
+    },
+    {
+        "hotel_id": 1,
+        "room_number": 103,
+        "price": 4000,
         "available": True,
         "image": "http://...."
     },
      {
         "hotel_id": 2,
         "room_number": 101,
-        "price": 7000,
+        "price": 5000,
         "available": True,
         "image": "http://...."
     },

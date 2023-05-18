@@ -10,7 +10,7 @@ export type RoomList = {
 }[]
 
 const getRoomList = async (hotelId: number): Promise<RoomList> => {
-  const res = await axios.get(BASE_URL + "/search", {
+  const res = await axios.get(BASE_URL + "/room", {
     data: {
       hotel_id: hotelId,
     },
