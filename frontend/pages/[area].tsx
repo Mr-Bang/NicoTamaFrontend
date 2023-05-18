@@ -1,7 +1,9 @@
 import MapLeftBar from "@/components/map/MapLeftBar"
-import { getHotelList } from "@/services/hotellist"
+import { HotelList, getHotelList } from "@/services/hotellist"
+import { RoomList, getRoomList } from "@/services/roomlist"
 import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
+import { useRouter } from "next/router"
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
@@ -18,90 +20,6 @@ const regions = [
   )
 )
 
-const hotels = [
-  {
-    name: "sequence MIYASHITA PARK",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/179182/origin/2ccbcfaa5812b54f3a0d75ff9a5516fb51aa269d.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 8000,
-  },
-  {
-    name: "all day place shibuya",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/183706/origin/2968993b95d5a9f88c7c7a41d1f55b592efa7c38.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 11000,
-  },
-  {
-    name: "アクトホテル渋谷",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/172650/origin/34fa11566f0e454604825b31297cdab2d3f1a409.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 4600,
-  },
-  {
-    name: "sequence MIYASHITA PARK",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/179182/origin/2ccbcfaa5812b54f3a0d75ff9a5516fb51aa269d.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 8000,
-  },
-  {
-    name: "all day place shibuya",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/183706/origin/2968993b95d5a9f88c7c7a41d1f55b592efa7c38.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 11000,
-  },
-  {
-    name: "アクトホテル渋谷",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/172650/origin/34fa11566f0e454604825b31297cdab2d3f1a409.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 4600,
-  },
-  {
-    name: "sequence MIYASHITA PARK",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/179182/origin/2ccbcfaa5812b54f3a0d75ff9a5516fb51aa269d.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 8000,
-  },
-  {
-    name: "all day place shibuya",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/183706/origin/2968993b95d5a9f88c7c7a41d1f55b592efa7c38.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 11000,
-  },
-  {
-    name: "アクトホテル渋谷",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/172650/origin/34fa11566f0e454604825b31297cdab2d3f1a409.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 4600,
-  },
-  {
-    name: "sequence MIYASHITA PARK",
-    href: "/",
-    image:
-      "https://trvimg.r10s.jp/share/image_up/179182/origin/2ccbcfaa5812b54f3a0d75ff9a5516fb51aa269d.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none",
-    price: 8000,
-  },
-].map((hotel, index) => (
-  <Card shadow='sm' padding='lg' radius='md' withBorder key={index}>
-    <Card.Section component='a' href={hotel.image}>
-      <Image src={hotel.image} alt={hotel.name} />
-      <Text ta='center' fw={700} fz='lg'>
-        {hotel.name}
-      </Text>
-      <Text ta='center' fz='md'>
-        ¥ {hotel.price.toLocaleString()} ~
-      </Text>
-    </Card.Section>
-  </Card>
-))
 type Props = {
   hotelList: {
     hotel_id: number
@@ -111,11 +29,13 @@ type Props = {
     longitude: number
     image: string
     region: string
+    priceList: number[]
   }[]
 }
 
 export default function Nansei(props: Props) {
   const { hotelList } = props
+  const router = useRouter()
 
   return (
     <>
@@ -138,7 +58,26 @@ export default function Nansei(props: Props) {
           <SimpleGrid cols={3}>
             {hotelList.map((hotel, index) => (
               <Card shadow='sm' padding='lg' radius='md' withBorder key={index}>
-                <Card.Section component='a' href={hotel.image}>
+                <Card.Section
+                  component='a'
+                  onClick={() => {
+                    router.push(
+                      {
+                        pathname: "/hotel/[id]",
+                        query: {
+                          id: hotel.hotel_id,
+                          name: hotel.name,
+                          description: hotel.description,
+                          latitude: hotel.description,
+                          longitude: hotel.description,
+                          image: hotel.image,
+                          region: hotel.region,
+                        },
+                      },
+                      "/hotel/" + hotel.hotel_id
+                    )
+                  }}
+                >
                   <Image src={hotel.image} alt={hotel.name} />
                   <Text ta='center' fw={700} fz='lg'>
                     {hotel.name}
@@ -159,13 +98,29 @@ export default function Nansei(props: Props) {
   )
 }
 
+const getPriceList = (roomList: RoomList) => {
+  let priceList: number[] = []
+  roomList.forEach((room) => {
+    priceList.push(room.price)
+  })
+  return {
+    priceList,
+  }
+}
+
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const { area } = context.query
-  const resHotelList = await getHotelList(area as string)
+  const resHotelList: HotelList = await getHotelList(area as string)
+  const hotelList = resHotelList.forEach(async (hotel) => {
+    return {
+      ...hotel,
+      priceList: getPriceList(await getRoomList(hotel.hotel_id)),
+    }
+  })
 
   return {
     props: {
-      hotelList: resHotelList,
+      hotelList: hotelList,
     },
   }
 }
