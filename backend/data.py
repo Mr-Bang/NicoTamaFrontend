@@ -3,21 +3,28 @@ hotels = [
         "name": "hotel1",
         "longitude": 2.0,
         "latitude": 2.0,
-        "image": "http://......",
+        "image": "https://trvimg.r10s.jp/share/image_up/80762/LARGE/68efbfe47ae1a0860d17741a1957b54275782207.47.1.26.2.jpg",
+        "region": "都心"
+    },
+    {
+        "name": "hotel2",
+        "longitude": 2.0,
+        "latitude": 2.0,
+        "image": "https://trvimg.r10s.jp/share/image_up/80762/LARGE/68efbfe47ae1a0860d17741a1957b54275782207.47.1.26.2.jpg",
         "region": "都心"
     },
     {
         "name": "testhotel123",
         "longitude": 2.0,
         "latitude": 2.0,
-        "image": "http://......",
+        "image": "https://travel.rakuten.co.jp/HOTEL/80762/?l-id=top_C_history",
         "region": "副都心"
     },
     {
         "name": "testhotel1234",
         "longitude": 3.0,
         "latitude": 3.0,
-        "image": "http://.......",
+        "image": "https://travel.rakuten.co.jp/HOTEL/80762/?l-id=top_C_history",
         "region": "東部"
     }
 ]

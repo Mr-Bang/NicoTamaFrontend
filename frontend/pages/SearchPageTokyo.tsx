@@ -23,12 +23,16 @@ export default function Home() {
   }))
   const { classes } = useStyles()
 
+  function onClickAreaButton() {
+    router.push("/都心")
+  }
+
   return (
     <div>
       <Title>東京２３区</Title>
       <Space h={"xl"} />
       <Grid>
-        <Grid.Col span="auto">
+        <Grid.Col span='auto'>
           <Container>
             <Box
               sx={{
@@ -37,7 +41,7 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 人気スポットから探す
               </Title>
               <Container>
@@ -49,7 +53,7 @@ export default function Home() {
               </Container>
             </Box>
 
-            <Space h="xl" />
+            <Space h='xl' />
 
             <Box
               sx={{
@@ -58,12 +62,12 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 主要駅・主要空港周辺から探す
               </Title>
 
               <Container>
-                <SimpleGrid cols={2} verticalSpacing="xs">
+                <SimpleGrid cols={2} verticalSpacing='xs'>
                   <div>新宿駅</div>
                   <div>東京駅</div>
                   <div>品川駅</div>
@@ -94,7 +98,7 @@ export default function Home() {
                 </SimpleGrid>
               </Container>
             </Box>
-            <Space h="xl" />
+            <Space h='xl' />
             <Box
               sx={{
                 background: "76AE25",
@@ -102,11 +106,11 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 人気スポットから探す
               </Title>
               <Container>
-                <SimpleGrid cols={2} verticalSpacing="xs">
+                <SimpleGrid cols={2} verticalSpacing='xs'>
                   <div>東京タワー</div>
                   <div>浅草寺</div>
                   <div>東京ディズニーリゾート®︎</div>
@@ -134,33 +138,33 @@ export default function Home() {
               borderRadius: "5px",
             }}
           >
-            <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+            <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
               地図から探す
             </Title>
             <Image width={834} height={824} alt={"mapoftokyo"} src={mapoftokyo} />
           </Box>
         </Grid.Col>
-        <Grid.Col span="auto"></Grid.Col>
+        <Grid.Col span='auto'></Grid.Col>
       </Grid>
 
-      <Button className={classes.root} variant="default" component="a">
+      <Button className={classes.root} variant='default' component='a'>
         プラン一覧
       </Button>
 
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         style={{ position: "absolute", width: "65px", height: "26px", left: "753px", top: "411px" }}
       >
         <Text fw={500}>板橋</Text>
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "620px", top: "450px" }}
       >
@@ -168,9 +172,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "850px", top: "430px" }}
       >
@@ -178,9 +182,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "710px", top: "560px" }}
       >
@@ -188,9 +192,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "630px", top: "610px" }}
       >
@@ -198,9 +202,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "640px", top: "750px" }}
       >
@@ -208,9 +212,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "770px", top: "770px" }}
       >
@@ -218,9 +222,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "850px", top: "820px" }}
         onClick={() => router.push("/SearchPageTokyo")}
@@ -229,9 +233,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "830px", top: "930px" }}
       >
@@ -239,9 +243,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "1000px", top: "400px" }}
       >
@@ -249,9 +253,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "1110px", top: "470px" }}
       >
@@ -259,9 +263,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "1170px", top: "610px" }}
       >
@@ -269,9 +273,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "970px", top: "500px" }}
       >
@@ -279,9 +283,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "970px", top: "550px" }}
       >
@@ -289,9 +293,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "1030px", top: "580px" }}
       >
@@ -299,9 +303,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "1040px", top: "670px" }}
       >
@@ -309,9 +313,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "810px", top: "510px" }}
       >
@@ -319,9 +323,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "885px", top: "540px" }}
       >
@@ -329,9 +333,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "810px", top: "615px" }}
       >
@@ -339,9 +343,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "900px", top: "630px" }}
       >
@@ -349,19 +353,20 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "950px", top: "670px" }}
+        onClick={() => onClickAreaButton()}
       >
         <Text fw={500}>中央</Text>
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "875px", top: "730px" }}
       >
@@ -369,9 +374,9 @@ export default function Home() {
       </Button>
       <Button
         className={classes.root}
-        variant="default"
-        component="a"
-        radius="5px"
+        variant='default'
+        component='a'
+        radius='5px'
         compact
         style={{ position: "absolute", width: "65px", height: "26px", left: "760px", top: "670px" }}
       >
@@ -380,8 +385,8 @@ export default function Home() {
 
       <Text
         className={classes.root2}
-        variant="default"
-        component="a"
+        variant='default'
+        component='a'
         weight={700}
         size={"45px"}
         style={{ position: "absolute", left: "860px", top: "660px" }}
@@ -391,8 +396,8 @@ export default function Home() {
       </Text>
       <Text
         className={classes.root2}
-        variant="default"
-        component="a"
+        variant='default'
+        component='a'
         weight={700}
         size={"45px"}
         style={{ position: "absolute", left: "790px", top: "550px" }}
@@ -402,8 +407,8 @@ export default function Home() {
       </Text>
       <Text
         className={classes.root2}
-        variant="default"
-        component="a"
+        variant='default'
+        component='a'
         weight={700}
         size={"50px"}
         style={{ position: "absolute", left: "600px", top: "480px" }}
@@ -413,8 +418,8 @@ export default function Home() {
       </Text>
       <Text
         className={classes.root2}
-        variant="default"
-        component="a"
+        variant='default'
+        component='a'
         weight={700}
         size={"50px"}
         style={{ position: "absolute", left: "680px", top: "800px" }}
@@ -425,8 +430,8 @@ export default function Home() {
 
       <Text
         className={classes.root2}
-        variant="default"
-        component="a"
+        variant='default'
+        component='a'
         weight={700}
         size={"50px"}
         style={{ position: "absolute", left: "1120px", top: "510px" }}
