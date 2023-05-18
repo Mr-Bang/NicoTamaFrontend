@@ -32,8 +32,8 @@ export default function ActivityList(props: Props) {
   const { classes } = useStyles()
   const { activityList } = props
 
-  const cards = activityList.map((activity) => (
-    <Card key={activity.url} p='md' radius='md' component='a' href='#' className={classes.card}>
+  const cards = activityList.map((activity, index) => (
+    <Card key={index} p='md' radius='md' component='a' href='#' className={classes.card}>
       <AspectRatio ratio={1920 / 1080}>
         <Image src={activity.image} fit={"contain"} />
       </AspectRatio>

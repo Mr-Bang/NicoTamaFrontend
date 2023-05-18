@@ -3,10 +3,18 @@ import ActivityList from "@/components/map/ActivityList"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Box, Container, Flex, SimpleGrid, Title } from "@mantine/core"
-import { InfoWindow, Marker, MarkerClusterer, useLoadScript } from "@react-google-maps/api"
-import { GoogleMap, LoadScript } from "@react-google-maps/api"
+import { InfoWindow, Marker, MarkerF, useJsApiLoader, useLoadScript } from "@react-google-maps/api"
+import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
-import { useCallback, useEffect, useState } from "react"
+import {
+  MemoExoticComponent,
+  ReactComponentElement,
+  cloneElement,
+  isValidElement,
+  useCallback,
+  useEffect,
+  useState,
+} from "react"
 
 const containerStyle = {
   width: "100%",
@@ -16,6 +24,37 @@ const containerStyle = {
 const center = {
   lat: 35.64947376923544,
   lng: 139.78989191498846,
+}
+
+const areaCenter: {
+  [key: string]: {
+    lat: number
+    lng: number
+  }
+} = {
+  都心: {
+    lat: 35.6752972133285,
+    lng: 139.76463639450805,
+  },
+
+  副都心: {
+    lat: 35.7023558010935,
+    lng: 139.7027006645815,
+  },
+
+  東部: {
+    lat: 35.71244223700499,
+    lng: 139.81344093561813,
+  },
+  北西部: {
+    lat: 35.731217938922306,
+    lng: 139.6523175347044,
+  },
+
+  南西部: {
+    lat: 35.61453465541908,
+    lng: 139.69429269110896,
+  },
 }
 
 const googleMapsApiKey: string = process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string
@@ -34,7 +73,7 @@ interface Props {
 
 export default function Map(props: Props) {
   const { activityList } = props
-  const { isLoaded } = useLoadScript({
+  const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: googleMapsApiKey,
   })
@@ -54,9 +93,9 @@ export default function Map(props: Props) {
   //   setMap(null)
   // }, [])
 
-  useEffect(() => {
-    console.log(activityList)
-  }, [])
+  const Markers = activityList.map((activity, index) => (
+    <MarkerF key={index} position={{ lat: Number(activity.latitude), lng: Number(activity.longitude) }} />
+  ))
 
   return (
     <>
@@ -67,21 +106,10 @@ export default function Map(props: Props) {
       <Flex>
         <MapLeftBar />
         <Box sx={{ width: 100 }} />
+
         {isLoaded ? (
-          <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-            {activityList.map((activity) => (
-              <>
-                <Marker
-                  position={{ lat: activity.latitude, lng: activity.longitude }}
-                  label={{ text: activity.name, color: "white", fontSize: "60px", fontWeight: "100" }}
-                />
-                <InfoWindow position={{ lat: activity.latitude, lng: activity.longitude }}>
-                  <div>
-                    <h1>秋葉原オフィス</h1>
-                  </div>
-                </InfoWindow>
-              </>
-            ))}
+          <GoogleMap mapContainerStyle={containerStyle} center={areaCenter[activityList[0].region]} zoom={13}>
+            {Markers}
           </GoogleMap>
         ) : (
           <></>
