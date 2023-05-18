@@ -361,74 +361,94 @@ hotels = [
 },
 {
     'hotel_id': 40,
-    'room_number': 100,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/18392/LARGE/17dcd746104a7a37a9d6b98e36d1298d9b4985fd.47.9.26.3.jpg',
-    'price': '24655'
+    'name': 'カプセル＆サウナ\u3000コスモプラザ赤羽',
+    'image': 'https://trvimg.r10s.jp/share/image_up/32083/origin/4f1abacb693e6a2972cf221d1bd234ad7a4d68ae.47.1.26.2.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': '東京最安値！訳ありプラン発売中！ポケットコイルマットレス&高速無料Wi-Fi&スマホ充電コンセント全室完備！',
+    'region': '北西部',
+    'latitude': '35.78127404',
+    'longitude': '139.7201853'
 },
 {
     'hotel_id': 41,
-    'room_number': 101,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/70707/LARGE/09b5e263e0b1dda2c812359cb00cbe019f7c25ae.47.9.26.3.jpg',
-    'price': '16614'
+    'name': 'アパホテル〈東京板橋駅前〉',
+    'image': 'https://trvimg.r10s.jp/share/image_up/2116/origin/1c20360a6f6e083ea89b97ca163d7fbe1bd3452d.47.1.26.2.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': '池袋駅から1駅3分★JR板橋駅東口から徒歩１分の好立地♪新宿駅から最速9分！東京ドームまでも乗換無し！！',
+    'region': '副都心',
+    'latitude': '35.74488367',
+    'longitude': '139.7194396'
 },
 {
     'hotel_id': 42,
-    'room_number': 102,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/37928/LARGE/2a179732a1b4961f7f15d63316087cb7da1b3bcd.47.9.26.3.jpg',
-    'price': '8137'
+    'name': 'ＪＲ東日本ホテルメッツ赤羽',
+    'image': 'https://trvimg.r10s.jp/share/image_up/37928/origin/a5eac9b1796efcd43a339633a18b1668c767c315.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': 'JR赤羽駅北改札・東口より徒歩1分\u3000上野、新宿、大宮へ約15分訪れるお客さまの快適を第一に考えたホテルです。',
+    'region': '北西部',
+    'latitude': '35.77862714',
+    'longitude': '139.7209242'
 },
 {
     'hotel_id': 43,
-    'room_number': 103,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/108993/LARGE/593ae456eedb86bb876c187fac0af1b1252db2a2.47.9.26.3.jpg',
-    'price': '4091'
+    'name': 'ダイワロイネットホテル東京赤羽',
+    'image': 'https://trvimg.r10s.jp/share/image_up/108993/origin/84e88578a0e304668359d870287e1ece103d9370.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': 'ビジネス利用やテレワークに最適！全室広々17㎡、加湿空気清浄機完備、ワイドデスク採用◇お得なクーポン配布中◇',
+    'region': '北西部',
+    'latitude': '35.77759396',
+    'longitude': '139.7224963'
 },
 {
     'hotel_id': 44,
-    'room_number': 104,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/168764/LARGE/c67874c30a0b2d171a32cb91c06fb5e64e6b49d8.47.9.26.3.jpg',
-    'price': '8500'
+    'name': '東横ＩＮＮ赤羽駅東口',
+    'image': 'https://trvimg.r10s.jp/share/image_up/168764/origin/e0f1808117ad9e9a4c4e03ef8d3e9e8ddad5a239.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': 'JR赤羽駅徒歩3分！ビジネス・観光に便利な立地♪全プラン朝食付きです。',
+    'region': '北西部',
+    'latitude': '35.77991869211716',
+    'longitude': '139.72223651733407'
 },
 {
     'hotel_id': 45,
-    'room_number': 105,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/181415/LARGE/3282362ec830f0b01003a2233b777b9dc7030112.47.9.26.3.jpg',
-    'price': '18182'
+    'name': '高濃度炭酸泉\u3000東京都北区赤羽の湯\u3000スーパーホテル東京・赤羽駅南口',
+    'image': 'https://img.travel.rakuten.co.jp/share/themes/ds/images/Sparkle_final16x16.png',
+    'description': 'ＪＲ赤羽駅南口改札から徒歩約２分！上野・池袋・新宿・渋谷・大宮などアクセス抜群！',
+    'region': '北西部',
+    'latitude': '35.77784653338057',
+    'longitude': '139.72264930185244'
 },
 {
     'hotel_id': 46,
-    'room_number': 106,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/183777/LARGE/415b95de91bf54a1ca774f4b190b3ea449b97079.47.9.26.3.jpg',
-    'price': '6546'
+    'name': '赤羽ホリックホテル',
+    'image': 'https://trvimg.r10s.jp/share/image_up/183777/origin/b001e21359d8c99600630de8fe98154eafddda3b.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': '赤羽駅徒歩約1分◆コンビニ目の前◆大浴場完備◆レストランBAR◆YouTube見放題◆ビジネス利用に便利なデスク付客室有',
+    'region': '北西部',
+    'latitude': '35.7780869',
+    'longitude': '139.722215'
 },
 {
     'hotel_id': 47,
-    'room_number': 107,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/165554/LARGE/cb829377430065a49a1f530e126a13bf6d25ff4f.47.1.26.2.jpg',
-    'price': '9050'
+    'name': '東京ゲストハウス板橋宿',
+    'image': 'https://trvimg.r10s.jp/share/image_up/165554/origin/6a9e0071bec03f1a1d254d85cafee0eff91c9b72.47.1.26.2.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': '中板橋駅北口から徒歩３分。ゲストハウスならではの人との交流、異文化交流をお楽しみ下さい。',
+    'region': '北西部',
+    'latitude': '35.75615950156604',
+    'longitude': '139.6972818134918'
 },
 {
     'hotel_id': 48,
-    'room_number': 108,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/172058/LARGE/cea7dafff7559048d58be5eb6d06b60a2cc91b10.47.9.26.3.jpg',
-    'price': '7999'
+    'name': 'ホテルウィングインターナショナル東京赤羽',
+    'image': 'https://trvimg.r10s.jp/share/image_up/172058/origin/45ccbc30f7aa89edb5b0b270f64c5f8d75f3f52c.47.1.26.2.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': '2019年5月１日新築OPEN◆赤羽駅西口徒歩2分◆大宮まで約17分、上野まで約11分、池袋まで約8分と好立地',
+    'region': '北西部',
+    'latitude': '35.77916457044751',
+    'longitude': '139.71906072327874'
 },
 {
     'hotel_id': 49,
-    'room_number': 109,
-    'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/5692/LARGE/61e18a895a95c0561fd2ad64c5c580fd17a47cb0.47.1.26.2.jpg',
-    'price': '8000'
-}
+    'name': '板橋センターホテル',
+    'image': 'https://trvimg.r10s.jp/share/image_up/5692/origin/811164797017a457ae625cbce4c0f3b3575b3eac.47.1.26.2.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': '駅近1分！都営地下鉄三田線にて都心アクセスも良好！【巣鴨5分・水道橋15分・大手町20分】',
+    'region': '北西部',
+    'latitude': '35.7515354',
+    'longitude': '139.7082903'
+},
 ]
 
 activities = [
@@ -735,17 +755,17 @@ rooms = [
 },
 {
     'hotel_id': 40,
-    'room_number': 100,
+    'room_number': 1010,
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/18392/LARGE/17dcd746104a7a37a9d6b98e36d1298d9b4985fd.47.9.26.3.jpg',
-    'price': '24655'
+    'image': 'https://trvimg.r10s.jp/share/image_up/32083/LARGE/0WPkRF.gif',
+    'price': '8600'
 },
 {
     'hotel_id': 41,
-    'room_number': 101,
+    'room_number': 1011,
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/70707/LARGE/09b5e263e0b1dda2c812359cb00cbe019f7c25ae.47.9.26.3.jpg',
-    'price': '16614'
+    'image': 'https://trvimg.r10s.jp/share/image_up/2116/LARGE/1d8aafb2fbcc9e4cf1e9b54dc9d53f35b48c67b5.47.9.26.3.jpg',
+    'price': '23455'
 },
 {
     'hotel_id': 42,
@@ -766,7 +786,7 @@ rooms = [
     'room_number': 104,
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/168764/LARGE/c67874c30a0b2d171a32cb91c06fb5e64e6b49d8.47.9.26.3.jpg',
-    'price': '5600'
+    'price': '6800'
 },
 {
     'hotel_id': 45,
@@ -787,7 +807,7 @@ rooms = [
     'room_number': 107,
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/165554/LARGE/cb829377430065a49a1f530e126a13bf6d25ff4f.47.1.26.2.jpg',
-    'price': '7800'
+    'price': '8600'
 },
 {
     'hotel_id': 48,
