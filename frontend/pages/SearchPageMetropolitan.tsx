@@ -1,5 +1,4 @@
 import { useRouter } from "next/router"
-import { useState } from "react"
 import Image from "next/image"
 import {
   Box,
@@ -9,15 +8,11 @@ import {
   Center,
   Container,
   Space,
-  TextInput,
   Radio,
   Group,
-  Select,
   NumberInput,
-  MultiSelect,
   Flex,
   Text,
-  SimpleGrid,
   Button,
   Checkbox,
 } from "@mantine/core"
