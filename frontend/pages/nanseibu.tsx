@@ -1,5 +1,5 @@
 import MapLeftBar from '@/components/map/MapLeftBar';
-import { Box, Breadcrumbs, Anchor, Grid, SimpleGrid, Image, Text, Title } from '@mantine/core';
+import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title } from '@mantine/core';
 
 const regions = [
   { name: '楽天トラベルトップ', href: '/' },
@@ -28,15 +28,16 @@ const hotels = [
   { name: 'アクトホテル渋谷', href: '/', image: 'https://trvimg.r10s.jp/share/image_up/172650/origin/34fa11566f0e454604825b31297cdab2d3f1a409.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none', price: 4600},
   { name: 'sequence MIYASHITA PARK', href: '/', image: 'https://trvimg.r10s.jp/share/image_up/179182/origin/2ccbcfaa5812b54f3a0d75ff9a5516fb51aa269d.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none', price: 8000},
 ].map((hotel, index) => (
-  <Box maw={340} mx="auto" key={index} component="a" href={hotel.href}>
-    <Image
-      radius="md"
-      src={hotel.image}
-      alt={hotel.name}
-    />
-    <Text ta="center" fw={700} fz="lg">{hotel.name}</Text>
-    <Text ta="center" fz="md">¥ {hotel.price.toLocaleString()} ~</Text>
-  </Box>
+  <Card shadow="sm" padding="lg" radius="md" withBorder key={index}>
+    <Card.Section component="a" href={hotel.image}>
+      <Image
+        src={hotel.image}
+        alt={hotel.name}
+      />
+      <Text ta="center" fw={700} fz="lg">{hotel.name}</Text>
+      <Text ta="center" fz="md">¥ {hotel.price.toLocaleString()} ~</Text>
+    </Card.Section>
+  </Card>
 ));
 
 function Nansei() {
