@@ -4,10 +4,11 @@ import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
 import { Box, Container, Flex, SimpleGrid, Title } from "@mantine/core"
-import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
+import { InfoWindowF, MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
 import { useEffect } from "react"
+import { faHotel } from "@fortawesome/free-solid-svg-icons"
 
 const containerStyle = {
   width: "100%",
@@ -95,7 +96,12 @@ export default function Map(props: Props) {
   const roomList = query.roomList ? JSON.parse(query.roomList) : []
 
   const Markers = activityList.map((activity, index) => (
-    <MarkerF key={index} position={{ lat: Number(activity.latitude), lng: Number(activity.longitude) }} />
+    <>
+      <MarkerF key={index} position={{ lat: activity.latitude, lng: activity.longitude }} />
+      {/* <InfoWindowF key={index} position={{ lat: activity.latitude, lng: activity.longitude }}>
+        <div>{activity.name}</div>
+      </InfoWindowF> */}
+    </>
   ))
 
   useEffect(() => {
@@ -118,13 +124,29 @@ export default function Map(props: Props) {
             center={{ lat: hotel.latitude, lng: hotel.longitude }}
             zoom={13}
           >
-            <MarkerF label={hotel.name} position={{ lat: hotel.latitude, lng: hotel.longitude }} />
+            <MarkerF
+              position={{ lat: hotel.latitude, lng: hotel.longitude }}
+              icon={{
+                path: faHotel.icon[4] as string,
+                fillColor: "#ff0066",
+                fillOpacity: 1,
+                anchor: new google.maps.Point(
+                  faHotel.icon[0] / 2, // width
+                  faHotel.icon[1] // height
+                ),
+                strokeWeight: 1,
+                strokeColor: "#ffffff",
+                scale: 0.055,
+              }}
+            />
+
             {Markers}
           </GoogleMap>
         ) : (
           <></>
         )}
         <Box sx={{ width: 100 }} />
+
         <ActivityList activityList={activityList} />
       </Flex>
     </>
