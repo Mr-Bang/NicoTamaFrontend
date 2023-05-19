@@ -2,29 +2,8 @@ import MapLeftBar from "@/components/map/MapLeftBar"
 import { Breadcrumbs, Anchor, Box, Center, Grid, Text, Title } from "@mantine/core"
 import HotelTab from "@/components/hotel/HotelTab"
 import HotelContent from "@/components/hotel/HotelContent"
-import { useRouter } from "next/router"
-import SampleHotel from "@/components/hotel/SampleHotel"
 import { GetServerSidePropsContext } from "next"
-import { useEffect } from "react"
 import { Hotel } from "@/types/hotel"
-
-const regions = [
-  { name: "楽天トラベルトップ", href: "/" },
-  { name: "首都圏", href: "/" },
-  { name: "東京23区", href: "/" },
-  { name: "世田谷・目黒・品川・大田", href: "/" },
-  { name: "住友不動産ホテル ヴィラフォンテーヌグランド東京田町" },
-].map((region, index) =>
-  region.href ? (
-    <Anchor href={region.href} key={index}>
-      {region.name}
-    </Anchor>
-  ) : (
-    <Text fw={700} key={index}>
-      {region.name}
-    </Text>
-  )
-)
 
 type Props = {
   query: {
@@ -71,12 +50,7 @@ export default function Hotel(props: Props) {
       </Text>
     )
   )
-  // クエリパラメータをパースしてリストに変換
   const roomList = query.roomList ? JSON.parse(query.roomList) : []
-
-  useEffect(() => {
-    console.log(query)
-  }, [])
 
   return (
     <>
@@ -98,7 +72,7 @@ export default function Hotel(props: Props) {
         <Grid.Col span={7}>
           <HotelTab hotel={hotel} rooms={roomList} />
           <Center>
-            <HotelContent roomList={roomList} />
+            <HotelContent hotel={hotel} roomList={roomList} />
           </Center>
         </Grid.Col>
         <Grid.Col span='auto'>
