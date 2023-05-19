@@ -1,3 +1,4 @@
+import HotelsMap from "@/components/HotelsMap"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { HotelList, getHotelList } from "@/services/hotellist"
 import { RoomList, getRoomList } from "@/services/roomlist"
@@ -49,7 +50,7 @@ export default function HotelList(props: Props) {
 
   return (
     <>
-      <Breadcrumbs separator='>' mt='xs'>
+      <Breadcrumbs separator=">" mt="xs">
         {regions}
       </Breadcrumbs>
       <Box
@@ -61,15 +62,15 @@ export default function HotelList(props: Props) {
         <Title order={2}>世田谷・目黒・品川・大田</Title>
       </Box>
       <Grid>
-        <Grid.Col span='auto'>
+        <Grid.Col span="auto">
           <MapLeftBar />
         </Grid.Col>
         <Grid.Col span={6}>
           <SimpleGrid cols={3}>
             {hotelList.map((hotel, index) => (
-              <Card shadow='sm' padding='lg' radius='md' withBorder key={index}>
+              <Card shadow="sm" padding="lg" radius="md" withBorder key={index}>
                 <Card.Section
-                  component='a'
+                  component="a"
                   onClick={() => {
                     router.push(
                       {
@@ -90,10 +91,10 @@ export default function HotelList(props: Props) {
                   }}
                 >
                   <Image src={hotel.image} alt={hotel.name} />
-                  <Text ta='center' fw={700} fz='lg'>
+                  <Text ta="center" fw={700} fz="lg">
                     {hotel.name}
                   </Text>
-                  <Text ta='center' fz='md'>
+                  <Text ta="center" fz="md">
                     ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
                   </Text>
                 </Card.Section>
@@ -101,8 +102,8 @@ export default function HotelList(props: Props) {
             ))}
           </SimpleGrid>
         </Grid.Col>
-        <Grid.Col span='auto'>
-          <Box sx={{ width: 600 }}></Box>
+        <Grid.Col span="auto">
+          <HotelsMap hotelList={hotelList} />
         </Grid.Col>
       </Grid>
     </>
