@@ -1,15 +1,6 @@
 import axios from "axios"
 import { BASE_URL } from "./baseurl"
-
-export type HotelList = {
-  hotel_id: number
-  name: string
-  description: string
-  latitude: number
-  longitude: number
-  image: string
-  region: string
-}[]
+import { HotelList } from "@/types/hotelList"
 
 const getHotelList = async (searchWord: string): Promise<HotelList> => {
   const res = await axios.get(BASE_URL + "/search", {

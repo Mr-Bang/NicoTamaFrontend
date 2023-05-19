@@ -1,4 +1,4 @@
-import { RoomList } from "@/services/roomlist"
+import { RoomList } from "@/types/roomList"
 import { Box, Image, Grid, SimpleGrid } from "@mantine/core"
 
 const sampleHotel = {

@@ -3,9 +3,8 @@ import { Breadcrumbs, Anchor, Box, Center, Grid, Text, Title } from "@mantine/co
 import HotelTab from "@/components/HotelTab"
 import SampleHotel from "@/components/hotel/SampleHotel"
 import { GetServerSidePropsContext } from "next"
-import { useRouter } from "next/router"
 import { useEffect } from "react"
-import { HotelList } from "@/services/hotellist"
+import { Hotel } from "@/types/hotel"
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
@@ -25,16 +24,37 @@ const regions = [
   )
 )
 
-export default function Hotel() {
-  const router = useRouter()
+type Props = {
+  query: {
+    hotel_id: number
+    name: string
+    description: string
+    latitude: number
+    longitude: number
+    image: string
+    region: string
+    roomList: string
+  }
+}
 
-  const hotel = router.query
+export default function Hotel(props: Props) {
+  const { query } = props
+
+  const hotel: Hotel = {
+    hotel_id: Number(query.hotel_id),
+    name: query.name as string,
+    description: query.description as string,
+    latitude: Number(query.latitude),
+    longitude: Number(query.longitude),
+    image: query.image as string,
+    region: query.region as string,
+  }
 
   // クエリパラメータをパースしてリストに変換
-  const roomList = hotel.roomList ? JSON.parse(hotel.roomList as string) : []
+  const roomList = query.roomList ? JSON.parse(query.roomList) : []
 
   useEffect(() => {
-    console.log(roomList)
+    console.log(query)
   }, [])
 
   return (
@@ -55,7 +75,7 @@ export default function Hotel() {
           <MapLeftBar />
         </Grid.Col>
         <Grid.Col span={7}>
-          <HotelTab />
+          <HotelTab hotel={hotel} rooms={roomList} />
           <Center>
             <SampleHotel rooms={roomList} />
           </Center>
@@ -66,4 +86,13 @@ export default function Hotel() {
       </Grid>
     </>
   )
+}
+
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+  const { query } = context
+  return {
+    props: {
+      query,
+    },
+  }
 }

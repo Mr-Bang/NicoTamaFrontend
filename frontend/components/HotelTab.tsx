@@ -1,3 +1,5 @@
+import { Hotel } from "@/types/hotel"
+import { RoomList } from "@/types/roomList"
 import { Button, Group, createStyles, rem } from "@mantine/core"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
@@ -20,10 +22,16 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-export default function HotelTab() {
+type Props = {
+  hotel: Hotel
+  rooms: RoomList
+}
+
+export default function HotelTab(props: Props) {
   const { classes } = useStyles()
   const router = useRouter()
   const path = router.pathname
+  const { hotel, rooms } = props
 
   useEffect(() => {
     console.log(path)
@@ -34,7 +42,21 @@ export default function HotelTab() {
       <Button
         className={"/hotel/[id]" == path ? classes.active : classes.root}
         variant='default'
-        onClick={() => router.push("/hotel/index")}
+        onClick={() => {
+          router.push({
+            pathname: "/hotel/[hotel_id]",
+            query: {
+              hotel_id: hotel.hotel_id,
+              name: hotel.name,
+              description: hotel.description,
+              latitude: hotel.description,
+              longitude: hotel.description,
+              image: hotel.image,
+              region: hotel.region,
+              roomList: JSON.stringify(rooms),
+            },
+          })
+        }}
       >
         施設紹介
       </Button>
@@ -51,7 +73,21 @@ export default function HotelTab() {
         className={"/map" == path ? classes.active : classes.root}
         variant='default'
         component='a'
-        onClick={() => router.push("/map")}
+        onClick={() => {
+          router.push({
+            pathname: "/map",
+            query: {
+              hotel_id: hotel.hotel_id,
+              name: hotel.name,
+              description: hotel.description,
+              latitude: hotel.latitude,
+              longitude: hotel.longitude,
+              image: hotel.image,
+              region: hotel.region,
+              roomList: JSON.stringify(rooms),
+            },
+          })
+        }}
       >
         地図・アクセス
       </Button>

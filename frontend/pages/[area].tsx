@@ -1,16 +1,33 @@
 import MapLeftBar from "@/components/map/MapLeftBar"
-import { HotelList, getHotelList } from "@/services/hotellist"
-import { RoomList, getRoomList } from "@/services/roomlist"
-import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title } from "@mantine/core"
+import { getHotelList } from "@/services/hotellist"
+import { getRoomList } from "@/services/roomlist"
+import { HotelList } from "@/types/hotelList"
+import { RoomList } from "@/types/roomList"
+import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title, createStyles } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
+
+const useStyles = createStyles((theme) => ({
+  card: {
+    transition: "transform 150ms ease, box-shadow 150ms ease",
+
+    "&:hover": {
+      transform: "scale(1.01)",
+      boxShadow: theme.shadows.md,
+    },
+  },
+
+  title: {
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 600,
+  },
+}))
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
-  { name: "首都圏", href: "/" },
-  { name: "東京23区", href: "/" },
-  { name: "世田谷・目黒・品川・大田" },
+  { name: "首都圏", href: "/SearchPageMetropolitan" },
+  { name: "東京23区", href: "/SearchPageTokyo" },
+  { name: "世田谷・目黒・品川・大田", href: "/SearchPageTokyo" },
 ].map((region, index) =>
   region.href ? (
     <Anchor href={region.href} key={index}>
@@ -36,6 +53,7 @@ type Props = {
 
 export default function HotelList(props: Props) {
   const { hotelList } = props
+  const { classes } = useStyles()
   const router = useRouter()
 
   const getPriceList = (roomList: RoomList) => {
@@ -67,26 +85,23 @@ export default function HotelList(props: Props) {
         <Grid.Col span={6}>
           <SimpleGrid cols={3}>
             {hotelList.map((hotel, index) => (
-              <Card shadow='sm' padding='lg' radius='md' withBorder key={index}>
+              <Card className={classes.card} shadow='sm' padding='lg' radius='md' withBorder key={index}>
                 <Card.Section
                   component='a'
                   onClick={() => {
-                    router.push(
-                      {
-                        pathname: "/hotel/[id]",
-                        query: {
-                          id: hotel.hotel_id,
-                          name: hotel.name,
-                          description: hotel.description,
-                          latitude: hotel.description,
-                          longitude: hotel.description,
-                          image: hotel.image,
-                          region: hotel.region,
-                          roomList: JSON.stringify(hotel.roomList),
-                        },
+                    router.push({
+                      pathname: "/hotel/[hotel_id]",
+                      query: {
+                        hotel_id: hotel.hotel_id,
+                        name: hotel.name,
+                        description: hotel.description,
+                        latitude: hotel.latitude,
+                        longitude: hotel.longitude,
+                        image: hotel.image,
+                        region: hotel.region,
+                        roomList: JSON.stringify(hotel.roomList),
                       },
-                      "/hotel/" + hotel.hotel_id
-                    )
+                    })
                   }}
                 >
                   <Image src={hotel.image} alt={hotel.name} />
