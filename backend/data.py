@@ -20,7 +20,7 @@ hotels = [
 	{
 		"hotel_id": 2,
 		"name": "ダイワロイネットホテル西新宿　ＰＲＥＭＩＥＲ",
-		"image": "https://img.travel.rakuten.co.jp/share/themes/ds/images/Sparkle_final16x16.png",
+		"image": "https://trvimg.r10s.jp/share/image_up/167606/origin/c1f200d95d06bbd7575eb58cd8aa9d363e6eac49.47.9.26.3.jpg?fit=inside%7C888:498",
 		"description": "",
 		"region": "副都心",
 		"latitude": 35.6944563,
@@ -137,7 +137,7 @@ hotels = [
 {
     'hotel_id': 15,
     'name': 'スーパーホテル東京・浜松町',
-    'image': 'https://img.travel.rakuten.co.jp/share/themes/ds/images/Sparkle_final16x16.png',
+    'image': 'https://trvimg.r10s.jp/share/image_up/168701/origin/76334e94d5a354d94aa19b17ca6b32a820547299.47.9.26.3.jpg?fit=inside%7C888:498',
     'description': '浜松町駅JR北口から徒歩約4分、大江戸線大門駅A1出口から徒歩約2分♪羽田空港からも約17分とアクセス抜群です！',
     'region': '都心',
     'latitude': 35.6554629,
@@ -209,7 +209,7 @@ hotels = [
 {
     'hotel_id': 23,
     'name': 'スーパーホテル浅草',
-    'image': 'https://img.travel.rakuten.co.jp/share/themes/ds/images/Sparkle_final16x16.png',
+    'image': 'https://trvimg.r10s.jp/share/image_up/135551/origin/3d82b7d42f7f7a8276ef7699d3cc6da93bf7594b.47.9.26.3.jpg?fit=inside%7C888:498',
     'description': '■浅草寺、浅草神社隣！■東京メトロ銀座線始発！「浅草駅」7番出口から徒歩5分■焼きたてパン朝食無料■ウェルカムバー',
     'region': '東部',
     'latitude': 35.71499748,
@@ -245,7 +245,7 @@ hotels = [
 {
     'hotel_id': 27,
     'name': '高濃度炭酸泉u3000藍染の湯u3000スーパーホテル秋葉原・末広町',
-    'image': 'https://img.travel.rakuten.co.jp/share/themes/ds/images/Sparkle_final16x16.png',
+    'image': 'https://trvimg.r10s.jp/share/image_up/147874/origin/0827a021752b5366e9fda306c0c8b213753fd8df.47.9.26.3.jpg?fit=inside%7C888:498',
     'description': '全室禁煙■高濃度人工炭酸泉男女入替制「藍染の湯」■秋葉原7分■上野御徒町5分■秋葉原＆アメ横＆上野動物園徒歩圏内■',
     'region': '東部',
     'latitude': 35.7033694218914,
@@ -254,7 +254,7 @@ hotels = [
 {
     'hotel_id': 28,
     'name': 'スーパーホテル上野・御徒町',
-    'image': 'https://img.travel.rakuten.co.jp/share/themes/ds/images/Sparkle_final16x16.png',
+    'image': 'https://trvimg.r10s.jp/share/image_up/106147/origin/fb6a05fc5e36a39546eeda09d109b44267f1f928.47.9.26.3.jpg?fit=inside%7C888:498',
     'description': '各線御徒町駅・コンビニすぐ！ウェルカムドリンク・Wi-Fiマガジン無料！無料駐輪場あり！朝食はブッフェ形式♪',
     'region': '東部',
     'latitude': 35.70621731,
@@ -407,7 +407,7 @@ hotels = [
 {
     'hotel_id': 45,
     'name': '高濃度炭酸泉u3000東京都北区赤羽の湯u3000スーパーホテル東京・赤羽駅南口',
-    'image': 'https://img.travel.rakuten.co.jp/share/themes/ds/images/Sparkle_final16x16.png',
+    'image': 'https://trvimg.r10s.jp/share/image_up/181415/origin/dea7fb4a48a3edf60aad365fb058016b7544834c.47.9.26.3.jpg?fit=inside%7C888:498',
     'description': 'ＪＲ赤羽駅南口改札から徒歩約２分！上野・池袋・新宿・渋谷・大宮などアクセス抜群！',
     'region': '北西部',
     'latitude': 35.77784653338057,
@@ -1764,8 +1764,8 @@ rooms = [
     'hotel_id': 40,
     'room_number': 1010,
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/32083/LARGE/0WPkRF.gif',
-    'price': '8600'
+    'image': 'https://trvimg.r10s.jp/share/image_up/32083/LARGE/2e97b585891982a46468d0d6e0d630749a11df4e.47.9.26.3.jpg',
+    'price': '4773'
 },
 {
     'hotel_id': 41,
@@ -2114,8 +2114,8 @@ rooms = [
     'hotel_id': 40,
     'room_number': 1011,
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/32083/LARGE/0WPkRF.gif',
-    'price': '8600'
+    'image': 'https://trvimg.r10s.jp/share/image_up/32083/LARGE/2e97b585891982a46468d0d6e0d630749a11df4e.47.9.26.3.jpg',
+    'price': '4537'
 },
 {
     'hotel_id': 41,
