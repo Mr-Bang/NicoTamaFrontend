@@ -1,9 +1,5 @@
-import HotelTab from "@/components/HotelTab"
-import ActivityList from "@/components/map/ActivityList"
-import MapLeftBar from "@/components/map/MapLeftBar"
-import { getActivityList } from "@/services/activity"
-import { Box, Container, Flex, SimpleGrid, Title } from "@mantine/core"
-import { InfoWindow, Marker, MarkerF, useJsApiLoader, useLoadScript } from "@react-google-maps/api"
+import { Box, Flex  } from "@mantine/core"
+import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { useEffect } from "react"
 
@@ -64,28 +60,19 @@ export default function HotelsMap(props: Props) {
     googleMapsApiKey: googleMapsApiKey,
   })
 
-  useEffect(() => {
-    console.log(hotelList)
-  }, [])
-
   const Markers = hotelList.map((hotel, index) => (
     <MarkerF key={index} position={{ lat: Number(hotel.latitude), lng: Number(hotel.longitude) }} />
   ))
 
   return (
     <>
-      <Flex>
-        <Box sx={{ width: 100 }} />
-
-        {isLoaded ? (
-          <GoogleMap mapContainerStyle={containerStyle} center={areaCenter[hotelList[0].region]} zoom={13}>
-            {Markers}
-          </GoogleMap>
-        ) : (
-          <></>
-        )}
-        <Box sx={{ width: 100 }} />
-      </Flex>
+      {isLoaded ? (
+        <GoogleMap mapContainerStyle={containerStyle} center={areaCenter[hotelList[0].region]} zoom={13}>
+          {Markers}
+        </GoogleMap>
+      ) : (
+        <></>
+      )}
     </>
   )
 }
