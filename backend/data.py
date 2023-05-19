@@ -2283,19 +2283,19 @@ rooms = [
 
 categories = [
     {
+        "category_id": 1,
+        "name": "フード"
+    },
+    {
         "category_id" : 2,
         "name" : "アウトドア・スポーツ"
     },
     {
-        "category_id" : 4,
-        "name": "リラクゼーション"
-    },
-    {
-        "category_id" : 3,
+        "category_id": 3,
         "name": "アトラクション·チケット"
     },
     {
-        "category_id" : 1,
-        "name": "フード"
+        "category_id" : 4,
+        "name": "リラクゼーション"
     }
 ]
