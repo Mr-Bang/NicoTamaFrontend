@@ -790,7 +790,7 @@ activities = [
         "image": "https:\/\/experiences.travel.rakuten.co.jp\/experiences\/24739",
         "region": "都心",
         "longitude": 139.7746888,
-        "latitude": "35.6561371,139",
+        "latitude": 35.6561371,
         "category_id": 3
     },
     {
