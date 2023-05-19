@@ -1,20 +1,13 @@
-import HotelTab from "@/components/HotelTab"
+import HotelTab from "@/components/hotel/HotelTab"
 import ActivityList from "@/components/map/ActivityList"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
+import { Hotel } from "@/types/hotel"
 import { Box, Container, Flex, SimpleGrid, Title } from "@mantine/core"
-import { InfoWindow, Marker, MarkerF, useJsApiLoader, useLoadScript } from "@react-google-maps/api"
+import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
-import {
-  MemoExoticComponent,
-  ReactComponentElement,
-  cloneElement,
-  isValidElement,
-  useCallback,
-  useEffect,
-  useState,
-} from "react"
+import { useEffect } from "react"
 
 const containerStyle = {
   width: "100%",
@@ -69,46 +62,61 @@ interface Props {
     url: string
     region: string
   }[]
+  query: {
+    hotel_id: number
+    name: string
+    description: string
+    latitude: number
+    longitude: number
+    image: string
+    region: string
+    roomList: string
+  }
 }
 
 export default function Map(props: Props) {
-  const { activityList } = props
+  const { activityList, query } = props
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: googleMapsApiKey,
   })
 
-  // const [map, setMap] = useState<google.maps.Map | null>(null)
+  const hotel: Hotel = {
+    hotel_id: Number(query.hotel_id),
+    name: query.name as string,
+    description: query.description as string,
+    latitude: Number(query.latitude),
+    longitude: Number(query.longitude),
+    image: query.image as string,
+    region: query.region as string,
+  }
 
-  // const onLoad = useCallback(function callback(map: google.maps.Map) {
-  //   // This is just an example of getting and using the map instance!!! don't just blindly copy!
-  //   // const bounds = new window.google.maps.LatLngBounds(center)
-  //   // map.fitBounds(bounds)
-
-  //   setMap(map)
-  // }, [])
-
-  // const onUnmount = useCallback(function callback(map: google.maps.Map) {
-  //   // do your stuff before map is unmounted
-  //   setMap(null)
-  // }, [])
+  // クエリパラメータをパースしてリストに変換
+  const roomList = query.roomList ? JSON.parse(query.roomList) : []
 
   const Markers = activityList.map((activity, index) => (
     <MarkerF key={index} position={{ lat: Number(activity.latitude), lng: Number(activity.longitude) }} />
   ))
 
+  useEffect(() => {}, [])
+
   return (
     <>
       <Container fluid>
-        <Title order={2}>住友不動産ホテル ヴィラフォンテーヌグランド東京田町</Title>
+        <Title order={2}>{hotel.name}</Title>
       </Container>
-      <HotelTab />
+      <HotelTab hotel={hotel} rooms={roomList} />
       <Flex>
         <MapLeftBar />
         <Box sx={{ width: 100 }} />
 
-        {isLoaded ? (
-          <GoogleMap mapContainerStyle={containerStyle} center={areaCenter[activityList[0].region]} zoom={13}>
+        {isLoaded && center ? (
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={{ lat: hotel.latitude, lng: hotel.longitude }}
+            zoom={13}
+          >
+            <MarkerF label={hotel.name} position={{ lat: hotel.latitude, lng: hotel.longitude }} />
             {Markers}
           </GoogleMap>
         ) : (
@@ -122,11 +130,13 @@ export default function Map(props: Props) {
 }
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-  const res = await getActivityList("東部")
+  const { query } = context
+  const resActivityList = await getActivityList("東部")
 
   return {
     props: {
-      activityList: res,
+      activityList: resActivityList,
+      query,
     },
   }
 }

@@ -1,13 +1,6 @@
 import axios from "axios"
 import { BASE_URL } from "./baseurl"
-
-export type RoomList = {
-  hotel_id: number
-  room_number: number
-  price: number
-  image: string
-  available: boolean
-}[]
+import { RoomList } from "@/types/roomList"
 
 const getRoomList = async (hotelId: number): Promise<RoomList> => {
   const res = await axios.get(BASE_URL + "/room", {

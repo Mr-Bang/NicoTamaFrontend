@@ -1,22 +1,37 @@
 import HotelsMap from "@/components/HotelsMap"
 import MapLeftBar from "@/components/map/MapLeftBar"
-import { HotelList, getHotelList } from "@/services/hotellist"
-import { RoomList, getRoomList } from "@/services/roomlist"
-import { Box, Container, Breadcrumbs, Card, Anchor, Flex, SimpleGrid, Image, Text, Title, createStyles, UnstyledButton } from "@mantine/core"
+import { getHotelList } from "@/services/hotellist"
+import { getRoomList } from "@/services/roomlist"
+import { HotelList } from "@/types/hotelList"
+import { RoomList } from "@/types/roomList"
+import {
+  Box,
+  Container,
+  Breadcrumbs,
+  Card,
+  Anchor,
+  Flex,
+  SimpleGrid,
+  Image,
+  Text,
+  Title,
+  createStyles,
+  UnstyledButton,
+} from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
 
 const useStyles = createStyles((theme) => ({
   item: {
     borderRadius: theme.radius.md,
-    transition: 'box-shadow 150ms ease, transform 100ms ease',
+    transition: "box-shadow 150ms ease, transform 100ms ease",
 
-    '&:hover': {
+    "&:hover": {
       boxShadow: theme.shadows.md,
-      transform: 'scale(1.05)',
+      transform: "scale(1.05)",
     },
   },
-}));
+}))
 
 type Props = {
   hotelList: {
@@ -33,16 +48,15 @@ type Props = {
 
 export default function HotelList(props: Props) {
   const { hotelList } = props
+  const { classes } = useStyles()
   const router = useRouter()
-
-  const { classes } = useStyles();
 
   const area = hotelList.length ? hotelList[0].region : "404 not found"
   const breadcrumbs = [
     { name: "楽天トラベルトップ", href: "/" },
     { name: "首都圏", href: "/SearchPageMetropolitan" },
     { name: "東京23区", href: "/SearchPageTokyo" },
-    { name: area},
+    { name: area },
   ].map((breadcrumb, index) =>
     breadcrumb.href ? (
       <Anchor href={breadcrumb.href} key={index}>
@@ -77,33 +91,30 @@ export default function HotelList(props: Props) {
       </Box>
       <Flex>
         <MapLeftBar />
-	<Container sx={{width: 3200}}>
+        <Container sx={{ width: 3200 }}>
           <SimpleGrid cols={3}>
             {hotelList.map((hotel, index) => (
-	      <UnstyledButton key={index} className={classes.item}>
+              <UnstyledButton key={index} className={classes.item}>
                 <Card shadow='sm' padding='lg' radius='md' withBorder>
                   <Card.Section
                     component='a'
                     onClick={() => {
-                      router.push(
-                        {
-                          pathname: "/hotel/[id]",
-                          query: {
-                            id: hotel.hotel_id,
-                            name: hotel.name,
-                            description: hotel.description,
-                            latitude: hotel.latitude,
-                            longitude: hotel.longitude,
-                            image: hotel.image,
-                            region: hotel.region,
-                            roomList: JSON.stringify(hotel.roomList),
-                          },
+                      router.push({
+                        pathname: "/hotel/[hotel_id]",
+                        query: {
+                          hotel_id: hotel.hotel_id,
+                          name: hotel.name,
+                          description: hotel.description,
+                          latitude: hotel.latitude,
+                          longitude: hotel.longitude,
+                          image: hotel.image,
+                          region: hotel.region,
+                          roomList: JSON.stringify(hotel.roomList),
                         },
-                        "/hotel/" + hotel.hotel_id
-                      )
+                      })
                     }}
                   >
-                    <Image width={300} height={170} fit="contain" src={hotel.image} alt={hotel.name} />
+                    <Image width={300} height={170} fit='contain' src={hotel.image} alt={hotel.name} />
                     <Text ta='center' fw={700} fz='lg'>
                       {hotel.name}
                     </Text>
@@ -112,10 +123,10 @@ export default function HotelList(props: Props) {
                     </Text>
                   </Card.Section>
                 </Card>
-	      </UnstyledButton>
+              </UnstyledButton>
             ))}
           </SimpleGrid>
-	</Container>
+        </Container>
         <HotelsMap hotelList={hotelList} />
       </Flex>
     </>
