@@ -40,7 +40,7 @@ export default function HotelTab(props: Props) {
   return (
     <Group position='center'>
       <Button
-        className={"/hotel/[id]" == path ? classes.active : classes.root}
+        className={"/hotel/[hotel_id]" == path ? classes.active : classes.root}
         variant='default'
         onClick={() => {
           router.push({
@@ -49,8 +49,8 @@ export default function HotelTab(props: Props) {
               hotel_id: hotel.hotel_id,
               name: hotel.name,
               description: hotel.description,
-              latitude: hotel.description,
-              longitude: hotel.description,
+              latitude: hotel.latitude,
+              longitude: hotel.longitude,
               image: hotel.image,
               region: hotel.region,
               roomList: JSON.stringify(rooms),
