@@ -1,29 +1,51 @@
-import { RoomList } from "@/services/roomlist"
-import { Box, Image, Grid, SimpleGrid } from "@mantine/core"
-
-const sampleHotel = {
-  name: "住友不動産ホテル　ヴィラフォンテーヌグランド東京田町",
-  image: "https://trvimg.r10s.jp/share/image_up/80762/LARGE/68efbfe47ae1a0860d17741a1957b54275782207.47.1.26.2.jpg",
-}
+import { Hotel } from "@/types/hotel"
+import { RoomList } from "@/types/roomList"
+import { Box, Badge, Button, Card, Image, Grid, Group, SimpleGrid, Text } from "@mantine/core"
 
 type Props = {
+  hotel: Hotel
   roomList: RoomList
 }
 
 export default function SampleHotel(props: Props) {
-  const { roomList } = props
+  const { hotel, roomList } = props
 
   return (
     <Grid grow>
       <Grid.Col span={4}>
         <Box maw={1200} mx='auto'>
-          <Image radius='md' src={sampleHotel.image} alt={sampleHotel.name} />
+          <Image radius='md' src={hotel.image} alt={hotel.name} />
         </Box>
       </Grid.Col>
       <SimpleGrid cols={2}>
         {roomList.map((room, index) => (
           <Grid.Col span={4} key={index}>
-            <Image radius='md' src={room.image} alt={room.room_number.toString()} />
+            <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Card.Section>
+              <Image
+                src={room.image}
+                height={260}
+		width={550}
+                alt={room.room_number.toString()}
+              />
+            </Card.Section>
+
+            <Group position="apart" mt="md" mb="xs">
+              <Text weight={500}>{room.room_number.toString()} 号室</Text>
+              { room.available ? <Badge color="blue" variant="light">
+	        空室あり
+              </Badge> : <Badge color="pink" variant="light">
+	        満室
+              </Badge> }
+            </Group>
+
+            <Text size="sm" color="dimmed">
+            </Text>
+
+            { room.available ? <Button variant="outline" fullWidth mt="md" radius="md">
+              予約する
+            </Button> : "" }
+            </Card>
           </Grid.Col>
         ))}
       </SimpleGrid>
