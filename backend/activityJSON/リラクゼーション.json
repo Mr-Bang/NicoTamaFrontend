@@ -1,0 +1,202 @@
+[
+ {
+  "name": "スパ・マッサージセッション",
+  "price": 6000,
+  "description": "心地よい音楽とアロマの香りに包まれながら、プロのセラピストによるスパ・マッサージを受けましょう。疲れた心と体をリフレッシュします。",
+  "image": "https:\/\/example.com\/image41.jpg",
+  "region": "北西",
+  "longitude": 139.6667,
+  "latitude": 35.7444,
+  "category_id": 4
+ },
+ {
+  "name": "ヨガクラス",
+  "price": 3000,
+  "description": "美しい自然の中で行うヨガクラスです。呼吸法とポーズの組み合わせにより、心と体のバランスを整えましょう。",
+  "image": "https:\/\/example.com\/image42.jpg",
+  "region": "北西",
+  "longitude": 139.6888,
+  "latitude": 35.7201,
+  "category_id": 4
+ },
+ {
+  "name": "温泉入浴体験",
+  "price": 2500,
+  "description": "温泉地の美しい風景を眺めながら、ゆったりと温泉に浸かるリラックス体験です。温泉の恵みに癒されましょう。",
+  "image": "https:\/\/example.com\/image43.jpg",
+  "region": "北西",
+  "longitude": 139.6722,
+  "latitude": 35.7319,
+  "category_id": 4
+ },
+ {
+  "name": "マインドフルネス瞑想セッション",
+  "price": 2000,
+  "description": "瞑想の専門家によるマインドフルネス瞑想セッションです。心を静め、内なる平穏を見つけましょう。",
+  "image": "https:\/\/example.com\/image44.jpg",
+  "region": "北西",
+  "longitude": 139.7005,
+  "latitude": 35.7083,
+  "category_id": 4
+ },
+ {
+  "name": "ストレス解消ワークショップ",
+  "price": 2800,
+  "description": "ストレス解消のためのワークショップです。ストレス管理のテクニックを学び、心身のリフレッシュを図りましょう。",
+  "image": "https:\/\/example.com\/image56.jpg",
+  "region": "東部",
+  "longitude": 139.8154,
+  "latitude": 35.775,
+  "category_id": 4
+ },
+ {
+  "name": "ネイチャーウォッチング",
+  "price": 2100,
+  "description": "自然環境での鳥や動物の観察体験です。自然の中でリラックスし、生命の豊かさを感じましょう。",
+  "image": "https:\/\/example.com\/image57.jpg",
+  "region": "東部",
+  "longitude": 139.8227,
+  "latitude": 35.7191,
+  "category_id": 4
+ },
+ {
+  "name": "フットバス体験",
+  "price": 1500,
+  "description": "足を温かいお湯に浸し、リフレッシュしましょう。足の疲れを癒し、全身のリラックスを促します。",
+  "image": "https:\/\/example.com\/image58.jpg",
+  "region": "東部",
+  "longitude": 139.7903,
+  "latitude": 35.6439,
+  "category_id": 4
+ },
+ {
+  "name": "自然の中でのピクニックランチ",
+  "price": 3500,
+  "description": "自然の中で楽しむピクニックランチです。美味しい食事を味わいながら、リラックスした時間を過ごしましょう。",
+  "image": "https:\/\/example.com\/image59.jpg",
+  "region": "東部",
+  "longitude": 139.7896,
+  "latitude": 35.7062,
+  "category_id": 4
+ },
+ {
+  "name": "アロマセラピー体験",
+  "price": 3500,
+  "description": "ナチュラルなアロマオイルを使ったセラピー体験です。香りに包まれながらリラックスし、心地よい癒しを感じましょう。",
+  "image": "https:\/\/example.com\/image45.jpg",
+  "region": "都心",
+  "longitude": 139.7531,
+  "latitude": 35.6938,
+  "category_id": 4
+ },
+ {
+  "name": "ジャグジーやサウナでリフレッシュ",
+  "price": 4000,
+  "description": "ジャグジーやサウナで心地よい汗を流しましょう。リラックス効果があり、疲れた体を癒します。",
+  "image": "https:\/\/example.com\/image54.jpg",
+  "region": "都心",
+  "longitude": 139.7514,
+  "latitude": 35.6581,
+  "category_id": 4
+ },
+ {
+  "name": "ハーブティーセット",
+  "price": 1200,
+  "description": "香り高いハーブティーのセットを楽しみましょう。リラックス効果や健康効果があります。",
+  "image": "https:\/\/example.com\/image55.jpg",
+  "region": "都心",
+  "longitude": 139.7666,
+  "latitude": 35.6762,
+  "category_id": 4
+ },
+ {
+  "name": "ハンドマッサージセッション",
+  "price": 2000,
+  "description": "手のひらや指を丁寧にマッサージするハンドマッサージセッションです。手や腕の疲れをほぐし、リラックスを促します。",
+  "image": "https:\/\/example.com\/image60.jpg",
+  "region": "都心",
+  "longitude": 139.7647,
+  "latitude": 35.6812,
+  "category_id": 4
+ },
+ {
+  "name": "マッサージチェア体験",
+  "price": 2800,
+  "description": "忙しい日常を忘れて、快適なマッサージチェアに座りましょう。全身をほぐしてリラックスします。",
+  "image": "https:\/\/example.com\/image46.jpg",
+  "region": "副都心",
+  "longitude": 139.7132,
+  "latitude": 35.7319,
+  "category_id": 4
+ },
+ {
+  "name": "リフレクソロジーセッション",
+  "price": 1500,
+  "description": "足裏の反射区を刺激するリフレクソロジーセッションです。足の疲れを癒し、全身のバランスを整え、疲れを癒しましょう。",
+  "image": "https:\/\/example.com\/image47.jpg",
+  "region": "副都心",
+  "longitude": 139.7516,
+  "latitude": 35.7148,
+  "category_id": 4
+ },
+ {
+  "name": "瞑想ウォーク",
+  "price": 1800,
+  "description": "自然の中で行う瞑想ウォークです。歩くことと瞑想を組み合わせ、心と体のリフレッシュを図りましょう。",
+  "image": "https:\/\/example.com\/image48.jpg",
+  "region": "副都心",
+  "longitude": 139.7034,
+  "latitude": 35.6895,
+  "category_id": 4
+ },
+ {
+  "name": "リラックス音楽コンサート",
+  "price": 3200,
+  "description": "美しい音楽に耳を傾けながら、心地よい空間でリラックス音楽コンサートを楽しみましょう。心を癒し、リフレッシュします。",
+  "image": "https:\/\/example.com\/image49.jpg",
+  "region": "副都心",
+  "longitude": 139.7022,
+  "latitude": 35.658,
+  "category_id": 4
+ },
+ {
+  "name": "湖畔のハンモックでのんびり",
+  "price": 2000,
+  "description": "湖畔の美しい風景を眺めながら、ゆったりとハンモックに揺られましょう。自然の恵みに身を委ね、リラックスを体験します。",
+  "image": "https:\/\/example.com\/image50.jpg",
+  "region": "南西",
+  "longitude": 139.6538,
+  "latitude": 35.646,
+  "category_id": 4
+ },
+ {
+  "name": "ストレッチクラス",
+  "price": 1800,
+  "description": "専門のインストラクターによるストレッチクラスです。柔軟性を高め、身体の緊張をほぐしましょう。",
+  "image": "https:\/\/example.com\/image51.jpg",
+  "region": "南西",
+  "longitude": 139.6981,
+  "latitude": 35.6084,
+  "category_id": 4
+ },
+ {
+  "name": "アートセラピー体験",
+  "price": 2500,
+  "description": "絵画や手作りの工作を通じて、自己表現や感情の解放を体験しましょう。創造力を刺激し、心のリフレッシュを図ります。",
+  "image": "https:\/\/example.com\/image52.jpg",
+  "region": "南西",
+  "longitude": 139.7389,
+  "latitude": 35.6075,
+  "category_id": 4
+ },
+ {
+  "name": "メディテーション",
+  "price": 2200,
+  "description": "専門の講師によるメディテーションセッションです。心を落ち着け、集中力や内なる平穏を高めましょう。",
+  "image": "https:\/\/example.com\/image53.jpg",
+  "region": "南西",
+  "longitude": 139.7212,
+  "latitude": 35.5612,
+  "category_id": 4
+ }
+]
