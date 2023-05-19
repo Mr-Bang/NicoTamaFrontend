@@ -1,4 +1,6 @@
 import { createStyles, Card, Image, Text, AspectRatio, Stack, ScrollArea, Center } from "@mantine/core"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -31,9 +33,22 @@ interface Props {
 export default function ActivityList(props: Props) {
   const { classes } = useStyles()
   const { activityList } = props
+  const router = useRouter()
+
+  useEffect(() => {
+    console.log("activityList: ", activityList)
+  }, [])
 
   const cards = activityList.map((activity, index) => (
-    <Card key={index} p='md' radius='md' component='a' href='#' className={classes.card}>
+    <Card
+      key={index}
+      p='md'
+      radius='md'
+      component='a'
+      href='#'
+      className={classes.card}
+      onClick={() => router.push(activity.url)}
+    >
       <AspectRatio ratio={1920 / 1080}>
         <Image src={activity.image} fit={"contain"} />
       </AspectRatio>

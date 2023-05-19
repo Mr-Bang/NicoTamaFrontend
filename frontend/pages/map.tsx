@@ -122,7 +122,7 @@ export default function Map(props: Props) {
 }
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-  const res = await getActivityList("都心")
+  const res = await getActivityList("東部")
 
   return {
     props: {
