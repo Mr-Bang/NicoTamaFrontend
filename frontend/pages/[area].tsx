@@ -1,7 +1,8 @@
+import HotelsMap from "@/components/HotelsMap"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { HotelList, getHotelList } from "@/services/hotellist"
 import { RoomList, getRoomList } from "@/services/roomlist"
-import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title, createStyles, UnstyledButton } from "@mantine/core"
+import { Box, Container, Breadcrumbs, Card, Anchor, Flex, SimpleGrid, Image, Text, Title, createStyles, UnstyledButton } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
 
@@ -74,11 +75,9 @@ export default function HotelList(props: Props) {
       >
         <Title order={2}>{area}</Title>
       </Box>
-      <Grid>
-        <Grid.Col span='auto'>
-          <MapLeftBar />
-        </Grid.Col>
-        <Grid.Col span={6}>
+      <Flex>
+        <MapLeftBar />
+	<Container sx={{width: 3200}}>
           <SimpleGrid cols={3}>
             {hotelList.map((hotel, index) => (
 	      <UnstyledButton key={index} className={classes.item}>
@@ -116,11 +115,9 @@ export default function HotelList(props: Props) {
 	      </UnstyledButton>
             ))}
           </SimpleGrid>
-        </Grid.Col>
-        <Grid.Col span='auto'>
-          <Box sx={{ width: 600 }}></Box>
-        </Grid.Col>
-      </Grid>
+	</Container>
+        <HotelsMap hotelList={hotelList} />
+      </Flex>
     </>
   )
 }

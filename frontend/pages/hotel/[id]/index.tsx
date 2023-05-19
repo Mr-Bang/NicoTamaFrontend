@@ -13,7 +13,6 @@ export default function Hotel() {
 
   const area = hotel.region
   const hotelName = hotel.name
-  const hotelImage = hotel.image
   const breadcrumbs = [
     { name: "楽天トラベルトップ", href: "/" },
     { name: "首都圏", href: "/SearchPageMetropolitan" },

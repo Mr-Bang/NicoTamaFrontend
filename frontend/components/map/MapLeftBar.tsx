@@ -1,11 +1,11 @@
-import { Box, Button, Flex, Group, Input, MantineTheme, NumberInput, Radio, Text, Title, rem } from "@mantine/core"
+import { Box, Button, Flex, Input, MantineTheme, NumberInput, Radio, Text, Title, rem } from "@mantine/core"
 
 export default function MapLeftBar() {
   return (
     <Box
       sx={(theme: MantineTheme) => ({
         height: "100vh",
-        width: 300,
+        width: 1300,
         border: `${rem(2)} solid #73AB23`,
         borderRadius: theme.radius.md,
         boxShadow: theme.shadows.md,
