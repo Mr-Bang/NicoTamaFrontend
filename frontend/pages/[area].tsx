@@ -4,7 +4,6 @@ import { RoomList, getRoomList } from "@/services/roomlist"
 import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
@@ -78,8 +77,8 @@ export default function HotelList(props: Props) {
                           id: hotel.hotel_id,
                           name: hotel.name,
                           description: hotel.description,
-                          latitude: hotel.description,
-                          longitude: hotel.description,
+                          latitude: hotel.latitude,
+                          longitude: hotel.longitude,
                           image: hotel.image,
                           region: hotel.region,
                           roomList: JSON.stringify(hotel.roomList),
@@ -89,7 +88,7 @@ export default function HotelList(props: Props) {
                     )
                   }}
                 >
-                  <Image src={hotel.image} alt={hotel.name} />
+                  <Image width={300} height={170} fit="contain" src={hotel.image} alt={hotel.name} />
                   <Text ta='center' fw={700} fz='lg'>
                     {hotel.name}
                   </Text>
@@ -124,7 +123,6 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     roomList: RoomList
   }[] = []
 
-  // ループを `for...of` に変更
   for (const hotel of resHotelList) {
     const roomList = await getRoomList(hotel.hotel_id)
 

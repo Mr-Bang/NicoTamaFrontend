@@ -2,15 +2,12 @@ import MapLeftBar from "@/components/map/MapLeftBar"
 import { Breadcrumbs, Anchor, Box, Center, Grid, Text, Title } from "@mantine/core"
 import HotelTab from "@/components/HotelTab"
 import SampleHotel from "@/components/hotel/SampleHotel"
-import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
-import { HotelList } from "@/services/hotellist"
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
-  { name: "首都圏", href: "/" },
-  { name: "東京23区", href: "/" },
+  { name: "首都圏", href: "/SearchPageMetropolitan" },
+  { name: "東京23区", href: "/SearchPageTokyo" },
   { name: "世田谷・目黒・品川・大田", href: "/" },
   { name: "住友不動産ホテル ヴィラフォンテーヌグランド東京田町" },
 ].map((region, index) =>
@@ -30,12 +27,7 @@ export default function Hotel() {
 
   const hotel = router.query
 
-  // クエリパラメータをパースしてリストに変換
   const roomList = hotel.roomList ? JSON.parse(hotel.roomList as string) : []
-
-  useEffect(() => {
-    console.log(roomList)
-  }, [])
 
   return (
     <>
