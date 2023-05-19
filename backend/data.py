@@ -459,7 +459,7 @@ activities = [
       "description": "美しい自然環境を背景に、マウンテンバイクでの冒険を楽しみましょう。専門ガイドが案内し、様々なトレイルを駆け抜けます。",
       "image": "https:\/\/example.com\/image21.jpg",
       "region": "北西",
-      "longtitude": 139.6518,
+      "longitude": 139.6518,
       "latitude": 35.7389,
       "category_id": 2
      },
@@ -469,7 +469,7 @@ activities = [
       "description": "波乗りの基本を学び、サーフボードに乗って楽しむレッスンです。プロのインストラクターが優しく指導します。",
       "image": "https:\/\/example.com\/image22.jpg",
       "region": "北西",
-      "longtitude": 139.6847,
+      "longitude": 139.6847,
       "latitude": 35.7512,
       "category_id": 2
      },
@@ -479,7 +479,7 @@ activities = [
       "description": "クリアな水面をカヤックで漕ぎながら、美しい風景を楽しむ体験ツアーです。自然との触れ合いを感じましょう。",
       "image": "https:\/\/example.com\/image23.jpg",
       "region": "北西",
-      "longtitude": 139.7286,
+      "longitude": 139.7286,
       "latitude": 35.7552,
       "category_id": 2
      },
@@ -489,7 +489,7 @@ activities = [
       "description": "山岳地帯のトレイルを走り抜けるランニングイベントです。美しい景色とアウトドアのエキサイティングな体験が待っています。",
       "image": "https:\/\/example.com\/image24.jpg",
       "region": "北西",
-      "longtitude": 139.638,
+      "longitude": 139.638,
       "latitude": 35.6997,
       "category_id": 2
      },
@@ -499,7 +499,7 @@ activities = [
       "description": "チーム対戦のサバイバルゲームです。戦術を駆使し、フィールドでの戦いを楽しみましょう。",
       "image": "https:\/\/example.com\/image25.jpg",
       "region": "東部",
-      "longtitude": 139.6603,
+      "longitude": 139.6603,
       "latitude": 35.6461,
       "category_id": 2
      },
@@ -509,7 +509,7 @@ activities = [
       "description": "ウォールに取り付けられたホールドを使ってクライミングするボルダリングです。身体能力を駆使して挑戦しましょう。",
       "image": "https:\/\/example.com\/image36.jpg",
       "region": "東部",
-      "longtitude": 139.6922,
+      "longitude": 139.6922,
       "latitude": 35.6199,
       "category_id": 2
      },
@@ -519,7 +519,7 @@ activities = [
       "description": "渓流での釣り体験です。自然の中で静かに釣りを楽しみましょう。専門ガイドがサポートします。",
       "image": "https:\/\/example.com\/image39.jpg",
       "region": "東部",
-      "longtitude": 139.7388,
+      "longitude": 139.7388,
       "latitude": 35.609,
       "category_id": 2
      },
@@ -529,7 +529,7 @@ activities = [
       "description": "的に向かって矢を放つアーチェリータゲットシューティングです。集中力と正確性を競いましょう。",
       "image": "https:\/\/example.com\/image40.jpg",
       "region": "東部",
-      "longtitude": 139.7175,
+      "longitude": 139.7175,
       "latitude": 35.5716,
       "category_id": 2
      },
@@ -539,7 +539,7 @@ activities = [
       "description": "自転車で街を巡るサイクリングツアーです。風を感じながら観光名所を訪れましょう。",
       "image": "https:\/\/example.com\/image30.jpg",
       "region": "都心",
-      "longtitude": 139.7538,
+      "longitude": 139.7538,
       "latitude": 35.6938,
       "category_id": 2
      },
@@ -549,7 +549,7 @@ activities = [
       "description": "ゴルフの基本を学び、上達を目指すレッスンです。プロのインストラクターが指導します。",
       "image": "https:\/\/example.com\/image31.jpg",
       "region": "都心",
-      "longtitude": 139.7527,
+      "longitude": 139.7527,
       "latitude": 35.6586,
       "category_id": 2
      },
@@ -559,7 +559,7 @@ activities = [
       "description": "チーム同士で競い合うバスケットボールトーナメントです。技術を磨きながら試合を楽しみましょう。",
       "image": "https:\/\/example.com\/image32.jpg",
       "region": "都心",
-      "longtitude": 139.7666,
+      "longitude": 139.7666,
       "latitude": 35.6732,
       "category_id": 2
      },
@@ -569,7 +569,7 @@ activities = [
       "description": "スタンドアップパドルボードに乗って湖や海を漕ぎながらのんびりと過ごしましょう。リラックスしながらアクティビティを楽しめます。",
       "image": "https:\/\/example.com\/image38.jpg",
       "region": "都心",
-      "longtitude": 139.7756,
+      "longitude": 139.7756,
       "latitude": 35.6652,
       "category_id": 2
      },
@@ -579,7 +579,7 @@ activities = [
       "description": "壁面に登りながら、ロッククライミングのスリルと挑戦を味わう体験です。インストラクターがサポートします。",
       "image": "https:\/\/example.com\/image26.jpg",
       "region": "副都心",
-      "longtitude": 139.7161,
+      "longitude": 139.7161,
       "latitude": 35.733,
       "category_id": 2
      },
@@ -589,7 +589,7 @@ activities = [
       "description": "自然の中を歩きながら、美しい景色を楽しむハイキングツアーです。リフレッシュしながらアクティブに過ごしましょう。",
       "image": "https:\/\/example.com\/image27.jpg",
       "region": "副都心",
-      "longtitude": 139.7521,
+      "longitude": 139.7521,
       "latitude": 35.7188,
       "category_id": 2
      },
@@ -599,7 +599,7 @@ activities = [
       "description": "急流をラフトボートで下りながら、スリル満点のラフティングアドベンチャーを楽しみましょう。安全なガイドが付きます。",
       "image": "https:\/\/example.com\/image28.jpg",
       "region": "副都心",
-      "longtitude": 139.7004,
+      "longitude": 139.7004,
       "latitude": 35.6938,
       "category_id": 2
      },
@@ -609,7 +609,7 @@ activities = [
       "description": "サッカーの基礎を学びながら、友達と楽しくプレーするキャンプです。プロのコーチが指導します。",
       "image": "https:\/\/example.com\/image29.jpg",
       "region": "副都心",
-      "longtitude": 139.703,
+      "longitude": 139.703,
       "latitude": 35.6591,
       "category_id": 2
      },
@@ -619,7 +619,7 @@ activities = [
       "description": "スケートボードのテクニックを磨きながら、スケートボードパークでのライディングを楽しみましょう。",
       "image": "https:\/\/example.com\/image33.jpg",
       "region": "南西",
-      "longtitude": 139.8047,
+      "longitude": 139.8047,
       "latitude": 35.7772,
       "category_id": 2
      },
@@ -629,7 +629,7 @@ activities = [
       "description": "自然の中でキャンプファイヤーを囲みながら、楽しい時間を過ごしましょう。焚き火の楽しみ方を学びます。",
       "image": "https:\/\/example.com\/image34.jpg",
       "region": "南西",
-      "longtitude": 139.8673,
+      "longitude": 139.8673,
       "latitude": 35.7063,
       "category_id": 2
      },
@@ -639,7 +639,7 @@ activities = [
       "description": "アーチェリーの基本を学び、的に矢を放つ体験です。集中力を高めながら的中率を競いましょう。",
       "image": "https:\/\/example.com\/image35.jpg",
       "region": "南西",
-      "longtitude": 139.8128,
+      "longitude": 139.8128,
       "latitude": 35.6687,
       "category_id": 2
      },
@@ -649,7 +649,7 @@ activities = [
       "description": "渓谷や滝を下りながら冒険するキャノニングツアーです。自然の中でのスリル満点の体験が待っています。",
       "image": "https:\/\/example.com\/image37.jpg",
       "region": "南西",
-      "longtitude": 139.7967,
+      "longitude": 139.7967,
       "latitude": 35.7232,
       "category_id": 2
      },
@@ -1082,7 +1082,7 @@ activities = [
   "longitude": 139.7966,
   "latitude": 35.7118,
   "url": "https:\/\/experiences.travel.rakuten.co.jp\/experiences\/23833",
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "東京 浅草つる次郎 お好み焼き＋鉄板焼き／もんじゃ焼きコース",
@@ -1093,7 +1093,7 @@ activities = [
   "longitude": 139.7966,
   "latitude": 35.7118,
   "url": "https:\/\/experiences.travel.rakuten.co.jp\/experiences\/23830",
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "銀座いわ　レストラン予約",
@@ -1104,7 +1104,7 @@ activities = [
   "longitude": 139.760259,
   "latitude": 35.6693,
   "url": "https:\/\/experiences.travel.rakuten.co.jp\/experiences\/21866",
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "東京湾クルーズシンフォニー 予約 ＜サンセットクルーズ／ディナークルーズ＞【窓側指定】",
@@ -1115,7 +1115,7 @@ activities = [
   "longitude": 139.757012,
   "latitude": 35.64603,
   "url": "https:\/\/experiences.travel.rakuten.co.jp\/experiences\/23426",
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "ショコラティエ体験ワークショップ",
@@ -1125,7 +1125,7 @@ activities = [
   "region": "南西",
   "longitude": 139.7161,
   "latitude": 35.5614,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "グルメストリートフードフェス",
@@ -1135,7 +1135,7 @@ activities = [
   "region": "南西",
   "longitude": 139.7388,
   "latitude": 35.609,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "ビール工場見学ツアー",
@@ -1145,7 +1145,7 @@ activities = [
   "region": "南西",
   "longitude": 139.7062,
   "latitude": 35.6072,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "ストリートフードフェスティバル",
@@ -1155,7 +1155,7 @@ activities = [
   "region": "南西",
   "longitude": 139.6381,
   "latitude": 35.6461,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "グルメワインテイスティング",
@@ -1165,7 +1165,7 @@ activities = [
   "region": "東部",
   "longitude": 139.8215,
   "latitude": 35.6762,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "シーフードフェスト",
@@ -1175,7 +1175,7 @@ activities = [
   "region": "東部",
   "longitude": 139.8041,
   "latitude": 35.7777,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "イタリアンピザナイト",
@@ -1185,7 +1185,7 @@ activities = [
   "region": "都心",
   "longitude": 139.7595,
   "latitude": 35.6581,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "グルメストリートフードマーケット",
@@ -1195,7 +1195,7 @@ activities = [
   "region": "都心",
   "longitude": 139.7523,
   "latitude": 35.6939,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "スイーツフェスティバル",
@@ -1205,7 +1205,7 @@ activities = [
   "region": "副都心",
   "longitude": 139.7038,
   "latitude": 35.6581,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "チョコレート工房見学",
@@ -1215,7 +1215,7 @@ activities = [
   "region": "副都心",
   "longitude": 139.7036,
   "latitude": 35.6895,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "和食料理教室",
@@ -1225,7 +1225,7 @@ activities = [
   "region": "副都心",
   "longitude": 139.7472,
   "latitude": 35.7212,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "甘味スイーツデザートバー",
@@ -1235,7 +1235,7 @@ activities = [
   "region": "副都心",
   "longitude": 139.7203,
   "latitude": 35.7366,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "おしゃれカフェ巡り",
@@ -1245,7 +1245,7 @@ activities = [
   "region": "北西",
   "longitude": 139.6508,
   "latitude": 35.7048,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "ラーメンマスター講座",
@@ -1255,7 +1255,7 @@ activities = [
   "region": "北西",
   "longitude": 139.7262,
   "latitude": 35.757,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "スシロー体験レッスン",
@@ -1265,7 +1265,7 @@ activities = [
   "region": "北西",
   "longitude": 139.7125,
   "latitude": 35.7746,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "東京グルメツアー",
@@ -1275,7 +1275,7 @@ activities = [
   "region": "北西",
   "longitude": 139.6287,
   "latitude": 35.738,
-  "categori_id": 1
+  "category_id": 1
  },
  {
   "name": "スパ・マッサージセッション",
