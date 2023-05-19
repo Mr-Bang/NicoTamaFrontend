@@ -2,6 +2,7 @@ import HotelsMap from "@/components/HotelsMap"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getHotelList } from "@/services/hotellist"
 import { getRoomList } from "@/services/roomlist"
+import { getActivityList } from "@/services/activity"
 import { HotelList } from "@/types/hotelList"
 import { RoomList } from "@/types/roomList"
 import {
@@ -20,6 +21,8 @@ import {
 } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
+import { useEffect } from "react"
+import { ActivityList } from "@/types/activityList"
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -44,10 +47,12 @@ type Props = {
     region: string
     roomList: RoomList
   }[]
+
+  activityList: ActivityList
 }
 
 export default function HotelList(props: Props) {
-  const { hotelList } = props
+  const { hotelList, activityList } = props
   const { classes } = useStyles()
   const router = useRouter()
 
@@ -76,9 +81,13 @@ export default function HotelList(props: Props) {
     return priceList
   }
 
+  useEffect(() => {
+    console.log("activityList", activityList)
+  }, [])
+
   return (
     <>
-      <Breadcrumbs separator='>' mt='xs'>
+      <Breadcrumbs separator=">" mt="xs">
         {breadcrumbs}
       </Breadcrumbs>
       <Box
@@ -95,9 +104,9 @@ export default function HotelList(props: Props) {
           <SimpleGrid cols={3}>
             {hotelList.map((hotel, index) => (
               <UnstyledButton key={index} className={classes.item}>
-                <Card shadow='sm' padding='lg' radius='md' withBorder>
+                <Card shadow="sm" padding="lg" radius="md" withBorder>
                   <Card.Section
-                    component='a'
+                    component="a"
                     onClick={() => {
                       router.push({
                         pathname: "/hotel/[hotel_id]",
@@ -114,11 +123,11 @@ export default function HotelList(props: Props) {
                       })
                     }}
                   >
-                    <Image width={300} height={170} fit='contain' src={hotel.image} alt={hotel.name} />
-                    <Text ta='center' fw={700} fz='lg'>
+                    <Image width={300} height={170} fit="contain" src={hotel.image} alt={hotel.name} />
+                    <Text ta="center" fw={700} fz="lg">
                       {hotel.name}
                     </Text>
-                    <Text ta='center' fz='md'>
+                    <Text ta="center" fz="md">
                       ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
                     </Text>
                   </Card.Section>
@@ -127,7 +136,8 @@ export default function HotelList(props: Props) {
             ))}
           </SimpleGrid>
         </Container>
-        <HotelsMap hotelList={hotelList} />
+
+        <HotelsMap hotelList={hotelList} activityList={activityList} />
       </Flex>
     </>
   )
@@ -136,6 +146,7 @@ export default function HotelList(props: Props) {
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const { area } = context.query
   const resHotelList: HotelList = await getHotelList(area as string)
+  const resActivityList: ActivityList = await getActivityList(area as string)
 
   let hotelList: {
     hotel_id: number
@@ -160,6 +171,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   return {
     props: {
       hotelList: hotelList,
+      activityList: resActivityList,
     },
   }
 }

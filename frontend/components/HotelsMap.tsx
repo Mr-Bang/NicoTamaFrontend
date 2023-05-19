@@ -1,7 +1,8 @@
-import { Box, Flex  } from "@mantine/core"
+import { Box, Flex } from "@mantine/core"
 import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { useEffect } from "react"
+import { ActivityList } from "@/types/activityList"
 
 const containerStyle = {
   width: "100%",
@@ -51,10 +52,12 @@ interface Props {
     image: string
     region: string
   }[]
+
+  activityList: ActivityList
 }
 
 export default function HotelsMap(props: Props) {
-  const { hotelList } = props
+  const { activityList, hotelList } = props
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: googleMapsApiKey,
@@ -64,11 +67,16 @@ export default function HotelsMap(props: Props) {
     <MarkerF key={index} position={{ lat: Number(hotel.latitude), lng: Number(hotel.longitude) }} />
   ))
 
+  const Markers2 = activityList.map((activity, index) => (
+    <MarkerF key={index} position={{ lat: Number(activity.latitude), lng: Number(activity.longitude) }} />
+  ))
+
   return (
     <>
       {isLoaded ? (
         <GoogleMap mapContainerStyle={containerStyle} center={areaCenter[hotelList[0].region]} zoom={13}>
           {Markers}
+          {Markers2}
         </GoogleMap>
       ) : (
         <></>
