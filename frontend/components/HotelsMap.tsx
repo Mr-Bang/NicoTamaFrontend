@@ -1,8 +1,9 @@
 import { Box, Flex } from "@mantine/core"
-import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
+import { MarkerF, Marker, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { useEffect } from "react"
 import { ActivityList } from "@/types/activityList"
+import { faHotel } from "@fortawesome/free-solid-svg-icons"
 
 const containerStyle = {
   width: "100%",
@@ -64,19 +65,35 @@ export default function HotelsMap(props: Props) {
   })
 
   const Markers = hotelList.map((hotel, index) => (
-    <MarkerF key={index} position={{ lat: Number(hotel.latitude), lng: Number(hotel.longitude) }} />
+    <>
+      <MarkerF
+        key={index}
+        position={{ lat: hotel.latitude, lng: hotel.longitude }}
+        icon={{
+          path: faHotel.icon[4] as string,
+          fillColor: "#0000ff",
+          fillOpacity: 1,
+
+          strokeWeight: 1,
+          strokeColor: "#ffffff",
+          scale: 0.055,
+        }}
+      />
+    </>
   ))
 
   const Markers2 = activityList.map((activity, index) => (
-    <MarkerF key={index} position={{ lat: Number(activity.latitude), lng: Number(activity.longitude) }} />
+    <>
+      <MarkerF key={index} position={{ lat: Number(activity.latitude), lng: Number(activity.longitude) }} />
+    </>
   ))
 
   return (
     <>
       {isLoaded ? (
         <GoogleMap mapContainerStyle={containerStyle} center={areaCenter[hotelList[0].region]} zoom={13}>
-          {Markers}
           {Markers2}
+          {Markers}
         </GoogleMap>
       ) : (
         <></>
