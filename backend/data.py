@@ -1042,7 +1042,7 @@ activities = [
   "image": "https://prod-rte-static.rakutentravelxchange.com/daf62fb3-e8d6-4d2c-96fd-7754331492f8.jpeg?height=1000&format=webp",
   "region": "都心",
   "longitude": 139.7746888,
-  "latitude": "35.6561371,139",
+  "latitude": 35.6561371,
   "category_id": 3,
   "url": "https://experiences.travel.rakuten.co.jp/experiences/24739"
  },
