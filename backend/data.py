@@ -127,7 +127,7 @@ hotels = [
 },
 {
     'hotel_id': 14,
-    'name': '京急ＥＸインu3000浜松町・大門駅前',
+    'name': '京急ＥＸイン\u3000浜松町・大門駅前',
     'image': 'https://trvimg.r10s.jp/share/image_up/168419/origin/1104bbfd6c2fd10c479c88bdc6881643ddee3ab5.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
     'description': '大門駅A5出口から【徒歩10秒!!】アクセス抜群/充実アメニティのレディースフロア/2020楽天ゴールドアワード受賞!!',
     'region': '都心',
@@ -163,7 +163,7 @@ hotels = [
 },
 {
     'hotel_id': 18,
-    'name': 'グランドニッコー東京u3000台場',
+    'name': 'グランドニッコー東京\u3000台場',
     'image': 'https://trvimg.r10s.jp/share/image_up/1917/origin/d6dc55eea0e6d149f27f7987253176ce0d44c77a.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
     'description': '東京湾ベイエリアに位置する海風感じるランドマークホテル。エグゼクティブフロアやベイビューフロアがおすすめ！',
     'region': '都心',
@@ -172,7 +172,7 @@ hotels = [
 },
 {
     'hotel_id': 19,
-    'name': '相鉄フレッサインu3000新橋日比谷口',
+    'name': '相鉄フレッサイン\u3000新橋日比谷口',
     'image': 'https://trvimg.r10s.jp/share/image_up/140984/origin/bc25c98d13a5da2d977838caf7eb2cdad5714e70.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
     'description': '新橋駅日比谷口より徒歩2分の好立地。銀座、汐留も徒歩圏内でアクセス抜群です。',
     'region': '都心',
@@ -190,7 +190,7 @@ hotels = [
 },
 {
     'hotel_id': 21,
-    'name': '住友不動産ホテルu3000ヴィラフォンテーヌ東京上野御徒町',
+    'name': '住友不動産ホテル\u3000ヴィラフォンテーヌ東京上野御徒町',
     'image': 'https://trvimg.r10s.jp/share/image_up/80757/origin/4ed9e24cc00d1f093e3d77edd233aeded73f48d5.47.1.26.2.jpg?fit=inside|900:507&interpolation=lanczos-none',
     'description': '2023年お部屋リニューアル！新御徒町駅より徒歩3分。上野・浅草など下町観光の拠点に。',
     'region': '東部',
@@ -201,7 +201,7 @@ hotels = [
     'hotel_id': 22,
     'name': 'ホテルニューグリーン御徒町',
     'image': 'https://trvimg.r10s.jp/share/image_up/3092/origin/9346db843749962fd7fc22cfdd2b66eecbb9e7d1.47.9.26.3.jpeg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': '全室、空気清浄機（加湿機能付）★無料Wi-Fi★有線LAN★除菌消臭剤★シモンズ社製ベッドu3000導入！！',
+    'description': '全室、空気清浄機（加湿機能付）★無料Wi-Fi★有線LAN★除菌消臭剤★シモンズ社製ベッド\u3000導入！！',
     'region': '東部',
     'latitude': 35.70493454788793,
     'longitude': 139.77555053313523
@@ -235,7 +235,7 @@ hotels = [
 },
 {
     'hotel_id': 26,
-    'name': '相鉄フレッサインu3000上野御徒町',
+    'name': '相鉄フレッサイン\u3000上野御徒町',
     'image': 'https://trvimg.r10s.jp/share/image_up/163073/origin/f01a093ecb0387281ae4ec6f2b813bcf8f1a324a.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
     'description': '【上野広小路駅徒歩１分！JR御徒町駅徒歩３分】東京駅３駅７分！wifi完備・空気清浄機完備・充実のフリーアメニティ',
     'region': '東部',
@@ -244,7 +244,7 @@ hotels = [
 },
 {
     'hotel_id': 27,
-    'name': '高濃度炭酸泉u3000藍染の湯u3000スーパーホテル秋葉原・末広町',
+    'name': '高濃度炭酸泉\u3000藍染の湯\u3000スーパーホテル秋葉原・末広町',
     'image': 'https://trvimg.r10s.jp/share/image_up/147874/origin/0827a021752b5366e9fda306c0c8b213753fd8df.47.9.26.3.jpg?fit=inside%7C888:498',
     'description': '全室禁煙■高濃度人工炭酸泉男女入替制「藍染の湯」■秋葉原7分■上野御徒町5分■秋葉原＆アメ横＆上野動物園徒歩圏内■',
     'region': '東部',
@@ -273,7 +273,7 @@ hotels = [
     'hotel_id': 30,
     'name': 'アワーズイン阪急',
     'image': 'https://trvimg.r10s.jp/share/image_up/128577/origin/680c8f00c6230207ec088c9c240d631169b72325.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': '◆品川駅から1駅、大井町駅前の好立地◆3路線利用可アクセス良好u3000Ｓ館1,100室Ｔ館288室大浴場あり(別途）',
+    'description': '◆品川駅から1駅、大井町駅前の好立地◆3路線利用可アクセス良好\u3000Ｓ館1,100室Ｔ館288室大浴場あり(別途）',
     'region': '南西部',
     'latitude': 35.60560806,
     'longitude': 139.7343773
@@ -282,7 +282,7 @@ hotels = [
     'hotel_id': 31,
     'name': 'ワイヤーズホテル品川シーサイド',
     'image': 'https://trvimg.r10s.jp/share/image_up/179391/origin/f47ba01d362c5e3b6daa24a89d63003a1896f525.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': '[2020年7月15日OPEN]u3000ホテル直営コメダ珈琲店u3000最上階に大浴場。ディズニーリゾートへもアクセス良いです。',
+    'description': '[2020年7月15日OPEN]\u3000ホテル直営コメダ珈琲店\u3000最上階に大浴場。ディズニーリゾートへもアクセス良いです。',
     'region': '南西部',
     'latitude': 35.606617,
     'longitude': 139.74777059999997
@@ -291,7 +291,7 @@ hotels = [
     'hotel_id': 32,
     'name': 'ホテルマイステイズプレミア大森',
     'image': 'https://trvimg.r10s.jp/share/image_up/715/origin/89e037e397db96dce6d0fef7b422cd8b70589550.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': '朝・夜u3000羽田空港⇔ホテル間をシャトルバス（白色）で無料送迎！ツイン２８．５平米のゆとりある客室',
+    'description': '朝・夜\u3000羽田空港⇔ホテル間をシャトルバス（白色）で無料送迎！ツイン２８．５平米のゆとりある客室',
     'region': '南西部',
     'latitude': 35.59060969,
     'longitude': 139.7325086
@@ -307,16 +307,16 @@ hotels = [
 },
 {
     'hotel_id': 34,
-    'name': '相鉄フレッサインu3000東京田町',
+    'name': '相鉄フレッサイン\u3000東京田町',
     'image': 'https://trvimg.r10s.jp/share/image_up/19908/origin/d7e79bbdf3c6b2221ff047f008382a735b23f2a5.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': 'ＪＲ田町駅「芝浦口」より徒歩４分u3000都会の穴場田町へ、ビジネス・レジャーの拠点としてお待ちしております',
+    'description': 'ＪＲ田町駅「芝浦口」より徒歩４分\u3000都会の穴場田町へ、ビジネス・レジャーの拠点としてお待ちしております',
     'region': '都心',
     'latitude': 35.64289036,
     'longitude': 139.7481968
 },
 {
     'hotel_id': 35,
-    'name': '京急ＥＸインu3000京急蒲田駅前',
+    'name': '京急ＥＸイン\u3000京急蒲田駅前',
     'image': 'https://trvimg.r10s.jp/share/image_up/183871/origin/d217fe0b97585d622ef926a64e5621100fd22ce2.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
     'description': '◆露天風呂付大浴場完備◆自慢のレディースフロアはセキュリティ万全！女性スタッフも24時間常駐◆京急蒲田駅より徒歩約3分',
     'region': '南西部',
@@ -361,7 +361,7 @@ hotels = [
 },
 {
     'hotel_id': 40,
-    'name': 'カプセル＆サウナu3000コスモプラザ赤羽',
+    'name': 'カプセル＆サウナ\u3000コスモプラザ赤羽',
     'image': 'https://trvimg.r10s.jp/share/image_up/32083/origin/4f1abacb693e6a2972cf221d1bd234ad7a4d68ae.47.1.26.2.jpg?fit=inside|900:507&interpolation=lanczos-none',
     'description': '東京最安値！訳ありプラン発売中！ポケットコイルマットレス&高速無料Wi-Fi&スマホ充電コンセント全室完備！',
     'region': '北西部',
@@ -381,7 +381,7 @@ hotels = [
     'hotel_id': 42,
     'name': 'ＪＲ東日本ホテルメッツ赤羽',
     'image': 'https://trvimg.r10s.jp/share/image_up/37928/origin/a5eac9b1796efcd43a339633a18b1668c767c315.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': 'JR赤羽駅北改札・東口より徒歩1分u3000上野、新宿、大宮へ約15分訪れるお客さまの快適を第一に考えたホテルです。',
+    'description': 'JR赤羽駅北改札・東口より徒歩1分\u3000上野、新宿、大宮へ約15分訪れるお客さまの快適を第一に考えたホテルです。',
     'region': '北西部',
     'latitude': 35.77862714,
     'longitude': 139.7209242
@@ -406,7 +406,7 @@ hotels = [
 },
 {
     'hotel_id': 45,
-    'name': '高濃度炭酸泉u3000東京都北区赤羽の湯u3000スーパーホテル東京・赤羽駅南口',
+    'name': '高濃度炭酸泉\u3000東京都北区赤羽の湯\u3000スーパーホテル東京・赤羽駅南口',
     'image': 'https://trvimg.r10s.jp/share/image_up/181415/origin/dea7fb4a48a3edf60aad365fb058016b7544834c.47.9.26.3.jpg?fit=inside%7C888:498',
     'description': 'ＪＲ赤羽駅南口改札から徒歩約２分！上野・池袋・新宿・渋谷・大宮などアクセス抜群！',
     'region': '北西部',
