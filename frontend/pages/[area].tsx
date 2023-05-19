@@ -19,8 +19,8 @@ const useStyles = createStyles((theme) => ({
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
-  { name: "首都圏", href: "/" },
-  { name: "東京23区", href: "/" },
+  { name: "首都圏", href: "/SearchPageMetropolitan" },
+  { name: "東京23区", href: "/SearchPageTokyo" },
   { name: "世田谷・目黒・品川・大田" },
 ].map((region, index) =>
   region.href ? (
@@ -51,6 +51,22 @@ export default function HotelList(props: Props) {
 
   const { classes } = useStyles();
 
+  const area = hotelList.length ? hotelList[0].region : "404 not found"
+  const regions = [
+    { name: "楽天トラベルトップ", href: "/" },
+    { name: "首都圏", href: "/SearchPageMetropolitan" },
+    { name: "東京23区", href: "/SearchPageTokyo" },
+    { name: area},
+  ].map((region, index) =>
+    region.href ? (
+      <Anchor href={region.href} key={index}>
+        {region.name}
+      </Anchor>
+    ) : (
+      <Text key={index}>{region.name}</Text>
+    )
+  )
+
   const getPriceList = (roomList: RoomList) => {
     let priceList: number[] = []
     roomList.forEach((room) => {
@@ -71,7 +87,7 @@ export default function HotelList(props: Props) {
           padding: theme.spacing.xl,
         })}
       >
-        <Title order={2}>世田谷・目黒・品川・大田</Title>
+        <Title order={2}>{area}</Title>
       </Box>
       <Grid>
         <Grid.Col span='auto'>
