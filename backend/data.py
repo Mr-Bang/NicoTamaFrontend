@@ -458,7 +458,7 @@ activities = [
       "price": 5000,
       "description": "美しい自然環境を背景に、マウンテンバイクでの冒険を楽しみましょう。専門ガイドが案内し、様々なトレイルを駆け抜けます。",
       "image": "https://example.com/image21.jpg",
-      "region": "北西",
+      "region": "北西部",
       "longitude": 139.6518,
       "latitude": 35.7389,
       "category_id": 2
@@ -468,7 +468,7 @@ activities = [
       "price": 3000,
       "description": "波乗りの基本を学び、サーフボードに乗って楽しむレッスンです。プロのインストラクターが優しく指導します。",
       "image": "https://example.com/image22.jpg",
-      "region": "北西",
+      "region": "北西部",
       "longitude": 139.6847,
       "latitude": 35.7512,
       "category_id": 2
@@ -478,7 +478,7 @@ activities = [
       "price": 2500,
       "description": "クリアな水面をカヤックで漕ぎながら、美しい風景を楽しむ体験ツアーです。自然との触れ合いを感じましょう。",
       "image": "https://example.com/image23.jpg",
-      "region": "北西",
+      "region": "北西部",
       "longitude": 139.7286,
       "latitude": 35.7552,
       "category_id": 2
@@ -488,7 +488,7 @@ activities = [
       "price": 2000,
       "description": "山岳地帯のトレイルを走り抜けるランニングイベントです。美しい景色とアウトドアのエキサイティングな体験が待っています。",
       "image": "https://example.com/image24.jpg",
-      "region": "北西",
+      "region": "北西部",
       "longitude": 139.638,
       "latitude": 35.6997,
       "category_id": 2
@@ -618,7 +618,7 @@ activities = [
       "price": 2500,
       "description": "スケートボードのテクニックを磨きながら、スケートボードパークでのライディングを楽しみましょう。",
       "image": "https://example.com/image33.jpg",
-      "region": "南西",
+      "region": "南西部",
       "longitude": 139.8047,
       "latitude": 35.7772,
       "category_id": 2
@@ -628,7 +628,7 @@ activities = [
       "price": 2000,
       "description": "自然の中でキャンプファイヤーを囲みながら、楽しい時間を過ごしましょう。焚き火の楽しみ方を学びます。",
       "image": "https://example.com/image34.jpg",
-      "region": "南西",
+      "region": "南西部",
       "longitude": 139.8673,
       "latitude": 35.7063,
       "category_id": 2
@@ -638,7 +638,7 @@ activities = [
       "price": 1800,
       "description": "アーチェリーの基本を学び、的に矢を放つ体験です。集中力を高めながら的中率を競いましょう。",
       "image": "https://example.com/image35.jpg",
-      "region": "南西",
+      "region": "南西部",
       "longitude": 139.8128,
       "latitude": 35.6687,
       "category_id": 2
@@ -648,7 +648,7 @@ activities = [
       "price": 4000,
       "description": "渓谷や滝を下りながら冒険するキャノニングツアーです。自然の中でのスリル満点の体験が待っています。",
       "image": "https://example.com/image37.jpg",
-      "region": "南西",
+      "region": "南西部",
       "longitude": 139.7967,
       "latitude": 35.7232,
       "category_id": 2
@@ -878,7 +878,7 @@ activities = [
         "price": 5000,
         "description": "ミッキーマウスと一緒に楽しむ冒険のアトラクションです。仲間と一緒にワクワクの世界へ飛び込みましょう！",
         "image": "https://example.com/image81.jpg",
-        "region": "北西",
+        "region": "北西部",
         "longitude": 139.6338,
         "latitude": 35.7373,
         "category_id": 3
@@ -888,7 +888,7 @@ activities = [
         "price": 8000,
         "description": "ハリー・ポッターの世界を体験できるアトラクションです。魔法の世界に夢中になりましょう！",
         "image": "https://example.com/image82.jpg",
-        "region": "北西",
+        "region": "北西部",
         "longitude": 139.6846,
         "latitude": 35.7513,
         "category_id": 3
@@ -898,7 +898,7 @@ activities = [
         "price": 3000,
         "description": "スリル満点のジェットコースターのアトラクションです。風を切ってスピード感を楽しみましょう！",
         "image": "https://example.com/image83.jpg",
-        "region": "北西",
+        "region": "北西部",
         "longitude": 139.7362,
         "latitude": 35.7609,
         "category_id": 3
@@ -908,7 +908,7 @@ activities = [
         "price": 2500,
         "description": "童話のキャラクターたちが織りなす夢の世界のアトラクションです。幻想的な世界に浸りましょう！",
         "image": "https://example.com/image84.jpg",
-        "region": "北西",
+        "region": "北西部",
         "longitude": 139.6282,
         "latitude": 35.7044,
         "category_id": 3
@@ -1038,7 +1038,7 @@ activities = [
         "price": 5000,
         "description": "楽しいプールパーティーを楽しむウォーターパークのアトラクションです。水遊びで盛り上がりましょう！",
         "image": "https://example.com/image93.jpg",
-        "region": "南西",
+        "region": "南西部",
         "longitude": 139.6561,
         "latitude": 35.646,
         "category_id": 3
@@ -1048,7 +1048,7 @@ activities = [
         "price": 2800,
         "description": "実験を通じて科学の不思議を学ぶアトラクションです。楽しみながら学びましょう！",
         "image": "https://example.com/image94.jpg",
-        "region": "南西",
+        "region": "南西部",
         "longitude": 139.698,
         "latitude": 35.6133,
         "category_id": 3
@@ -1058,7 +1058,7 @@ activities = [
         "price": 4500,
         "description": "スピード感溢れるレースカートでチャレンジするアトラクションです。ライバルと競い合いましょう！",
         "image": "https://example.com/image99.jpg",
-        "region": "南西",
+        "region": "南西部",
         "longitude": 139.7389,
         "latitude": 35.6075,
         "category_id": 3
@@ -1068,7 +1068,7 @@ activities = [
         "price": 3800,
         "description": "宇宙探査の体験をするライドシミュレーターのアトラクションです。想像を超えた冒険が待っています！",
         "image": "https://example.com/image100.jpg",
-        "region": "南西",
+        "region": "南西部",
         "longitude": 139.7372,
         "latitude": 35.5612,
         "category_id": 3
@@ -1122,7 +1122,7 @@ activities = [
   "price": 4500,
   "description": "ショコラティエとしての技術を学ぶワークショップで...",
   "image": "https://example.com/image120.jpg",
-  "region": "南西",
+  "region": "南西部",
   "longitude": 139.7161,
   "latitude": 35.5614,
   "category_id": 1
@@ -1132,7 +1132,7 @@ activities = [
   "price": 4000,
   "description": "グルメフードが集まるストリートフードフェスティバ...",
   "image": "https://example.com/image119.jpg",
-  "region": "南西",
+  "region": "南西部",
   "longitude": 139.7388,
   "latitude": 35.609,
   "category_id": 1
@@ -1142,7 +1142,7 @@ activities = [
   "price": 3000,
   "description": "ビール工場の見学ツアーです。ビールの醸造プロセスを...",
   "image": "https://example.com/image117.jpg",
-  "region": "南西",
+  "region": "南西部",
   "longitude": 139.7062,
   "latitude": 35.6072,
   "category_id": 1
@@ -1152,7 +1152,7 @@ activities = [
   "price": 3800,
   "description": "街中で楽しむストリートフードの祭典です。気軽に美味...",
   "image": "https://example.com/image116.jpg",
-  "region": "南西",
+  "region": "南西部",
   "longitude": 139.6381,
   "latitude": 35.6461,
   "category_id": 1
@@ -1242,7 +1242,7 @@ activities = [
   "price": 2000,
   "description": "おしゃれなカフェを巡るツアーです。美味しいコー...",
   "image": "https://example.com/image104.jpg",
-  "region": "北西",
+  "region": "北西部",
   "longitude": 139.6508,
   "latitude": 35.7048,
   "category_id": 1
@@ -1252,7 +1252,7 @@ activities = [
   "price": 2500,
   "description": "ラーメンのプロからラーメンの作り方を学ぶマスタ...",
   "image": "https://example.com/image103.jpg",
-  "region": "北西",
+  "region": "北西部",
   "longitude": 139.7262,
   "latitude": 35.757,
   "category_id": 1
@@ -1262,7 +1262,7 @@ activities = [
   "price": 3000,
   "description": "スシローの職人から直接寿司の作り方を学ぶ体験レ...",
   "image": "https://example.com/image102.jpg",
-  "region": "北西",
+  "region": "北西部",
   "longitude": 139.7125,
   "latitude": 35.7746,
   "category_id": 1
@@ -1272,7 +1272,7 @@ activities = [
   "price": 5000,
   "description": "東京の有名な食べ物を楽しむグルメツアーです。...",
   "image": "https://example.com/image101.jpg",
-  "region": "北西",
+  "region": "北西部",
   "longitude": 139.6287,
   "latitude": 35.738,
   "category_id": 1
@@ -1282,7 +1282,7 @@ activities = [
   "price": 6000,
   "description": "心地よい音楽とアロマの香りに包まれながら、プロのセラピストによるスパ・マッサージを受けましょう。疲れた心と体をリフレッシュします。",
   "image": "https://example.com/image41.jpg",
-  "region": "北西",
+  "region": "北西部",
   "longitude": 139.6667,
   "latitude": 35.7444,
   "category_id": 4
@@ -1292,7 +1292,7 @@ activities = [
   "price": 3000,
   "description": "美しい自然の中で行うヨガクラスです。呼吸法とポーズの組み合わせにより、心と体のバランスを整えましょう。",
   "image": "https://example.com/image42.jpg",
-  "region": "北西",
+  "region": "北西部",
   "longitude": 139.6888,
   "latitude": 35.7201,
   "category_id": 4
@@ -1302,7 +1302,7 @@ activities = [
   "price": 2500,
   "description": "温泉地の美しい風景を眺めながら、ゆったりと温泉に浸かるリラックス体験です。温泉の恵みに癒されましょう。",
   "image": "https://example.com/image43.jpg",
-  "region": "北西",
+  "region": "北西部",
   "longitude": 139.6722,
   "latitude": 35.7319,
   "category_id": 4
@@ -1312,7 +1312,7 @@ activities = [
   "price": 2000,
   "description": "瞑想の専門家によるマインドフルネス瞑想セッションです。心を静め、内なる平穏を見つけましょう。",
   "image": "https://example.com/image44.jpg",
-  "region": "北西",
+  "region": "北西部",
   "longitude": 139.7005,
   "latitude": 35.7083,
   "category_id": 4
@@ -1442,7 +1442,7 @@ activities = [
   "price": 2000,
   "description": "湖畔の美しい風景を眺めながら、ゆったりとハンモックに揺られましょう。自然の恵みに身を委ね、リラックスを体験します。",
   "image": "https://example.com/image50.jpg",
-  "region": "南西",
+  "region": "南西部",
   "longitude": 139.6538,
   "latitude": 35.646,
   "category_id": 4
@@ -1452,7 +1452,7 @@ activities = [
   "price": 1800,
   "description": "専門のインストラクターによるストレッチクラスです。柔軟性を高め、身体の緊張をほぐしましょう。",
   "image": "https://example.com/image51.jpg",
-  "region": "南西",
+  "region": "南西部",
   "longitude": 139.6981,
   "latitude": 35.6084,
   "category_id": 4
@@ -1462,7 +1462,7 @@ activities = [
   "price": 2500,
   "description": "絵画や手作りの工作を通じて、自己表現や感情の解放を体験しましょう。創造力を刺激し、心のリフレッシュを図ります。",
   "image": "https://example.com/image52.jpg",
-  "region": "南西",
+  "region": "南西部",
   "longitude": 139.7389,
   "latitude": 35.6075,
   "category_id": 4
@@ -1472,7 +1472,7 @@ activities = [
   "price": 2200,
   "description": "専門の講師によるメディテーションセッションです。心を落ち着け、集中力や内なる平穏を高めましょう。",
   "image": "https://example.com/image53.jpg",
-  "region": "南西",
+  "region": "南西部",
   "longitude": 139.7212,
   "latitude": 35.5612,
   "category_id": 4

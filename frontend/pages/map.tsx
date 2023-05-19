@@ -98,7 +98,9 @@ export default function Map(props: Props) {
     <MarkerF key={index} position={{ lat: Number(activity.latitude), lng: Number(activity.longitude) }} />
   ))
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    console.log(activityList)
+  }, [])
 
   return (
     <>
@@ -131,7 +133,7 @@ export default function Map(props: Props) {
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const { query } = context
-  const resActivityList = await getActivityList("東部")
+  const resActivityList = await getActivityList(query.region as string)
 
   return {
     props: {
