@@ -37,18 +37,18 @@ export default function HotelList(props: Props) {
   const { classes } = useStyles();
 
   const area = hotelList.length ? hotelList[0].region : "404 not found"
-  const regions = [
+  const breadcrumbs = [
     { name: "楽天トラベルトップ", href: "/" },
     { name: "首都圏", href: "/SearchPageMetropolitan" },
     { name: "東京23区", href: "/SearchPageTokyo" },
     { name: area},
-  ].map((region, index) =>
-    region.href ? (
-      <Anchor href={region.href} key={index}>
-        {region.name}
+  ].map((breadcrumb, index) =>
+    breadcrumb.href ? (
+      <Anchor href={breadcrumb.href} key={index}>
+        {breadcrumb.name}
       </Anchor>
     ) : (
-      <Text key={index}>{region.name}</Text>
+      <Text key={index}>{breadcrumb.name}</Text>
     )
   )
 
@@ -64,7 +64,7 @@ export default function HotelList(props: Props) {
   return (
     <>
       <Breadcrumbs separator='>' mt='xs'>
-        {regions}
+        {breadcrumbs}
       </Breadcrumbs>
       <Box
         sx={(theme) => ({
