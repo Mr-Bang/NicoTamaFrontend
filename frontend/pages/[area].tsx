@@ -1,9 +1,21 @@
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { HotelList, getHotelList } from "@/services/hotellist"
 import { RoomList, getRoomList } from "@/services/roomlist"
-import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title } from "@mantine/core"
+import { Box, Breadcrumbs, Card, Anchor, Grid, SimpleGrid, Image, Text, Title, createStyles, UnstyledButton } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
+
+const useStyles = createStyles((theme) => ({
+  item: {
+    borderRadius: theme.radius.md,
+    transition: 'box-shadow 150ms ease, transform 100ms ease',
+
+    '&:hover': {
+      boxShadow: theme.shadows.md,
+      transform: 'scale(1.05)',
+    },
+  },
+}));
 
 const regions = [
   { name: "楽天トラベルトップ", href: "/" },
@@ -37,6 +49,8 @@ export default function HotelList(props: Props) {
   const { hotelList } = props
   const router = useRouter()
 
+  const { classes } = useStyles();
+
   const getPriceList = (roomList: RoomList) => {
     let priceList: number[] = []
     roomList.forEach((room) => {
@@ -66,37 +80,40 @@ export default function HotelList(props: Props) {
         <Grid.Col span={6}>
           <SimpleGrid cols={3}>
             {hotelList.map((hotel, index) => (
-              <Card shadow='sm' padding='lg' radius='md' withBorder key={index}>
-                <Card.Section
-                  component='a'
-                  onClick={() => {
-                    router.push(
-                      {
-                        pathname: "/hotel/[id]",
-                        query: {
-                          id: hotel.hotel_id,
-                          name: hotel.name,
-                          description: hotel.description,
-                          latitude: hotel.latitude,
-                          longitude: hotel.longitude,
-                          image: hotel.image,
-                          region: hotel.region,
-                          roomList: JSON.stringify(hotel.roomList),
+	      <UnstyledButton key={index} className={classes.item}>
+                <Card shadow='sm' padding='lg' radius='md' withBorder>
+                  <Card.Section
+                    component='a'
+	            ref={(node) => console.log(node)}
+                    onClick={() => {
+                      router.push(
+                        {
+                          pathname: "/hotel/[id]",
+                          query: {
+                            id: hotel.hotel_id,
+                            name: hotel.name,
+                            description: hotel.description,
+                            latitude: hotel.latitude,
+                            longitude: hotel.longitude,
+                            image: hotel.image,
+                            region: hotel.region,
+                            roomList: JSON.stringify(hotel.roomList),
+                          },
                         },
-                      },
-                      "/hotel/" + hotel.hotel_id
-                    )
-                  }}
-                >
-                  <Image width={300} height={170} fit="contain" src={hotel.image} alt={hotel.name} />
-                  <Text ta='center' fw={700} fz='lg'>
-                    {hotel.name}
-                  </Text>
-                  <Text ta='center' fz='md'>
-                    ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
-                  </Text>
-                </Card.Section>
-              </Card>
+                        "/hotel/" + hotel.hotel_id
+                      )
+                    }}
+                  >
+                    <Image width={300} height={170} fit="contain" src={hotel.image} alt={hotel.name} />
+                    <Text ta='center' fw={700} fz='lg'>
+                      {hotel.name}
+                    </Text>
+                    <Text ta='center' fz='md'>
+                      ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
+                    </Text>
+                  </Card.Section>
+                </Card>
+	      </UnstyledButton>
             ))}
           </SimpleGrid>
         </Grid.Col>
@@ -131,8 +148,6 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
       roomList: roomList,
     })
   }
-
-  console.log(hotelList)
 
   return {
     props: {
