@@ -1,4 +1,4 @@
-import { createStyles, Card, Image, Text, AspectRatio, Stack, ScrollArea } from "@mantine/core"
+import { Box, Center, rem, MantineTheme, createStyles, Card, Image, Text, AspectRatio, Stack, ScrollArea } from "@mantine/core"
 import { useRouter } from "next/router"
 
 const useStyles = createStyles((theme) => ({
@@ -7,7 +7,7 @@ const useStyles = createStyles((theme) => ({
 
     "&:hover": {
       transform: "scale(1.01)",
-      boxShadow: theme.shadows.sm,
+      boxShadow: theme.shadows.md,
     },
   },
 
@@ -52,14 +52,27 @@ export default function ActivityList(props: Props) {
         {activity.name}
       </Text>
       <Text color='dimmed' size='xs' transform='uppercase' weight={700} mt='md'>
-        {activity.price}
+        ¥ {activity.price.toLocaleString()}
       </Text>
     </Card>
   ))
 
   return (
-    <ScrollArea h={"100vh"} w={450}>
-      <Stack>{cards}</Stack>
-    </ScrollArea>
+    <Box
+      sx={(theme: MantineTheme) => ({
+        height: "100vh",
+        width: 455,
+        border: `${rem(2)} solid #73AB23`,
+        borderRadius: theme.radius.md,
+        boxShadow: theme.shadows.md,
+	padding: theme.spacing.sm,
+      })}
+    >
+      <Center>
+        <ScrollArea h={"100vh"} type="hover" w={450}>
+          <Stack>{cards}</Stack>
+        </ScrollArea>
+      </Center>
+    </Box>
   )
 }
