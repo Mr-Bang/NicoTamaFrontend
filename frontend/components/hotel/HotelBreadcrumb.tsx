@@ -1,5 +1,6 @@
 import { Hotel } from "@/types/hotel"
 import { Anchor, Breadcrumbs, Text } from "@mantine/core"
+import { Area, areaDetail } from "@/types/area"
 
 type Props = {
   hotel: Hotel
@@ -11,7 +12,7 @@ export default function HotelBreadcrumb(props: Props) {
     { name: "楽天トラベルトップ", href: "/" },
     { name: "首都圏", href: "/SearchPageMetropolitan" },
     { name: "東京23区", href: "/SearchPageTokyo" },
-    { name: hotel.region, href: "/" + hotel.region },
+    { name: areaDetail[hotel.region as Area], href: "/" + hotel.region },
     { name: hotel.name },
   ].map((breadcrumb, index) =>
     breadcrumb.href ? (

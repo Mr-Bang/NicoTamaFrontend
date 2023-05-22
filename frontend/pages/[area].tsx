@@ -22,7 +22,6 @@ import {
 } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
 import { ActivityList } from "@/types/activityList"
 import { Area, areaDetail } from "@/types/area"
 
