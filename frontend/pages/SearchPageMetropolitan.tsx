@@ -1,7 +1,9 @@
 import { useRouter } from "next/router"
 import Image from "next/image"
 import {
+  Anchor,
   Box,
+  Breadcrumbs,
   Input,
   Title,
   Grid,
@@ -45,13 +47,37 @@ export default function A() {
 
   const { classes } = useStyles()
 
+  const breadcrumbs = [
+    { name: "楽天トラベルトップ", href: "/" },
+    { name: "首都圏" },
+  ].map((breadcrumb, index) =>
+    breadcrumb.href ? (
+      <Anchor href={breadcrumb.href} key={index}>
+        {breadcrumb.name}
+      </Anchor>
+    ) : (
+      <Text fw={700} key={index}>
+        {breadcrumb.name}
+      </Text>
+    )
+  )
+
   return (
     <div>
+      <Breadcrumbs separator='>' mt='xs'>
+        {breadcrumbs}
+      </Breadcrumbs>
+      <Box
+        sx={(theme) => ({
+          textAlign: "left",
+          padding: theme.spacing.xl,
+        })}
+      >
+        <Title order={1}>首都圏</Title>
+      </Box>
       <Grid grow>
         <Grid.Col span={"auto"}>
-          {/*Box1-1*/}
           <Container>
-            <Title>首都圏 旅行</Title>
             <Flex>
               <Container>
                 <Box
@@ -309,7 +335,6 @@ export default function A() {
           </Container>
         </Grid.Col>
         <Grid.Col span={"auto"}>
-          {/*Box1-2*/}
           <Box
             sx={{
               background: "#EBF2D8",
@@ -325,7 +350,7 @@ export default function A() {
         color="brack"
         radius="5px"
         compact
-        style={{ position: "absolute", width: "74px", height: "26px", left: "320px", top: "650px" }}
+        style={{ position: "absolute", width: "74px", height: "26px", left: "320px", top: "725px" }}
         onClick={() => router.push("/SearchPageTokyo")}
       >
         東京都
@@ -334,7 +359,7 @@ export default function A() {
         color="brack"
         radius="5px"
         compact
-        style={{ position: "absolute", width: "74px", height: "26px", left: "298px", top: "567px" }}
+        style={{ position: "absolute", width: "74px", height: "26px", left: "298px", top: "642px" }}
       >
         埼玉県
       </Button>
@@ -342,7 +367,7 @@ export default function A() {
         color="brack"
         radius="5px"
         compact
-        style={{ position: "absolute", width: "74px", height: "26px", left: "505px", top: "696px" }}
+        style={{ position: "absolute", width: "74px", height: "26px", left: "505px", top: "770px" }}
       >
         千葉県
       </Button>
@@ -350,7 +375,7 @@ export default function A() {
         color="brack"
         radius="5px"
         compact
-        style={{ position: "absolute", width: "84px", height: "26px", left: "288px", top: "728px" }}
+        style={{ position: "absolute", width: "84px", height: "26px", left: "288px", top: "803px" }}
       >
         神奈川県
       </Button>

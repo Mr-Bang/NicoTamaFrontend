@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import Image from "next/image"
-import { Box, Title, Grid, Container, Space, Text, SimpleGrid, Button, createStyles, rem, Anchor } from "@mantine/core"
+import { Box, Breadcrumbs, Title, Grid, Container, Space, Text, SimpleGrid, Button, createStyles, rem, Anchor } from "@mantine/core"
 import mapoftokyo from "../public/mapoftokyo.svg"
 
 export default function Home() {
@@ -29,10 +29,6 @@ export default function Home() {
   }))
 
   const { classes } = useStyles()
-
-  function onClickAreaButton(area: string) {
-    router.push("/" + area)
-  }
 
   const areaInfoList = [
     { name: "板橋", top: "411px", left: "753px", area: "北西部" },
@@ -112,11 +108,35 @@ export default function Home() {
     { name: "国営昭和記念公園" },
   ]
 
+  const breadcrumbs = [
+    { name: "楽天トラベルトップ", href: "/" },
+    { name: "首都圏", href: "/SearchPageMetropolitan" },
+    { name: "東京23区" },
+  ].map((breadcrumb, index) =>
+    breadcrumb.href ? (
+      <Anchor href={breadcrumb.href} key={index}>
+        {breadcrumb.name}
+      </Anchor>
+    ) : (
+      <Text fw={700} key={index}>
+        {breadcrumb.name}
+      </Text>
+    )
+  )
+
   return (
-    <div>
-      <Text></Text>
-      <Title>東京２３区</Title>
-      <Space h={"xl"} />
+    <>
+      <Breadcrumbs separator='>' mt='xs'>
+        {breadcrumbs}
+      </Breadcrumbs>
+      <Box
+        sx={(theme) => ({
+          textAlign: "left",
+          padding: theme.spacing.xl,
+        })}
+      >
+        <Title order={1}>東京23区</Title>
+      </Box>
       <Grid>
         <Grid.Col span="auto">
           <Container>
@@ -131,11 +151,10 @@ export default function Home() {
                 地域名から探す
               </Title>
               <Container>
-                <div>
+                <>
                   {area23InfoList.map((area23Info, index) => (
-                    <div>
+                    <div key={index}>
                       <Anchor
-                        key={index}
                         className={classes.root3}
                         variant="default"
                         component="a"
@@ -145,7 +164,7 @@ export default function Home() {
                       </Anchor>
                     </div>
                   ))}
-                </div>
+                </>
               </Container>
             </Box>
 
@@ -165,9 +184,8 @@ export default function Home() {
               <Container>
                 <SimpleGrid cols={2} verticalSpacing="xs">
                   {stationInfoList.map((stationInfo, index) => (
-                    <div>
+                    <div key={index}>
                       <Anchor
-                        key={index}
                         className={classes.root3}
                         variant="default"
                         component="a"
@@ -194,9 +212,8 @@ export default function Home() {
               <Container>
                 <SimpleGrid cols={2} verticalSpacing="xs">
                   {popularInfoList.map((popularInfo, index) => (
-                    <div>
+                    <div key={index}>
                       <Anchor
-                        key={index}
                         className={classes.root3}
                         variant="default"
                         component="a"
@@ -256,6 +273,6 @@ export default function Home() {
           {area23Info.name}
         </Text>
       ))}
-    </div>
+    </>
   )
 }
