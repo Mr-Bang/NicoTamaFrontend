@@ -3,11 +3,10 @@ import ActivityList from "@/components/map/ActivityList"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
-import { Box, Container, Flex, SimpleGrid, Title } from "@mantine/core"
-import { InfoWindowF, MarkerF, useJsApiLoader } from "@react-google-maps/api"
+import { Box, Container, Flex, Title } from "@mantine/core"
+import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
-import { useEffect } from "react"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
 
 const containerStyle = {
@@ -18,37 +17,6 @@ const containerStyle = {
 const center = {
   lat: 35.64947376923544,
   lng: 139.78989191498846,
-}
-
-const areaCenter: {
-  [key: string]: {
-    lat: number
-    lng: number
-  }
-} = {
-  都心: {
-    lat: 35.6752972133285,
-    lng: 139.76463639450805,
-  },
-
-  副都心: {
-    lat: 35.7023558010935,
-    lng: 139.7027006645815,
-  },
-
-  東部: {
-    lat: 35.71244223700499,
-    lng: 139.81344093561813,
-  },
-  北西部: {
-    lat: 35.731217938922306,
-    lng: 139.6523175347044,
-  },
-
-  南西部: {
-    lat: 35.61453465541908,
-    lng: 139.69429269110896,
-  },
 }
 
 const googleMapsApiKey: string = process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string
@@ -103,10 +71,6 @@ export default function Map(props: Props) {
       </InfoWindowF> */}
     </>
   ))
-
-  useEffect(() => {
-    console.log(activityList)
-  }, [])
 
   return (
     <>
