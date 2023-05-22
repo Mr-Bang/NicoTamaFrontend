@@ -1,7 +1,9 @@
 import { useRouter } from "next/router"
 import Image from "next/image"
 import {
+  Anchor,
   Box,
+  Breadcrumbs,
   Input,
   Title,
   Grid,
@@ -45,13 +47,37 @@ export default function A() {
 
   const { classes } = useStyles()
 
+  const breadcrumbs = [
+    { name: "楽天トラベルトップ", href: "/" },
+    { name: "首都圏" },
+  ].map((breadcrumb, index) =>
+    breadcrumb.href ? (
+      <Anchor href={breadcrumb.href} key={index}>
+        {breadcrumb.name}
+      </Anchor>
+    ) : (
+      <Text fw={700} key={index}>
+        {breadcrumb.name}
+      </Text>
+    )
+  )
+
   return (
     <div>
+      <Breadcrumbs separator='>' mt='xs'>
+        {breadcrumbs}
+      </Breadcrumbs>
+      <Box
+        sx={(theme) => ({
+          textAlign: "left",
+          padding: theme.spacing.xl,
+        })}
+      >
+        <Title order={1}>首都圏</Title>
+      </Box>
       <Grid grow>
         <Grid.Col span={"auto"}>
-          {/*Box1-1*/}
           <Container>
-            <Title>首都圏 旅行</Title>
             <Flex>
               <Container>
                 <Box
@@ -309,7 +335,6 @@ export default function A() {
           </Container>
         </Grid.Col>
         <Grid.Col span={"auto"}>
-          {/*Box1-2*/}
           <Box
             sx={{
               background: "#EBF2D8",
