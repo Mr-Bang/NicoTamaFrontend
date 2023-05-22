@@ -350,7 +350,7 @@ export default function A() {
         color="brack"
         radius="5px"
         compact
-        style={{ position: "absolute", width: "74px", height: "26px", left: "320px", top: "650px" }}
+        style={{ position: "absolute", width: "74px", height: "26px", left: "320px", top: "725px" }}
         onClick={() => router.push("/SearchPageTokyo")}
       >
         東京都
@@ -359,7 +359,7 @@ export default function A() {
         color="brack"
         radius="5px"
         compact
-        style={{ position: "absolute", width: "74px", height: "26px", left: "298px", top: "567px" }}
+        style={{ position: "absolute", width: "74px", height: "26px", left: "298px", top: "642px" }}
       >
         埼玉県
       </Button>
@@ -367,7 +367,7 @@ export default function A() {
         color="brack"
         radius="5px"
         compact
-        style={{ position: "absolute", width: "74px", height: "26px", left: "505px", top: "696px" }}
+        style={{ position: "absolute", width: "74px", height: "26px", left: "505px", top: "770px" }}
       >
         千葉県
       </Button>
@@ -375,7 +375,7 @@ export default function A() {
         color="brack"
         radius="5px"
         compact
-        style={{ position: "absolute", width: "84px", height: "26px", left: "288px", top: "728px" }}
+        style={{ position: "absolute", width: "84px", height: "26px", left: "288px", top: "803px" }}
       >
         神奈川県
       </Button>
