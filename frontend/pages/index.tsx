@@ -17,9 +17,15 @@ import {
   Text,
   SimpleGrid,
   Button,
+  createStyles,
 } from "@mantine/core"
 import Map from "../public/searchmap.jpg"
 import Adv from "../public/advertizements.png"
+import Adv2 from "/Users/kazuyuki.arano/nicotama/frontend/public/advertisements2.svg"
+import Adv3 from "/Users/kazuyuki.arano/nicotama/frontend/public/advertisements3.svg"
+import Adv4 from "/Users/kazuyuki.arano/nicotama/frontend/public/advertisements4.svg"
+import Adv5 from "/Users/kazuyuki.arano/nicotama/frontend/public/advertisements5.svg"
+
 import Register from "../public/register.jpg"
 import { useState } from "react"
 
@@ -27,6 +33,17 @@ export default function Home() {
   const router = useRouter()
 
   const [searchWord, setSeachWord] = useState<string>()
+
+  const useStyles = createStyles((theme) => ({
+    root: {
+      "&:not([data-disabled])": theme.fn.hover({
+        backgroundColor: theme.fn.darken("#98fb98", 0.05),
+        border: 0,
+      }),
+    },
+  }))
+
+  const { classes } = useStyles()
 
   const data = [
     { value: "東京都", label: "東京都" },
@@ -56,276 +73,346 @@ export default function Home() {
   return (
     <div>
       <Grid>
-        <Grid.Col span="auto">
-          <Center>
-            <Box
-              sx={{
-                background: "#E0E0E0",
-                border: "1px solid #CCCCCC",
-                borderRadius: "4px",
-                height: "102px",
-                width: "320px",
-              }}
-            >
-              <Title size="20px">キーワードから探す</Title>
-              <Radio.Group name="favoriteFramework" withAsterisk>
-                <Group mt="xs">
-                  <Radio value="react" label="国内宿泊" />
-                  <Radio value="svelte" label="駅名" />
-                  <Radio value="ng" label="海外ホテル" />
-                </Group>
-              </Radio.Group>
-              <Space h="xs" />
-              <Flex>
-                <TextInput
-                  label=""
-                  radius="md"
-                  size="xs"
-                  value={searchWord}
-                  onChange={(e) => setSeachWord(e.target.value)}
-                />
-                <Space w="xs" />
-                <Button
-                  size="xs"
-                  style={{ border: "1px solid #CCCCCC", borderRadius: "4px", width: "90px" }}
-                  onClick={() => router.push("/" + searchWord)}
-                >
-                  検索
-                </Button>
-              </Flex>
-            </Box>
-          </Center>
-
-          <Space h="lg" />
-
-          <Center>
-            <Box
-              sx={{
-                background: "#E0E0E0",
-                border: "1px solid #CCCCCC",
-                borderRadius: "4px",
-                width: "320px",
-                height: "661px",
-                left: "0px",
-                top: "122px",
-              }}
-            >
-              <Title size="20px">日付から探す</Title>
-              <Box>
+        <Grid.Col span={"auto"}>
+          <Grid>
+            <Grid.Col span="auto">
+              <Box
+                sx={{
+                  background: "76AE25",
+                  border: "1px solid #76AE25",
+                  borderRadius: "5px",
+                  width: "320px",
+                }}
+              >
+                <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25", textAlign: "center" }}>
+                  キーワードから探す
+                </Title>
                 <Container>
                   <Radio.Group name="favoriteFramework" withAsterisk>
                     <Group mt="xs">
-                      <Radio value="react" label="国内旅行" />
-                      <Radio value="svelte" label="日帰り・デイユース" />
-                      <Radio value="ng" label="ANA航空券+宿泊" />
-                      <Radio value="vue" label="JAL航空券+宿泊" />
-                      <Radio value="vue" label="高速バス予約" />
-                      <Radio value="vue" label="レンタカー予約" />
+                      <Radio value="react" label="国内宿泊" />
+                      <Radio value="svelte" label="駅名" />
+                      <Radio value="ng" label="海外ホテル" />
                     </Group>
                   </Radio.Group>
+                  <Space h="md" />
+                  <Flex>
+                    <TextInput
+                      label=""
+                      radius="md"
+                      size="xs"
+                      value={searchWord}
+                      onChange={(e) => setSeachWord(e.target.value)}
+                    />
+                    <Space w="xl" />
+                    <Button
+                      size="xs"
+                      color={"red"}
+                      style={{ border: "1px solid #CCCCCC", borderRadius: "4px", width: "90px" }}
+                      onClick={() => router.push("/" + searchWord)}
+                    >
+                      検索
+                    </Button>
+                  </Flex>
                 </Container>
+                <Space h="xs" />
               </Box>
-              <Space h="xs" />
-              <Container>
-                <Flex>
-                  <Text>チェックイン</Text>
-                  <Input />
-                </Flex>
-              </Container>
-              <Space h="xs" />
-              <Container>
-                <Flex>
-                  <Text>チェックアウト</Text>
-                  <Input />
-                </Flex>
-              </Container>
-              <Space h="xs" />
 
-              <Container>
-                <Flex>
-                  <text>ご利用部屋数</text>
-                  <NumberInput
-                    defaultValue={18}
-                    placeholder=""
-                    label=""
-                    // size="xs"
-                    sx={{ width: "100px" }}
-                  />
-                </Flex>
+              <Space h="lg" />
+
+              <Box
+                sx={{
+                  background: "76AE25",
+                  border: "1px solid #76AE25",
+                  borderRadius: "5px",
+                  width: "320px",
+                  height: "661px",
+                  left: "0px",
+                  top: "122px",
+                }}
+              >
+                <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25", textAlign: "center" }}>
+                  日付から探す
+                </Title>
+                <Box>
+                  <Container>
+                    <Radio.Group name="favoriteFramework" withAsterisk>
+                      <Group mt="xs">
+                        <Radio value="react" label="国内旅行" />
+                        <Space w="xl" />
+                        <Radio value="svelte" label="日帰り/デイユース" />
+                      </Group>
+                      <Group mt="xs">
+                        <Radio value="ng" label="ANA航空券+宿泊" />
+                        <Radio value="vue" label="JAL航空券+宿泊" />
+                      </Group>
+                      <Group mt="xs">
+                        <Radio value="vue" label="高速バス予約" />
+                        <Space w="xs" />
+                        <Radio value="vue" label="レンタカー予約" />
+                      </Group>
+                    </Radio.Group>
+                  </Container>
+                </Box>
+                <Space h="xs" />
+                <Container>
+                  <Text>チェックイン</Text>
+                  <Input placeholder="2023/05/11" size="xs" />
+                </Container>
+                <Space h="xs" />
+                <Container>
+                  <Text>チェックアウト</Text>
+                  <Input placeholder="2023/05/11" size="xs" />
+                </Container>
                 <Space h="xs" />
 
-                <Flex>
+                <Container>
+                  <Flex align={"center"}>
+                    <text>ご利用部屋数</text>
+                    <Space w="xs" />
+                    <NumberInput
+                      defaultValue={18}
+                      placeholder=""
+                      label=""
+                      // size="xs"
+                      sx={{ width: "100px" }}
+                    />
+                  </Flex>
+                  <Space h="xs" />
+
                   <text>1部屋ご利用人数</text>
                   <Flex>
-                    <text>大人</text>
-                    <NumberInput
-                      defaultValue={1}
-                      placeholder=""
+                    <Container>
+                      <Flex align={"center"}>
+                        <text>大人</text>
+                        <Space w="xs" />
+                        <NumberInput
+                          defaultValue={1}
+                          placeholder=""
+                          label=""
+                          // size="xs"
+                          sx={{ width: "70px" }}
+                        />
+                      </Flex>
+                    </Container>
+                    <Container>
+                      <Flex align={"center"}>
+                        <text>子供</text>
+                        <Space w="xs" />
+                        <NumberInput
+                          defaultValue={1}
+                          placeholder=""
+                          label=""
+                          // size="xs"
+                          sx={{ width: "70px" }}
+                        />
+                      </Flex>
+                    </Container>
+                  </Flex>
+                  <Space h="xs" />
+
+                  <Flex align={"center"}>
+                    <text>宿泊地</text>
+                    <Space w="xs" />
+                    <MultiSelect
+                      data={data}
                       label=""
+                      placeholder=""
                       // size="xs"
-                      sx={{ width: "70px" }}
+                      sx={{ width: "150px" }}
                     />
                   </Flex>
-                  <Flex>
-                    <text>子供</text>
-                    <NumberInput
-                      defaultValue={1}
-                      placeholder=""
+                  <Space h="xs" />
+
+                  <text>合計料金（１泊）</text>
+                  <Flex align={"center"}>
+                    <text>下限</text>
+                    <Space w="xs" />
+                    <MultiSelect
+                      data={data_cost}
                       label=""
+                      placeholder=""
                       // size="xs"
-                      sx={{ width: "70px" }}
+                      sx={{ width: "80px" }}
+                    />
+                    <Space w="xs" />
+                    <text>〜上限</text>
+                    <Space w="xs" />
+                    <MultiSelect
+                      data={data_cost}
+                      label=""
+                      placeholder=""
+                      // size="xs"
+                      sx={{ width: "100px" }}
                     />
                   </Flex>
-                </Flex>
-                <Space h="xs" />
+                  <Space h="xs" />
 
-                <Flex>
-                  <text>宿泊地</text>
-                  <MultiSelect
-                    data={data}
-                    label=""
-                    placeholder=""
-                    // size="xs"
-                    sx={{ width: "150px" }}
-                  />
-                </Flex>
-                <Space h="xs" />
-
-                <text>合計料金（１泊）</text>
-                <Flex>
-                  <text>下限</text>
-                  <MultiSelect
-                    data={data_cost}
-                    label=""
-                    placeholder=""
-                    // size="xs"
-                    sx={{ width: "100px" }}
-                  />
-                  <text>〜上限</text>
-                  <MultiSelect
-                    data={data_cost}
-                    label=""
-                    placeholder=""
-                    // size="xs"
-                    sx={{ width: "100px" }}
-                  />
-                </Flex>
-                <Space h="xs" />
-                <Button size="xs" style={{ border: "1px solid #CCCCCC", borderRadius: "4px", width: "90px" }}>
-                  検索
-                </Button>
-              </Container>
-            </Box>
-          </Center>
-        </Grid.Col>
-
-        <Grid.Col span={7}>
-          <Container>
-            <Center>
-              <Box sx={{ background: "#76AE25", height: "30px", width: "1200px" }}>
-                <Title size="20px" style={{ color: "#FFFFFF" }}>
-                  地図から探す
-                </Title>
+                  <Text mt={"md"}>*1部屋あたり消費税込み</Text>
+                  <Flex justify={"flex-end"} mt={"md"}>
+                    <Button color={"red"} style={{ border: "1px solid #CCCCCC", borderRadius: "4px", width: "90px" }}>
+                      検索
+                    </Button>
+                  </Flex>
+                </Container>
               </Box>
-            </Center>
-          </Container>
+            </Grid.Col>
 
-          <Space h="lg" />
-          <Container>
-            <Center>
-              <Image alt={"map"} src={Map} />
-            </Center>
-          </Container>
-          <Space h="lg" />
-          <Container>
-            <SimpleGrid cols={4} spacing="xs">
-              <div>
-                <Box sx={{ border: "1px solid #CCCCCC", borderRadius: "4px", height: "50px", width: "200px" }}>
-                  <Center>
-                    <text>出張</text>
-                  </Center>
-                </Box>
-              </div>
-              <div>
-                <Box sx={{ border: "1px solid #CCCCCC", borderRadius: "4px", height: "50px", width: "200px" }}>
-                  <Center>
-                    <text>駅・空港</text>
-                  </Center>
-                </Box>
-              </div>
-              <div>
-                <Box sx={{ border: "1px solid #CCCCCC", borderRadius: "4px", height: "50px", width: "200px" }}>
-                  <Center>
-                    <text>温泉</text>
-                  </Center>
-                </Box>
-              </div>
-              <div>
-                <Box sx={{ border: "1px solid #CCCCCC", borderRadius: "4px", height: "50px", width: "200px" }}>
-                  <Center>
-                    <text>高級宿</text>
-                  </Center>
-                </Box>
-              </div>
-            </SimpleGrid>
-          </Container>
+            <Grid.Col span={7}>
+              <Container>
+                <Center>
+                  <Box sx={{ background: "#76AE25", height: "30px", width: "1200px", borderRadius: "4px" }}>
+                    <Title size="20px" style={{ color: "#FFFFFF", textAlign: "center" }}>
+                      地図から探す
+                    </Title>
+                  </Box>
+                </Center>
+              </Container>
 
-          <Space h="xl" />
+              <Space h="lg" />
+              <Container>
+                <Center>
+                  <Image alt={"map"} src={Map} />
+                </Center>
+              </Container>
+              <Space h="lg" />
+              <Container>
+                <SimpleGrid cols={4} spacing="xs">
+                  <div>
+                    <Button
+                      className={classes.root}
+                      variant="light"
+                      color="gray"
+                      sx={{
+                        border: "1px solid #CCCCCC",
+                        borderRadius: "4px",
+                        height: "50px",
+                        width: "200px",
+                      }}
+                    >
+                      <Text weight={700} color="dark">
+                        出張
+                      </Text>
+                    </Button>
+                  </div>
+                  <div>
+                    <Button
+                      className={classes.root}
+                      variant="light"
+                      color="gray"
+                      sx={{ border: "1px solid #CCCCCC", borderRadius: "4px", height: "50px", width: "200px" }}
+                    >
+                      <Text weight={700} color="dark">
+                        駅・空港
+                      </Text>
+                    </Button>
+                  </div>
+                  <div>
+                    <Button
+                      className={classes.root}
+                      variant="light"
+                      color="gray"
+                      sx={{ border: "1px solid #CCCCCC", borderRadius: "4px", height: "50px", width: "200px" }}
+                    >
+                      <Text weight={700} color="dark">
+                        温泉
+                      </Text>
+                    </Button>
+                  </div>
+                  <div>
+                    <Button
+                      className={classes.root}
+                      variant="light"
+                      color="gray"
+                      sx={{ border: "1px solid #CCCCCC", borderRadius: "4px", height: "50px", width: "200px" }}
+                    >
+                      <Text weight={700} color={"dark"}>
+                        高級宿
+                      </Text>
+                    </Button>
+                  </div>
+                </SimpleGrid>
+              </Container>
 
-          <Center>
-            <Box sx={{ border: "1px solid #CCCCCC", borderRadius: "4px" }}>
-              <Flex>
-                <Container>
-                  <Title size="20px" style={{ color: "#457F0F" }}>
-                    目的から宿を探す
-                  </Title>
-                  <text>東京ディズニーリゾート</text>
-                  <Space />
-                  <text>ペットと泊まれる宿</text>
-                  <Space />
-                  <text>24時からの予約</text>
-                </Container>
-                <Container>
-                  <Title size="20px" style={{ color: "#457F0F" }}>
-                    カテゴリから宿を探す
-                  </Title>
-                  <SimpleGrid cols={2} spacing="xs">
-                    <div>空港近くの宿</div>
-                    <div>民宿・ペンション</div>
-                    <div>ホテルチェーン</div>
-                    <div>人に優しい宿</div>
-                    <div>家族旅行</div>
-                    <div>日帰り・デイユース</div>
-                  </SimpleGrid>
-                </Container>
-                <Container>
-                  <Title size="20px" style={{ color: "#457F0F" }}>
-                    地名・名称から宿を探す
-                  </Title>
-                  <text>駅・空港名一覧</text>
-                  <Space />
-                  <text>観光スポット名一覧</text>
-                  <Space />
-                </Container>
-                <Container>
-                  <Title size="20px" style={{ color: "#457F0F" }}>
-                    イベントから宿を探す
-                  </Title>
-                  <text>夏祭り・花火大会</text>
-                  <Space />
-                  <text>クリスマスイブ</text>
-                  <Space />
-                  <text>コンサート・ライブ</text>
-                </Container>
-              </Flex>
-            </Box>
-          </Center>
+              <Space h="xl" />
+
+              <Center>
+                <Box sx={{ border: "1px solid #CCCCCC", borderRadius: "4px" }}>
+                  <Flex>
+                    <Container>
+                      <Title size="20px" style={{ color: "#457F0F" }}>
+                        目的から宿を探す
+                      </Title>
+                      <text>東京ディズニーリゾート</text>
+                      <Space />
+                      <text>ペットと泊まれる宿</text>
+                      <Space />
+                      <text>24時からの予約</text>
+                    </Container>
+                    <Container>
+                      <Title size="20px" style={{ color: "#457F0F" }}>
+                        カテゴリから宿を探す
+                      </Title>
+                      <Group>
+                        <text>空港近くの宿</text>
+                        <Space />
+                        <text>民宿・ペンション</text>
+                      </Group>
+                      <Group>
+                        <text>ホテルチェーン</text>
+                        <text>人に優しい宿</text>
+                      </Group>
+                      <Group>
+                        <text>家族旅行</text>
+                        <Space />
+                        <Space />
+                        <Space />
+                        <text>日帰り・デイユース</text>
+                      </Group>
+                    </Container>
+                    <Container>
+                      <Title size="20px" style={{ color: "#457F0F" }}>
+                        地名・名称から宿を探す
+                      </Title>
+                      <text>駅・空港名一覧</text>
+                      <Space />
+                      <text>観光スポット名一覧</text>
+                      <Space />
+                    </Container>
+                    <Container>
+                      <Title size="20px" style={{ color: "#457F0F" }}>
+                        イベントから宿を探す
+                      </Title>
+                      <text>夏祭り・花火大会</text>
+                      <Space />
+                      <text>クリスマスイブ</text>
+                      <Space />
+                      <text>コンサート・ライブ</text>
+                    </Container>
+                  </Flex>
+                </Box>
+              </Center>
+            </Grid.Col>
+
+            <Grid.Col span={"auto"}>
+              <Image alt={"Register"} src={Register} />
+            </Grid.Col>
+          </Grid>
+
+          <Image alt={"Adv2"} src={Adv2} style={{ width: "1712px" }} />
+
+          <Flex>
+            <Image alt={"Adv3"} src={Adv3} />
+
+            <Image alt={"Adv4"} src={Adv4} />
+
+            <Image alt={"Adv5"} src={Adv5} />
+          </Flex>
         </Grid.Col>
 
-        <Flex>
-          <Image alt={"Register"} src={Register} />
+        <Grid.Col span={"auto"}>
           <Image alt={"Adv"} src={Adv} />
-        </Flex>
+        </Grid.Col>
       </Grid>
 
       <Button
@@ -333,7 +420,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "1050px", top: "644px", height: "25px" }}
+        style={{ position: "absolute", left: "950px", top: "644px", height: "25px" }}
         onClick={() => router.push("/SearchPageMetropolitan")}
       >
         首都圏
@@ -343,7 +430,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "1250px", top: "310px", height: "25px" }}
+        style={{ position: "absolute", left: "1150px", top: "310px", height: "25px" }}
       >
         北海道
       </Button>
@@ -352,7 +439,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "1220px", top: "515px", height: "25px" }}
+        style={{ position: "absolute", left: "1110px", top: "515px", height: "25px" }}
       >
         東北
       </Button>
@@ -361,7 +448,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "1000px", top: "545px", height: "25px" }}
+        style={{ position: "absolute", left: "900px", top: "545px", height: "25px" }}
       >
         北陸
       </Button>
@@ -370,7 +457,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "1129px", top: "690px", height: "25px" }}
+        style={{ position: "absolute", left: "1029px", top: "710px", height: "25px" }}
       >
         北関東
       </Button>
@@ -379,7 +466,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "970px", top: "670px", height: "25px" }}
+        style={{ position: "absolute", left: "870px", top: "670px", height: "25px" }}
       >
         伊豆・箱根
       </Button>
@@ -388,7 +475,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "920px", top: "620px", height: "25px" }}
+        style={{ position: "absolute", left: "820px", top: "620px", height: "25px" }}
       >
         甲信越
       </Button>
@@ -397,7 +484,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "920px", top: "670px", height: "25px" }}
+        style={{ position: "absolute", left: "820px", top: "670px", height: "25px" }}
       >
         東海
       </Button>
@@ -406,7 +493,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "870px", top: "600px", height: "25px" }}
+        style={{ position: "absolute", left: "770px", top: "600px", height: "25px" }}
       >
         近畿
       </Button>
@@ -415,7 +502,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "740px", top: "615px", height: "25px" }}
+        style={{ position: "absolute", left: "640px", top: "615px", height: "25px" }}
       >
         山陽・山陰
       </Button>
@@ -424,7 +511,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "770px", top: "730px", height: "25px" }}
+        style={{ position: "absolute", left: "670px", top: "730px", height: "25px" }}
       >
         四国
       </Button>
@@ -433,7 +520,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "630px", top: "575px", height: "25px" }}
+        style={{ position: "absolute", left: "530px", top: "575px", height: "25px" }}
       >
         九州
       </Button>
@@ -442,7 +529,7 @@ export default function Home() {
         radius="xl"
         size="xs"
         compact
-        style={{ position: "absolute", left: "560px", top: "760px", height: "25px" }}
+        style={{ position: "absolute", left: "460px", top: "760px", height: "25px" }}
       >
         沖縄
       </Button>
