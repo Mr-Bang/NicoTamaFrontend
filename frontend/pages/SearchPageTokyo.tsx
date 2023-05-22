@@ -30,10 +30,6 @@ export default function Home() {
 
   const { classes } = useStyles()
 
-  function onClickAreaButton(area: string) {
-    router.push("/" + area)
-  }
-
   const areaInfoList = [
     { name: "板橋", top: "411px", left: "753px", area: "北西部" },
     { name: "練馬", top: "450px", left: "620px", area: "北西部" },
@@ -113,7 +109,7 @@ export default function Home() {
   ]
 
   return (
-    <div>
+    <>
       <Text></Text>
       <Title>東京２３区</Title>
       <Space h={"xl"} />
@@ -131,11 +127,10 @@ export default function Home() {
                 地域名から探す
               </Title>
               <Container>
-                <div>
+                <>
                   {area23InfoList.map((area23Info, index) => (
-                    <div>
+                    <div key={index}>
                       <Anchor
-                        key={index}
                         className={classes.root3}
                         variant="default"
                         component="a"
@@ -145,7 +140,7 @@ export default function Home() {
                       </Anchor>
                     </div>
                   ))}
-                </div>
+                </>
               </Container>
             </Box>
 
@@ -165,9 +160,8 @@ export default function Home() {
               <Container>
                 <SimpleGrid cols={2} verticalSpacing="xs">
                   {stationInfoList.map((stationInfo, index) => (
-                    <div>
+                    <div key={index}>
                       <Anchor
-                        key={index}
                         className={classes.root3}
                         variant="default"
                         component="a"
@@ -194,9 +188,8 @@ export default function Home() {
               <Container>
                 <SimpleGrid cols={2} verticalSpacing="xs">
                   {popularInfoList.map((popularInfo, index) => (
-                    <div>
+                    <div key={index}>
                       <Anchor
-                        key={index}
                         className={classes.root3}
                         variant="default"
                         component="a"
@@ -256,6 +249,6 @@ export default function Home() {
           {area23Info.name}
         </Text>
       ))}
-    </div>
+    </>
   )
 }
