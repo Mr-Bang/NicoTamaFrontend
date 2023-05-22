@@ -15,13 +15,35 @@ import {
   Text,
   Button,
   Checkbox,
+  createStyles,
 } from "@mantine/core"
 import Adv5 from "../public/advertizements5.svg"
 import Map from "../public/mapsyutoken.png"
-import spBox from "../public/spBox.svg"
+import PRbox from "../public/PRbox.svg"
+import PRbox2 from "../public/PRbox2.svg"
+import PRbox3 from "../public/PRbox3.svg"
+import PRbox4 from "../public/PRbox4.svg"
+import PRbox5 from "../public/PRbox5.svg"
+import PRbox6 from "../public/PRbox6.svg"
+import PRbox7 from "../public/PRbox7.svg"
+import PRbox8 from "../public/PRbox8.svg"
+
+import PR from "../public/PR.svg"
+import PR2 from "../public/PR2.svg"
 
 export default function A() {
   const router = useRouter()
+
+  const useStyles = createStyles((theme) => ({
+    root: {
+      "&:not([data-disabled])": theme.fn.hover({
+        backgroundColor: theme.fn.darken("#EAEAEA", 0.05),
+        border: 0,
+      }),
+    },
+  }))
+
+  const { classes } = useStyles()
 
   return (
     <div>
@@ -156,46 +178,132 @@ export default function A() {
                     </Container>
                   </Container>
                 </Box>
+                <Space h="xl" />
+                <Flex>
+                  <Image alt={"PR2"} src={PR2} />
+                  <Space w="md" />
+                  <Image alt={"PR"} src={PR} />
+                </Flex>
               </Container>
 
               <Container>
-                <Title
-                  size="20px"
-                  sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
-                >
-                  首都圏 おすすめ特集
-                </Title>
+                <Box style={{ width: "930px" }}>
+                  <Text
+                    size="20px"
+                    weight="700"
+                    sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
+                  >
+                    首都圏 おすすめ特集
+                  </Text>
+                </Box>
+                <Space h="xs" />
                 <Flex>
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
+                  <Image width={170} height={192.5} alt={"PRbox"} src={PRbox} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox2"} src={PRbox2} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox3"} src={PRbox3} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox4"} src={PRbox4} /> <Space w="xs" />
                 </Flex>
-                <Title
-                  size="20px"
-                  sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
-                >
-                  首都圏の遊び・体験
-                </Title>
+                <Space h="xs" />
+                <Box style={{ width: "930px" }}>
+                  <Text
+                    size="20px"
+                    weight="700"
+                    sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
+                  >
+                    首都圏の遊び・体験
+                  </Text>
+                </Box>
+                <Space h="xs" />
                 <Flex>
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
+                  <Button
+                    variant="light"
+                    color="gray"
+                    className={classes.root}
+                    component="a"
+                    sx={{
+                      border: "1px solid #CCCCCC",
+                      borderRadius: "4px",
+                      height: "50px",
+                      width: "170px",
+                    }}
+                  >
+                    <Text weight={700} color="dark">
+                      埼玉の遊び・体験
+                    </Text>
+                  </Button>
+                  <Space w="xs" />
+                  <Button
+                    variant="light"
+                    color="gray"
+                    className={classes.root}
+                    component="a"
+                    sx={{
+                      border: "1px solid #CCCCCC",
+                      borderRadius: "4px",
+                      height: "50px",
+                      width: "170px",
+                    }}
+                  >
+                    <Text weight={700} color="dark">
+                      千葉の遊び・体験
+                    </Text>
+                  </Button>{" "}
+                  <Space w="xs" />
+                  <Button
+                    variant="light"
+                    color="gray"
+                    className={classes.root}
+                    component="a"
+                    sx={{
+                      border: "1px solid #CCCCCC",
+                      borderRadius: "4px",
+                      height: "50px",
+                      width: "170px",
+                    }}
+                  >
+                    <Text weight={700} color="dark">
+                      東京の遊び・体験
+                    </Text>
+                  </Button>{" "}
+                  <Space w="xs" />
+                  <Button
+                    variant="light"
+                    color="gray"
+                    className={classes.root}
+                    component="a"
+                    sx={{
+                      border: "1px solid #CCCCCC",
+                      borderRadius: "4px",
+                      height: "50px",
+                      width: "170px",
+                    }}
+                  >
+                    <Text weight={700} color="dark">
+                      神奈川の遊び・体験
+                    </Text>
+                  </Button>{" "}
+                  <Space w="xs" />
                 </Flex>
-                <Title
-                  size="20px"
-                  sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
-                >
-                  首都圏 注目観光スポット
-                </Title>
+                <Space h="xs" />
+
+                <Box style={{ width: "930px" }}>
+                  <Text
+                    size="20px"
+                    weight="700"
+                    sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
+                  >
+                    首都圏 注目観光スポット
+                  </Text>
+                </Box>
+                <Space h="xs" />
                 <Flex>
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
-                  <Image width={170} height={192.5} alt={"spBox"} src={spBox} />
+                  <Image width={170} height={192.5} alt={"PRbox5"} src={PRbox5} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox6"} src={PRbox6} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox7"} src={PRbox7} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox8"} src={PRbox8} /> <Space w="xs" />
                 </Flex>
               </Container>
+
               <Image alt={"Adv5"} src={Adv5} />
             </Flex>
           </Container>
