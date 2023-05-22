@@ -2,7 +2,6 @@ import { Hotel } from "@/types/hotel"
 import { RoomList } from "@/types/roomList"
 import { Button, Group, createStyles, rem } from "@mantine/core"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -32,10 +31,6 @@ export default function HotelTab(props: Props) {
   const router = useRouter()
   const path = router.pathname
   const { hotel, rooms } = props
-
-  useEffect(() => {
-    console.log(path)
-  })
 
   return (
     <Group position='center'>

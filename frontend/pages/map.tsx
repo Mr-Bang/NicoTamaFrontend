@@ -1,9 +1,10 @@
 import HotelTab from "@/components/hotel/HotelTab"
+import HotelBreadcrumb from "@/components/hotel/HotelBreadcrumb"
 import ActivityList from "@/components/map/ActivityList"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
-import { Anchor, Breadcrumbs, Box, Grid, Title, Text } from "@mantine/core"
+import { Box, Grid, Title } from "@mantine/core"
 import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
@@ -60,26 +61,6 @@ export default function Map(props: Props) {
     region: query.region as string,
   }
 
-  const area = hotel.region
-  const hotelName = hotel.name
-  const breadcrumbs = [
-    { name: "楽天トラベルトップ", href: "/" },
-    { name: "首都圏", href: "/SearchPageMetropolitan" },
-    { name: "東京23区", href: "/SearchPageTokyo" },
-    { name: area, href: "/" + area },
-    { name: hotelName },
-  ].map((breadcrumb, index) =>
-    breadcrumb.href ? (
-      <Anchor href={breadcrumb.href} key={index}>
-        {breadcrumb.name}
-      </Anchor>
-    ) : (
-      <Text fw={700} key={index}>
-        {breadcrumb.name}
-      </Text>
-    )
-  )
-
   const roomList = query.roomList ? JSON.parse(query.roomList) : []
 
   const Markers = activityList.map((activity, index) => (
@@ -93,16 +74,14 @@ export default function Map(props: Props) {
 
   return (
     <>
-      <Breadcrumbs separator='>' mt='xs'>
-        {breadcrumbs}
-      </Breadcrumbs>
+      <HotelBreadcrumb hotel={hotel} />
       <Box
         sx={(theme) => ({
           textAlign: "left",
           padding: theme.spacing.xl,
         })}
       >
-        <Title order={2}>{hotelName}</Title>
+        <Title order={2}>{hotel.name}</Title>
       </Box>
       <Grid>
         <Grid.Col span={2}>
