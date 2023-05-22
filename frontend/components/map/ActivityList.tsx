@@ -1,4 +1,5 @@
 import {
+  Box,
   createStyles,
   Card,
   Image,
@@ -7,11 +8,10 @@ import {
   Stack,
   ScrollArea,
   Center,
-  UnstyledButton,
-  SimpleGrid,
+  MantineTheme,
+  rem
 } from "@mantine/core"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -20,7 +20,7 @@ const useStyles = createStyles((theme) => ({
 
     "&:hover": {
       boxShadow: theme.shadows.md,
-      transform: "scale(1.05)",
+      transform: "scale(1.03)",
     },
   },
 
@@ -48,34 +48,44 @@ export default function ActivityList(props: Props) {
   const router = useRouter()
 
   const cards = activityList.map((activity, index) => (
-    <UnstyledButton key={index} className={classes.card}>
-      <Card
-        key={index}
-        component='a'
-        className={classes.card}
-        onClick={() => router.push(activity.url)}
-        shadow='sm'
-        padding='lg'
-        radius='md'
-        withBorder
-      >
-        <AspectRatio ratio={1920 / 1080}>
-          <Image src={activity.image} fit={"contain"} />
-        </AspectRatio>
+    <Card
+      key={index}
+      p='md'
+      radius='md'
+      component='a'
+      href='#'
+      className={classes.card}
+      onClick={() => router.push(activity.url)}
+    >
+      <AspectRatio ratio={1920 / 1080}>
+        <Image src={activity.image} alt={activity.name} fit={"contain"} />
+      </AspectRatio>
 
-        <Text className={classes.title} mt={5}>
-          {activity.name}
-        </Text>
-        <Text size='xs' weight={700} mt='md' align='end'>
-          ¥ {activity.price.toLocaleString()}
-        </Text>
-      </Card>
-    </UnstyledButton>
+      <Text className={classes.title} mt={5}>
+        {activity.name}
+      </Text>
+      <Text color='dimmed' size='xs' transform='uppercase' weight={700} mt='md'>
+        ¥ {activity.price.toLocaleString()}
+      </Text>
+    </Card>
   ))
 
   return (
-    <ScrollArea h={"100vh"} mt={42}>
-      <SimpleGrid cols={1}>{cards}</SimpleGrid>
-    </ScrollArea>
-  )
+    <Box
+      sx={(theme: MantineTheme) => ({
+        height: "105vh",
+        width: 400,
+        border: `${rem(2)} solid #73AB23`,
+        borderRadius: theme.radius.md,
+        boxShadow: theme.shadows.md,
+	padding: theme.spacing.xl,
+      })}
+    >
+      <Center>
+        <ScrollArea h={"100vh"} type="hover" w={450}>
+          <Stack>{cards}</Stack>
+        </ScrollArea>
+      </Center>
+    </Box>
+  ) 
 }

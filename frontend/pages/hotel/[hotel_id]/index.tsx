@@ -1,10 +1,10 @@
 import MapLeftBar from "@/components/map/MapLeftBar"
-import { Breadcrumbs, Anchor, Box, Center, Grid, Text, Title } from "@mantine/core"
+import { Box, Center, Grid, Title } from "@mantine/core"
 import HotelTab from "@/components/hotel/HotelTab"
 import HotelContent from "@/components/hotel/HotelContent"
+import HotelBreadcrumb from "@/components/hotel/HotelBreadcrumb"
 import { GetServerSidePropsContext } from "next"
 import { Hotel } from "@/types/hotel"
-import { Area, areaDetail } from "@/types/area"
 
 type Props = {
   query: {
@@ -32,38 +32,18 @@ export default function Hotel(props: Props) {
     region: query.region as string,
   }
 
-  const area = hotel.region as Area
-  const hotelName = hotel.name
-  const breadcrumbs = [
-    { name: "楽天トラベルトップ", href: "/" },
-    { name: "首都圏", href: "/SearchPageMetropolitan" },
-    { name: "東京23区", href: "/SearchPageTokyo" },
-    { name: areaDetail[area] },
-  ].map((breadcrumb, index) =>
-    breadcrumb.href ? (
-      <Anchor href={breadcrumb.href} key={index}>
-        {breadcrumb.name}
-      </Anchor>
-    ) : (
-      <Text fw={700} key={index}>
-        {breadcrumb.name}
-      </Text>
-    )
-  )
   const roomList = query.roomList ? JSON.parse(query.roomList) : []
 
   return (
     <>
-      <Breadcrumbs separator='>' mt='xs'>
-        {breadcrumbs}
-      </Breadcrumbs>
+      <HotelBreadcrumb hotel={hotel} />
       <Box
         sx={(theme) => ({
           textAlign: "left",
           padding: theme.spacing.xl,
         })}
       >
-        <Title order={2}>{hotelName}</Title>
+        <Title order={2}>{hotel.name}</Title>
       </Box>
       <Grid>
         <Grid.Col span='auto'>
@@ -76,7 +56,7 @@ export default function Hotel(props: Props) {
           </Center>
         </Grid.Col>
         <Grid.Col span='auto'>
-          <Box sx={{ width: 300 }}></Box>
+          <Box sx={{ width: 400 }}></Box>
         </Grid.Col>
       </Grid>
     </>
