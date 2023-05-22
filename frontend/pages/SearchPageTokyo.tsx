@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import Image from "next/image"
-import { Box, Title, Grid, Container, Space, Text, SimpleGrid, Button, createStyles, rem, Anchor } from "@mantine/core"
+import { Box, Breadcrumbs, Title, Grid, Container, Space, Text, SimpleGrid, Button, createStyles, rem, Anchor } from "@mantine/core"
 import mapoftokyo from "../public/mapoftokyo.svg"
 
 export default function Home() {
@@ -108,11 +108,35 @@ export default function Home() {
     { name: "国営昭和記念公園" },
   ]
 
+  const breadcrumbs = [
+    { name: "楽天トラベルトップ", href: "/" },
+    { name: "首都圏", href: "/SearchPageMetropolitan" },
+    { name: "東京23区" },
+  ].map((breadcrumb, index) =>
+    breadcrumb.href ? (
+      <Anchor href={breadcrumb.href} key={index}>
+        {breadcrumb.name}
+      </Anchor>
+    ) : (
+      <Text fw={700} key={index}>
+        {breadcrumb.name}
+      </Text>
+    )
+  )
+
   return (
     <>
-      <Text></Text>
-      <Title>東京２３区</Title>
-      <Space h={"xl"} />
+      <Breadcrumbs separator='>' mt='xs'>
+        {breadcrumbs}
+      </Breadcrumbs>
+      <Box
+        sx={(theme) => ({
+          textAlign: "left",
+          padding: theme.spacing.xl,
+        })}
+      >
+        <Title order={1}>東京23区</Title>
+      </Box>
       <Grid>
         <Grid.Col span="auto">
           <Container>
