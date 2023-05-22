@@ -4,10 +4,12 @@ import ActivityList from "@/components/map/ActivityList"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
-import { Box, Grid, Title } from "@mantine/core"
-import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api"
+import { Anchor, Box, Breadcrumbs, Center, Grid, Text, Title } from "@mantine/core"
+import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
+import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
+import { Area, areaDetail } from "@/types/area"
 
 const containerStyle = {
   width: "100%",
@@ -71,9 +73,26 @@ export default function Map(props: Props) {
     </>
   ))
 
+  const breadcrumbs = [
+    { name: "楽天トラベルトップ", href: "/" },
+    { name: "首都圏", href: "/SearchPageMetropolitan" },
+    { name: "東京23区", href: "/SearchPageTokyo" },
+    { name: areaDetail[hotel.region as Area] },
+  ].map((breadcrumb, index) =>
+    breadcrumb.href ? (
+      <Anchor href={breadcrumb.href} key={index}>
+        {breadcrumb.name}
+      </Anchor>
+    ) : (
+      <Text key={index}>{breadcrumb.name}</Text>
+    )
+  )
+
   return (
     <>
-      <HotelBreadcrumb hotel={hotel} />
+      <Breadcrumbs separator='>' mt='xs'>
+        {breadcrumbs}
+      </Breadcrumbs>
       <Box
         sx={(theme) => ({
           textAlign: "left",
@@ -83,42 +102,43 @@ export default function Map(props: Props) {
         <Title order={2}>{hotel.name}</Title>
       </Box>
       <Grid>
-        <Grid.Col span={2}>
+        <Grid.Col span='auto'>
           <MapLeftBar />
-	</Grid.Col>
+        </Grid.Col>
         <Grid.Col span={7}>
           <HotelTab hotel={hotel} rooms={roomList} />
-          {isLoaded && center ? (
-            <GoogleMap
-              mapContainerStyle={containerStyle}
-              center={{ lat: hotel.latitude, lng: hotel.longitude }}
-              zoom={13}
-            >
-              <MarkerF
-                position={{ lat: hotel.latitude, lng: hotel.longitude }}
-                icon={{
-                  path: faHotel.icon[4] as string,
-                  fillColor: "#ff0066",
-                  fillOpacity: 1,
-                  anchor: new google.maps.Point(
-                    faHotel.icon[0] / 2, // width
-                    faHotel.icon[1] // height
-                  ),
-                  strokeWeight: 1,
-                  strokeColor: "#ffffff",
-                  scale: 0.055,
-                }}
-              />
-
-              {Markers}
-            </GoogleMap>
-          ) : (
-            <></>
-          )}
+          <Center>
+            {isLoaded && center ? (
+              <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={{ lat: hotel.latitude, lng: hotel.longitude }}
+                zoom={13}
+              >
+                <MarkerF
+                  position={{ lat: hotel.latitude, lng: hotel.longitude }}
+                  icon={{
+                    path: faHotel.icon[4] as string,
+                    fillColor: "#ff0066",
+                    fillOpacity: 1,
+                    anchor: new google.maps.Point(
+                      faHotel.icon[0] / 2, // width
+                      faHotel.icon[1] // height
+                    ),
+                    strokeWeight: 1,
+                    strokeColor: "#ffffff",
+                    scale: 0.055,
+                  }}
+                />
+                {Markers}
+              </GoogleMap>
+            ) : (
+              <></>
+            )}
+          </Center>
         </Grid.Col>
         <Grid.Col span='auto'>
           <ActivityList activityList={activityList} />
-	</Grid.Col>
+        </Grid.Col>
       </Grid>
     </>
   )

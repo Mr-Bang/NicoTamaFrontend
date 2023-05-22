@@ -5,7 +5,8 @@ export default function MapLeftBar() {
     <Box
       sx={(theme: MantineTheme) => ({
         height: "100vh",
-        width: 300,
+        width: 350,
+        minWidth: 350,
         border: `${rem(2)} solid #73AB23`,
         borderRadius: theme.radius.md,
         boxShadow: theme.shadows.md,

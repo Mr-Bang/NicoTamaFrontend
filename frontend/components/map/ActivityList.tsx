@@ -1,13 +1,26 @@
-import { Box, Center, rem, MantineTheme, createStyles, Card, Image, Text, AspectRatio, Stack, ScrollArea } from "@mantine/core"
+import {
+  Box,
+  createStyles,
+  Card,
+  Image,
+  Text,
+  AspectRatio,
+  Stack,
+  ScrollArea,
+  Center,
+  MantineTheme,
+  rem
+} from "@mantine/core"
 import { useRouter } from "next/router"
 
 const useStyles = createStyles((theme) => ({
   card: {
-    transition: "transform 150ms ease, box-shadow 150ms ease",
+    borderRadius: theme.radius.md,
+    transition: "box-shadow 150ms ease, transform 100ms ease",
 
     "&:hover": {
-      transform: "scale(1.01)",
       boxShadow: theme.shadows.md,
+      transform: "scale(1.01)",
     },
   },
 
@@ -60,12 +73,12 @@ export default function ActivityList(props: Props) {
   return (
     <Box
       sx={(theme: MantineTheme) => ({
-        height: "100vh",
-        width: 455,
+        height: "105vh",
+        width: 400,
         border: `${rem(2)} solid #73AB23`,
         borderRadius: theme.radius.md,
         boxShadow: theme.shadows.md,
-	padding: theme.spacing.sm,
+	padding: theme.spacing.xl,
       })}
     >
       <Center>
@@ -74,5 +87,5 @@ export default function ActivityList(props: Props) {
         </ScrollArea>
       </Center>
     </Box>
-  )
+  ) 
 }
