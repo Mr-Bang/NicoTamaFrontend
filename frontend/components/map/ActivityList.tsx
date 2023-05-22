@@ -9,9 +9,12 @@ import {
   ScrollArea,
   Center,
   MantineTheme,
-  rem
+  rem,
+  Flex,
 } from "@mantine/core"
 import { useRouter } from "next/router"
+import NextImage from "next/image"
+import HealthIcon from "../../public/rakuten_healthcare_icon.png"
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -31,6 +34,11 @@ const useStyles = createStyles((theme) => ({
 }))
 
 interface Props {
+  distanceList: {
+    text: string
+    value: number
+    durationText: string
+  }[]
   activityList: {
     name: string
     price: number
@@ -44,7 +52,7 @@ interface Props {
 
 export default function ActivityList(props: Props) {
   const { classes } = useStyles()
-  const { activityList } = props
+  const { activityList, distanceList } = props
   const router = useRouter()
 
   const cards = activityList.map((activity, index) => (
@@ -64,9 +72,23 @@ export default function ActivityList(props: Props) {
       <Text className={classes.title} mt={5}>
         {activity.name}
       </Text>
-      <Text color='dimmed' size='xs' transform='uppercase' weight={700} mt='md'>
+      <Text color='dimmed' size='sm' transform='uppercase' weight={700} mt='md'>
         ¥ {activity.price.toLocaleString()}
       </Text>
+      {distanceList.length > 0 && (
+        <Flex justify={"flex-end"} align={"center"}>
+          <NextImage src={HealthIcon} width={20} height={20} alt={""} />
+          <Text className={classes.title} p={5}>
+            {Math.round(distanceList[index].value / 0.6)}歩
+          </Text>
+          <Text color='dimmed' size='sm' p={5}>
+            {distanceList[index].text}
+          </Text>
+          <Text color='dimmed' size='sm' p={5}>
+            {distanceList[index].durationText}
+          </Text>
+        </Flex>
+      )}
     </Card>
   ))
 
@@ -78,14 +100,14 @@ export default function ActivityList(props: Props) {
         border: `${rem(2)} solid #73AB23`,
         borderRadius: theme.radius.md,
         boxShadow: theme.shadows.md,
-	padding: theme.spacing.xl,
+        padding: theme.spacing.xl,
       })}
     >
       <Center>
-        <ScrollArea h={"100vh"} type="hover" w={450}>
+        <ScrollArea h={"100vh"} type='hover' w={450}>
           <Stack>{cards}</Stack>
         </ScrollArea>
       </Center>
     </Box>
-  ) 
+  )
 }

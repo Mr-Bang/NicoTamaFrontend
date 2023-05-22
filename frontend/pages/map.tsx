@@ -9,6 +9,8 @@ import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
+import { calcDistance } from "@/services/calcDistance"
+import { useEffect, useState } from "react"
 
 const containerStyle = {
   width: "100%",
@@ -72,6 +74,41 @@ export default function Map(props: Props) {
     </>
   ))
 
+  const destinations = activityList.map((activity) => ({
+    lat: activity.latitude,
+    lng: activity.longitude,
+  }))
+
+  const [distanceList, setDistanceList] = useState<
+    {
+      text: string
+      value: number
+      durationText: string
+    }[]
+  >([])
+
+  async function getDistanceList() {
+    // 計算量すごいから、DEMOのときだけ有効にする (使う時相談して！！)
+    //   const distances = await calcDistance({
+    //     origin: [{ lat: hotel.latitude, lng: hotel.longitude }],
+    //     destinations: destinations,
+    //   })
+    //   setDistanceList(distances.distanceList)
+    //   console.log(distances.distanceList)
+
+    const objects = activityList.map((activity) => ({
+      durationText: "7 mins",
+      text: "0.5 km",
+      value: 501,
+    }))
+    setDistanceList(objects)
+  }
+
+  useEffect(() => {
+    if (!isLoaded) return
+    getDistanceList()
+  }, [isLoaded])
+
   return (
     <>
       <HotelBreadcrumb hotel={hotel} />
@@ -119,7 +156,7 @@ export default function Map(props: Props) {
           </Center>
         </Grid.Col>
         <Grid.Col span='auto'>
-          <ActivityList activityList={activityList} />
+          <ActivityList activityList={activityList} distanceList={distanceList} />
         </Grid.Col>
       </Grid>
     </>
