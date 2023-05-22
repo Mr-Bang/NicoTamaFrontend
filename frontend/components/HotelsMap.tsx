@@ -1,9 +1,8 @@
-import { Box, Flex } from "@mantine/core"
-import { MarkerF, Marker, useJsApiLoader } from "@react-google-maps/api"
+import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
-import { useEffect } from "react"
 import { ActivityList } from "@/types/activityList"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
+import { SimpleMapStyle } from "@/components/map/SimpleMapStyle"
 
 const containerStyle = {
   width: "100%",
@@ -42,6 +41,10 @@ const areaCenter: {
 }
 
 const googleMapsApiKey: string = process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string
+
+const SimpleMapOptions = {
+  styles: SimpleMapStyle,
+}
 
 interface Props {
   hotelList: {
@@ -91,7 +94,12 @@ export default function HotelsMap(props: Props) {
   return (
     <>
       {isLoaded ? (
-        <GoogleMap mapContainerStyle={containerStyle} center={areaCenter[hotelList[0].region]} zoom={13}>
+        <GoogleMap
+	  mapContainerStyle={containerStyle}
+	  center={areaCenter[hotelList[0].region]}
+	  zoom={13}
+	  options={SimpleMapOptions}
+	>
           {Markers2}
           {Markers}
         </GoogleMap>
