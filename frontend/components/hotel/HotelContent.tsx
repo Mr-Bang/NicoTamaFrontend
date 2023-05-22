@@ -45,7 +45,16 @@ export default function SampleHotel(props: Props) {
                   予約する
                 </Button>
               ) : (
-                ""
+                <Button
+                  data-disabled
+		  variant='outline'
+		  fullWidth
+		  mt='md' radius='md'
+                  sx={{ '&[data-disabled]': { pointerEvents: 'all' } }}
+                  onClick={(event) => event.preventDefault()}
+                >
+                  予約する
+                </Button>
               )}
             </Card>
           </Grid.Col>
