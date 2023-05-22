@@ -3,7 +3,7 @@ import ActivityList from "@/components/map/ActivityList"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
-import { Box, Container, Flex, Title } from "@mantine/core"
+import { Anchor, Breadcrumbs, Box, Grid, Title, Text } from "@mantine/core"
 import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
@@ -60,7 +60,26 @@ export default function Map(props: Props) {
     region: query.region as string,
   }
 
-  // クエリパラメータをパースしてリストに変換
+  const area = hotel.region
+  const hotelName = hotel.name
+  const breadcrumbs = [
+    { name: "楽天トラベルトップ", href: "/" },
+    { name: "首都圏", href: "/SearchPageMetropolitan" },
+    { name: "東京23区", href: "/SearchPageTokyo" },
+    { name: area, href: "/" + area },
+    { name: hotelName },
+  ].map((breadcrumb, index) =>
+    breadcrumb.href ? (
+      <Anchor href={breadcrumb.href} key={index}>
+        {breadcrumb.name}
+      </Anchor>
+    ) : (
+      <Text fw={700} key={index}>
+        {breadcrumb.name}
+      </Text>
+    )
+  )
+
   const roomList = query.roomList ? JSON.parse(query.roomList) : []
 
   const Markers = activityList.map((activity, index) => (
@@ -74,45 +93,55 @@ export default function Map(props: Props) {
 
   return (
     <>
-      <Container fluid>
-        <Title order={2}>{hotel.name}</Title>
-      </Container>
-      <HotelTab hotel={hotel} rooms={roomList} />
-      <Flex>
-        <MapLeftBar />
-        <Box sx={{ width: 100 }} />
+      <Breadcrumbs separator='>' mt='xs'>
+        {breadcrumbs}
+      </Breadcrumbs>
+      <Box
+        sx={(theme) => ({
+          textAlign: "left",
+          padding: theme.spacing.xl,
+        })}
+      >
+        <Title order={2}>{hotelName}</Title>
+      </Box>
+      <Grid>
+        <Grid.Col span='auto'>
+          <MapLeftBar />
+	</Grid.Col>
+        <Grid.Col span={7}>
+          <HotelTab hotel={hotel} rooms={roomList} />
+          {isLoaded && center ? (
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={{ lat: hotel.latitude, lng: hotel.longitude }}
+              zoom={13}
+            >
+              <MarkerF
+                position={{ lat: hotel.latitude, lng: hotel.longitude }}
+                icon={{
+                  path: faHotel.icon[4] as string,
+                  fillColor: "#ff0066",
+                  fillOpacity: 1,
+                  anchor: new google.maps.Point(
+                    faHotel.icon[0] / 2, // width
+                    faHotel.icon[1] // height
+                  ),
+                  strokeWeight: 1,
+                  strokeColor: "#ffffff",
+                  scale: 0.055,
+                }}
+              />
 
-        {isLoaded && center ? (
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={{ lat: hotel.latitude, lng: hotel.longitude }}
-            zoom={13}
-          >
-            <MarkerF
-              position={{ lat: hotel.latitude, lng: hotel.longitude }}
-              icon={{
-                path: faHotel.icon[4] as string,
-                fillColor: "#ff0066",
-                fillOpacity: 1,
-                anchor: new google.maps.Point(
-                  faHotel.icon[0] / 2, // width
-                  faHotel.icon[1] // height
-                ),
-                strokeWeight: 1,
-                strokeColor: "#ffffff",
-                scale: 0.055,
-              }}
-            />
-
-            {Markers}
-          </GoogleMap>
-        ) : (
-          <></>
-        )}
-        <Box sx={{ width: 100 }} />
-
-        <ActivityList activityList={activityList} />
-      </Flex>
+              {Markers}
+            </GoogleMap>
+          ) : (
+            <></>
+          )}
+        </Grid.Col>
+        <Grid.Col span='auto'>
+          <ActivityList activityList={activityList} />
+	</Grid.Col>
+      </Grid>
     </>
   )
 }
