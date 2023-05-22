@@ -119,11 +119,11 @@ export default function A() {
                           </Center>
                           <Flex align={"center"}>
                             <Text size="12px">大人</Text>
-                            <NumberInput defaultValue={18} placeholder="" size="xs" sx={{ width: "60px" }} required />
+                            <NumberInput defaultValue={0} placeholder="" size="xs" sx={{ width: "60px" }} required />
                             <Text ml={"xs"} size="12px">
                               子供
                             </Text>
-                            <NumberInput defaultValue={18} placeholder="" size="xs" sx={{ width: "60px" }} required />
+                            <NumberInput defaultValue={0} placeholder="" size="xs" sx={{ width: "60px" }} required />
                           </Flex>
                         </Container>
                         <Container>
