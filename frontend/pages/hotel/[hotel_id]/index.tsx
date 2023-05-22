@@ -76,7 +76,7 @@ export default function Hotel(props: Props) {
           </Center>
         </Grid.Col>
         <Grid.Col span='auto'>
-          <Box sx={{ width: 300 }}></Box>
+          <Box sx={{ width: 450 }}></Box>
         </Grid.Col>
       </Grid>
     </>

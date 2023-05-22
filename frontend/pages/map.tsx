@@ -105,7 +105,7 @@ export default function Map(props: Props) {
         <Title order={2}>{hotelName}</Title>
       </Box>
       <Grid>
-        <Grid.Col span='auto'>
+        <Grid.Col span={2}>
           <MapLeftBar />
 	</Grid.Col>
         <Grid.Col span={7}>

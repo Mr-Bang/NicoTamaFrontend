@@ -58,7 +58,7 @@ export default function ActivityList(props: Props) {
   ))
 
   return (
-    <ScrollArea h={"100vh"} w={400}>
+    <ScrollArea h={"100vh"} w={450}>
       <Stack>{cards}</Stack>
     </ScrollArea>
   )
