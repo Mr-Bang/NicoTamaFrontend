@@ -4,6 +4,7 @@ import HotelTab from "@/components/hotel/HotelTab"
 import HotelContent from "@/components/hotel/HotelContent"
 import { GetServerSidePropsContext } from "next"
 import { Hotel } from "@/types/hotel"
+import { Area, areaDetail } from "@/types/area"
 
 type Props = {
   query: {
@@ -31,14 +32,13 @@ export default function Hotel(props: Props) {
     region: query.region as string,
   }
 
-  const area = hotel.region
+  const area = hotel.region as Area
   const hotelName = hotel.name
   const breadcrumbs = [
     { name: "楽天トラベルトップ", href: "/" },
     { name: "首都圏", href: "/SearchPageMetropolitan" },
     { name: "東京23区", href: "/SearchPageTokyo" },
-    { name: area, href: "/" + area },
-    { name: hotelName },
+    { name: areaDetail[area] },
   ].map((breadcrumb, index) =>
     breadcrumb.href ? (
       <Anchor href={breadcrumb.href} key={index}>

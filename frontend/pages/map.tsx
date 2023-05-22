@@ -3,12 +3,13 @@ import ActivityList from "@/components/map/ActivityList"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
-import { Box, Container, Flex, SimpleGrid, Title } from "@mantine/core"
+import { Anchor, Box, Breadcrumbs, Center, Container, Flex, Grid, SimpleGrid, Text, Title } from "@mantine/core"
 import { InfoWindowF, MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
 import { useEffect } from "react"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
+import { Area, areaDetail } from "@/types/area"
 
 const containerStyle = {
   width: "100%",
@@ -104,51 +105,75 @@ export default function Map(props: Props) {
     </>
   ))
 
-  useEffect(() => {
-    console.log(activityList)
-  }, [])
+  const breadcrumbs = [
+    { name: "楽天トラベルトップ", href: "/" },
+    { name: "首都圏", href: "/SearchPageMetropolitan" },
+    { name: "東京23区", href: "/SearchPageTokyo" },
+    { name: areaDetail[hotel.region as Area] },
+  ].map((breadcrumb, index) =>
+    breadcrumb.href ? (
+      <Anchor href={breadcrumb.href} key={index}>
+        {breadcrumb.name}
+      </Anchor>
+    ) : (
+      <Text key={index}>{breadcrumb.name}</Text>
+    )
+  )
 
   return (
     <>
-      <Container fluid>
+      <Breadcrumbs separator='>' mt='xs'>
+        {breadcrumbs}
+      </Breadcrumbs>
+      <Box
+        sx={(theme) => ({
+          textAlign: "left",
+          padding: theme.spacing.xl,
+        })}
+      >
         <Title order={2}>{hotel.name}</Title>
-      </Container>
-      <HotelTab hotel={hotel} rooms={roomList} />
-      <Flex>
-        <MapLeftBar />
-        <Box sx={{ width: 100 }} />
+      </Box>
 
-        {isLoaded && center ? (
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={{ lat: hotel.latitude, lng: hotel.longitude }}
-            zoom={13}
-          >
-            <MarkerF
-              position={{ lat: hotel.latitude, lng: hotel.longitude }}
-              icon={{
-                path: faHotel.icon[4] as string,
-                fillColor: "#ff0066",
-                fillOpacity: 1,
-                anchor: new google.maps.Point(
-                  faHotel.icon[0] / 2, // width
-                  faHotel.icon[1] // height
-                ),
-                strokeWeight: 1,
-                strokeColor: "#ffffff",
-                scale: 0.055,
-              }}
-            />
+      <Grid>
+        <Grid.Col span='auto'>
+          <MapLeftBar />
+        </Grid.Col>
+        <Grid.Col span={7}>
+          <HotelTab hotel={hotel} rooms={roomList} />
+          <Center>
+            {isLoaded && center ? (
+              <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={{ lat: hotel.latitude, lng: hotel.longitude }}
+                zoom={13}
+              >
+                <MarkerF
+                  position={{ lat: hotel.latitude, lng: hotel.longitude }}
+                  icon={{
+                    path: faHotel.icon[4] as string,
+                    fillColor: "#ff0066",
+                    fillOpacity: 1,
+                    anchor: new google.maps.Point(
+                      faHotel.icon[0] / 2, // width
+                      faHotel.icon[1] // height
+                    ),
+                    strokeWeight: 1,
+                    strokeColor: "#ffffff",
+                    scale: 0.055,
+                  }}
+                />
 
-            {Markers}
-          </GoogleMap>
-        ) : (
-          <></>
-        )}
-        <Box sx={{ width: 100 }} />
-
-        <ActivityList activityList={activityList} />
-      </Flex>
+                {Markers}
+              </GoogleMap>
+            ) : (
+              <></>
+            )}
+          </Center>
+        </Grid.Col>
+        <Grid.Col span='auto'>
+          <ActivityList activityList={activityList} />
+        </Grid.Col>
+      </Grid>
     </>
   )
 }
