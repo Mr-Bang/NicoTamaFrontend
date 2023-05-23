@@ -31,81 +31,82 @@ export default function Home() {
   const { classes } = useStyles()
 
   const areaInfoList = [
-    { name: "板橋", top: "411px", left: "753px", area: "北西部" },
-    { name: "練馬", top: "450px", left: "620px", area: "北西部" },
-    { name: "北区", top: "430px", left: "850px", area: "北西部" },
-    { name: "中野", top: "560px", left: "710px", area: "北西部" },
-    { name: "杉並", top: "610px", left: "630px", area: "北西部" },
-    { name: "世田谷", top: "750px", left: "640px", area: "南西部" },
-    { name: "目黒", top: "770px", left: "770px", area: "南西部" },
-    { name: "品川", top: "820px", left: "850px", area: "南西部" },
-    { name: "大田", top: "930px", left: "830px", area: "南西部" },
-    { name: "足立", top: "400px", left: "1000px", area: "東部" },
-    { name: "葛飾", top: "470px", left: "1110px", area: "東部" },
-    { name: "江戸川", top: "610px", left: "1170px", area: "東部" },
-    { name: "荒川", top: "500px", left: "970px", area: "東部" },
-    { name: "台東", top: "550px", left: "970px", area: "東部" },
-    { name: "墨田", top: "580px", left: "1030px", area: "東部" },
-    { name: "江東", top: "670px", left: "1040px", area: "東部" },
-    { name: "豊島", top: "510px", left: "810px", area: "副都心" },
-    { name: "文京", top: "540px", left: "885px", area: "副都心" },
-    { name: "新宿", top: "615px", left: "810px", area: "副都心" },
-    { name: "中央", top: "670px", left: "950px", area: "都心" },
-    { name: "港区", top: "730px", left: "875px", area: "都心" },
-    { name: "渋谷", top: "670px", left: "760px", area: "副都心" },
-    { name: "千代田", top: "630px", left: "900px", area: "都心" },
+    { name: "板橋", top: "465px", left: "750px", area: "北西部" },
+    { name: "練馬", top: "505px", left: "610px", area: "北西部" },
+    { name: "北区", top: "485px", left: "850px", area: "北西部" },
+    { name: "中野", top: "615px", left: "700px", area: "北西部" },
+    { name: "杉並", top: "665px", left: "620px", area: "北西部" },
+    { name: "世田谷", top: "805px", left: "630px", area: "南西部" },
+    { name: "目黒", top: "825px", left: "760px", area: "南西部" },
+    { name: "品川", top: "875px", left: "840px", area: "南西部" },
+    { name: "大田", top: "985px", left: "820px", area: "南西部" },
+    { name: "足立", top: "455px", left: "990px", area: "東部" },
+    { name: "葛飾", top: "525px", left: "1100px", area: "東部" },
+    { name: "江戸川", top: "665px", left: "1160px", area: "東部" },
+    { name: "荒川", top: "555px", left: "960px", area: "東部" },
+    { name: "台東", top: "605px", left: "960px", area: "東部" },
+    { name: "墨田", top: "635px", left: "1020px", area: "東部" },
+    { name: "江東", top: "725px", left: "1030px", area: "東部" },
+    { name: "豊島", top: "565px", left: "800px", area: "副都心" },
+    { name: "文京", top: "595px", left: "875px", area: "副都心" },
+    { name: "新宿", top: "675px", left: "800px", area: "副都心" },
+    { name: "中央", top: "735px", left: "940px", area: "都心" },
+    { name: "港区", top: "795px", left: "865px", area: "都心" },
+    { name: "渋谷", top: "735px", left: "750px", area: "副都心" },
+    { name: "千代田", top: "685px", left: "890px", area: "都心" },
   ]
   const area23InfoList = [
-    { name: "都心", left: "860px", top: "660px" },
-    { name: "副都心", left: "790px", top: "550px" },
-    { name: "北西部", left: "600px", top: "480px" },
-    { name: "南西部", left: "680px", top: "800px" },
-    { name: "東部", left: "1120px", top: "510px" },
+    { name: "都心", left: "860px", top: "720px" },
+    { name: "副都心", left: "785px", top: "610px" },
+    { name: "北西部", left: "600px", top: "540px" },
+    { name: "南西部", left: "680px", top: "860px" },
+    { name: "東部", left: "1120px", top: "570px" },
   ]
 
   const stationInfoList = [
-    { name: "新宿駅" },
-    { name: "新橋駅" },
-    { name: "池袋駅" },
-    { name: "上野駅" },
-    { name: "渋谷駅" },
-    { name: "赤坂見附駅" },
-    { name: "八王子駅" },
-    { name: "恵比寿駅" },
-    { name: "台場駅" },
-    { name: "浜松町駅" },
-    { name: "六本木駅" },
-    { name: "銀座駅" },
-    { name: "大手町駅" },
-    { name: "立川駅" },
-    { name: "五反田駅" },
-    { name: "錦糸町駅" },
-    { name: "京橋駅" },
-    { name: "有楽町駅" },
-    { name: "東京国際空港" },
-    { name: "三宅島空港" },
-    { name: "新島空港" },
-    { name: "神津島空港" },
-    { name: "大島空港" },
-    { name: "八丈島空港" },
-    { name: "調布飛行場" },
+    { name: "新宿駅", region: "副都心" },
+    { name: "新橋駅", region: "都心" },
+    { name: "池袋駅", region: "副都心" },
+    { name: "上野駅", region: "東部" },
+    { name: "渋谷駅", region: "副都心" },
+    { name: "赤坂見附駅", region: "都心" },
+    { name: "八王子駅", region: "SearchPageTokyo" },
+    { name: "二子玉川駅", region: "北西部" },
+    { name: "恵比寿駅", region: "副都心" },
+    { name: "台場駅", region: "都心" },
+    { name: "浜松町駅", region: "都心" },
+    { name: "六本木駅", region: "都心" },
+    { name: "銀座駅", region: "都心" },
+    { name: "大手町駅", region: "都心" },
+    { name: "立川駅", region: "SearchPageTokyo" },
+    { name: "五反田駅", region: "南西部" },
+    { name: "錦糸町駅", region: "" },
+    { name: "京橋駅", region: "都心" },
+    { name: "有楽町駅", region: "都心" },
+    { name: "東京国際空港", region: "南西部" },
+    { name: "三宅島空港", region: "SearchPageTokyo" },
+    { name: "新島空港", region: "SearchPageTokyo" },
+    { name: "神津島空港", region: "SearchPageTokyo" },
+    { name: "大島空港", region: "SearchPageTokyo" },
+    { name: "八丈島空港", region: "SearchPageTokyo" },
+    { name: "調布飛行場", region: "SearchPageTokyo" },
   ]
 
   const popularInfoList = [
-    { name: "東京タワー" },
-    { name: "浅草寺" },
-    { name: "東京ディズニーリゾート®︎" },
-    { name: "東京ドーム" },
-    { name: "国立競技場" },
-    { name: "神宮球場" },
-    { name: "東京スタジアム" },
-    { name: "東京国際フォーラム" },
-    { name: "東京ビッグサイト" },
-    { name: "日本武道館" },
-    { name: "上野動物園" },
-    { name: "お台場" },
-    { name: "奥多摩湖" },
-    { name: "国営昭和記念公園" },
+    { name: "東京タワー", region: "都心" },
+    { name: "浅草寺", region: "東部" },
+    { name: "東京ディズニーリゾート®︎", region: "東部" },
+    { name: "東京ドーム", region: "都心" },
+    { name: "国立競技場", region: "副都心" },
+    { name: "神宮球場", region: "副都心" },
+    { name: "東京スタジアム", region: "SearchPageTokyo" },
+    { name: "東京国際フォーラム", region: "都心" },
+    { name: "東京ビッグサイト", region: "都心" },
+    { name: "日本武道館", region: "都心" },
+    { name: "上野動物園", region: "東部" },
+    { name: "お台場", region: "都心" },
+    { name: "奥多摩湖", region: "SearchPageTokyo" },
+    { name: "国営昭和記念公園", region: "SearchPageTokyo" },
   ]
 
   const breadcrumbs = [
@@ -189,7 +190,7 @@ export default function Home() {
                         className={classes.root3}
                         variant="default"
                         component="a"
-                        onClick={() => router.push("/" + stationInfo.name)}
+                        onClick={() => router.push("/" + stationInfo.region)}
                       >
                         {stationInfo.name}
                       </Anchor>
@@ -211,18 +212,20 @@ export default function Home() {
               </Title>
               <Container>
                 <SimpleGrid cols={2} verticalSpacing="xs">
-                  {popularInfoList.map((popularInfo, index) => (
-                    <div key={index}>
-                      <Anchor
-                        className={classes.root3}
-                        variant="default"
-                        component="a"
-                        onClick={() => router.push("/" + popularInfo.name)}
-                      >
-                        {popularInfo.name}
-                      </Anchor>
-                    </div>
-                  ))}
+                  {popularInfoList.map((popularInfo, index) =>
+		    (
+                      <div key={index}>
+                        <Anchor
+                          className={classes.root3}
+                          variant="default"
+                          component="a"
+                          onClick={() => router.push("/" + popularInfo.region)}
+                        >
+                          {popularInfo.name}
+                        </Anchor>
+                      </div>
+		    )
+                  )}
                 </SimpleGrid>
               </Container>
             </Box>
