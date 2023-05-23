@@ -3,15 +3,17 @@ import HotelBreadcrumb from "@/components/hotel/HotelBreadcrumb"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
-import { Box, Center, Grid, Title } from "@mantine/core"
-import { MarkerF, useJsApiLoader } from "@react-google-maps/api"
+import { AspectRatio, Box, Card, Center, Flex, Grid, Image, Text, Title } from "@mantine/core"
+import { InfoWindowF, MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
-import { calcDistance } from "@/services/calcDistance"
 import { useEffect, useState } from "react"
 import Activities from "@/components/map/Activities"
 import { ActivityList } from "@/types/activityList"
+import { useRouter } from "next/router"
+import NextImage from "next/image"
+import HealthIcon from "../public/rakuten_healthcare_icon.png"
 
 const containerStyle = {
   width: "100%",
@@ -49,7 +51,10 @@ interface Props {
 }
 
 export default function Map(props: Props) {
+  const [indexShowActivityInfo, setIndexShowActivityInfo] = useState<number>(-1)
   const [activeTab, setActiveTab] = useState<number>(0)
+
+  const router = useRouter()
   const { activityList, query } = props
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -68,25 +73,9 @@ export default function Map(props: Props) {
 
   const roomList = query.roomList ? JSON.parse(query.roomList) : []
 
-  // category_idごとに場合分けする
-  const categorizedActivities: {
-    [key: number]: ActivityList
-  } = { 1: [], 2: [], 3: [], 4: [] }
-
-  activityList.forEach((activity) => {
-    const categoryId = activity.category_id
-    categorizedActivities[categoryId].push(activity)
-  })
-  categorizedActivities[0] = activityList
-
-  const activityMarkers = categorizedActivities[activeTab].map((activity, index) => (
-    <>
-      <MarkerF key={index} position={{ lat: activity.latitude, lng: activity.longitude }} />
-      {/* <InfoWindowF key={index} position={{ lat: activity.latitude, lng: activity.longitude }}>
-        <div>{activity.name}</div>
-      </InfoWindowF> */}
-    </>
-  ))
+  function onClickActivityMarker(index: number) {
+    setIndexShowActivityInfo(index)
+  }
 
   const destinations = activityList.map((activity) => ({
     lat: activity.latitude,
@@ -122,6 +111,62 @@ export default function Map(props: Props) {
     if (!isLoaded) return
     getDistanceList()
   }, [isLoaded])
+
+  // category_idごとに場合分けする
+  const categorizedActivities: {
+    [key: number]: ActivityList
+  } = { 1: [], 2: [], 3: [], 4: [] }
+
+  activityList.forEach((activity) => {
+    const categoryId = activity.category_id
+    categorizedActivities[categoryId].push(activity)
+  })
+  categorizedActivities[0] = activityList
+
+  const activityMarkers = categorizedActivities[activeTab].map((activity, index) => (
+    <>
+      <MarkerF
+        key={index}
+        position={{ lat: activity.latitude, lng: activity.longitude }}
+        onClick={() => onClickActivityMarker(index)}
+      />
+      {index == indexShowActivityInfo && (
+        <InfoWindowF position={{ lat: Number(activity.latitude + 0.0015), lng: Number(activity.longitude) }}>
+          <Card
+            style={{ width: "200px" }}
+            padding='1'
+            shadow='sm'
+            key={index}
+            radius='md'
+            component='a'
+            href='#'
+            onClick={() => router.push(activity.url)}
+          >
+            <AspectRatio ratio={1920 / 1080}>
+              <Image maw={300} mx='auto' src={activity.image} alt={activity.name} fit={"contain"} />
+            </AspectRatio>
+
+            <Text mt={5}>{activity.name}</Text>
+            <Text color='dimmed' size='sm' transform='uppercase' weight={700} mt='md'>
+              ¥ {activity.price.toLocaleString()}
+            </Text>
+            {distanceList.length > 0 && (
+              <Flex justify={"flex-end"} align={"center"}>
+                <NextImage src={HealthIcon} width={20} height={20} alt={""} />
+                <Text p={5}>{Math.round(distanceList[index].value / 0.6)}歩</Text>
+                <Text color='dimmed' size='sm' p={5}>
+                  {distanceList[index].text}
+                </Text>
+                <Text color='dimmed' size='sm' p={5}>
+                  {distanceList[index].durationText}
+                </Text>
+              </Flex>
+            )}
+          </Card>
+        </InfoWindowF>
+      )}
+    </>
+  ))
 
   return (
     <>
