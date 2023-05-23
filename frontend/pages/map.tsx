@@ -15,6 +15,7 @@ import { useRouter } from "next/router"
 import NextImage from "next/image"
 import HealthIcon from "../public/rakuten_healthcare_icon.png"
 import { calcDistance } from "@/services/calcDistance"
+import { SimpleMapStyle } from "@/components/map/SimpleMapStyle"
 
 const containerStyle = {
   width: "100%",
@@ -24,6 +25,10 @@ const containerStyle = {
 const center = {
   lat: 35.64947376923544,
   lng: 139.78989191498846,
+}
+
+const SimpleMapOptions = {
+  styles: SimpleMapStyle,
 }
 
 const googleMapsApiKey: string = process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string
@@ -187,11 +192,12 @@ export default function Map(props: Props) {
         <Grid.Col span={7}>
           <HotelTab hotel={hotel} rooms={roomList} />
           <Center>
-            {isLoaded && center ? (
+            {isLoaded ? (
               <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={{ lat: hotel.latitude, lng: hotel.longitude }}
                 zoom={13}
+                options={SimpleMapOptions}
               >
                 <MarkerF
                   position={{ lat: hotel.latitude, lng: hotel.longitude }}

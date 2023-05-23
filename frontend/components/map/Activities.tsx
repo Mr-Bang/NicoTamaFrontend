@@ -14,6 +14,7 @@ import {
   Tabs,
   BackgroundImage,
   TabsValue,
+  Title,
 } from "@mantine/core"
 import { useRouter } from "next/router"
 import NextImage from "next/image"
@@ -131,6 +132,9 @@ export default function Activities(props: Props) {
 
   return (
     <>
+      <Title order={4} align='center' mt={-25} pb={5}>
+        周辺のアクティビティ
+      </Title>
       <Tabs variant='outline' value={changeValueToCategoryId(activeTab)} onTabChange={(value) => onChangeTab(value)}>
         <Tabs.List grow position='center'>
           <Tabs.Tab value='all'>all</Tabs.Tab>
