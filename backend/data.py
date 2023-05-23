@@ -118,12 +118,12 @@ hotels = [
 },
 {
     'hotel_id': 13,
-    'name': '三交インＧｒａｎｄｅ東京浜松町',
-    'image': 'https://trvimg.r10s.jp/share/image_up/147101/origin/a02cf1b121ac74b8376967ac6c489a63ebad56d8.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
-    'description': '【バス・トイレ・洗面台独立の快適空間】「浜松町」「大門」各駅徒歩約３分！羽田空港好アクセス抜群◎',
-    'region': '都心',
-    'latitude': 35.65424980992729,
-    'longitude': 139.75461835501707
+    'name': 'アクトホテル渋谷',
+    'image': 'https://trvimg.r10s.jp/share/image_up/172650/origin/34fa11566f0e454604825b31297cdab2d3f1a409.47.9.26.3.jpg?fit=inside|900:507&interpolation=lanczos-none',
+    'description': '池尻大橋周辺で一番新しく充実の最新設備。渋谷・新宿へのアクセスも良くソフトドリンク、ソフトクリームの無料サービスあり♪',
+    'region': '南西部',
+    'latitude': 35.65205540577932,
+    'longitude': 139.68618871220974
 },
 {
     'hotel_id': 14,
@@ -1673,8 +1673,8 @@ rooms = [
     'hotel_id': 13,
     'room_number': 103,
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/147101/LARGE/e3410e5fa86f11fe9cb451119efa876a5d805f98.47.9.26.3.jpg',
-    'price': '10910'
+    'image': 'https://trvimg.r10s.jp/share/image_up/172650/LARGE/ee93322782b14a595bc06db3efae47ed5de2540b.47.9.26.3.jpg',
+    'price': '8550'
 },
 {
     'hotel_id': 14,
@@ -2023,8 +2023,8 @@ rooms = [
     'hotel_id': 13,
     'room_number': 104,
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/147101/LARGE/e3410e5fa86f11fe9cb451119efa876a5d805f98.47.9.26.3.jpg',
-    'price': '10910'
+    'image': 'https://trvimg.r10s.jp/share/image_up/172650/LARGE/ee93322782b14a595bc06db3efae47ed5de2540b.47.9.26.3.jpg',
+    'price': '8550'
 },
 {
     'hotel_id': 14,
