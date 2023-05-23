@@ -1,6 +1,5 @@
 import HotelTab from "@/components/hotel/HotelTab"
 import HotelBreadcrumb from "@/components/hotel/HotelBreadcrumb"
-import ActivityList from "@/components/map/ActivityList"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
@@ -11,6 +10,8 @@ import { GetServerSidePropsContext } from "next"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
 import { calcDistance } from "@/services/calcDistance"
 import { useEffect, useState } from "react"
+import Activities from "@/components/map/Activities"
+import { ActivityList } from "@/types/activityList"
 
 const containerStyle = {
   width: "100%",
@@ -33,6 +34,7 @@ interface Props {
     latitude: number
     url: string
     region: string
+    category_id: number
   }[]
   query: {
     hotel_id: number
@@ -47,6 +49,7 @@ interface Props {
 }
 
 export default function Map(props: Props) {
+  const [activeTab, setActiveTab] = useState<number>(0)
   const { activityList, query } = props
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -65,7 +68,18 @@ export default function Map(props: Props) {
 
   const roomList = query.roomList ? JSON.parse(query.roomList) : []
 
-  const Markers = activityList.map((activity, index) => (
+  // category_idごとに場合分けする
+  const categorizedActivities: {
+    [key: number]: ActivityList
+  } = { 1: [], 2: [], 3: [], 4: [] }
+
+  activityList.forEach((activity) => {
+    const categoryId = activity.category_id
+    categorizedActivities[categoryId].push(activity)
+  })
+  categorizedActivities[0] = activityList
+
+  const Markers = categorizedActivities[activeTab].map((activity, index) => (
     <>
       <MarkerF key={index} position={{ lat: activity.latitude, lng: activity.longitude }} />
       {/* <InfoWindowF key={index} position={{ lat: activity.latitude, lng: activity.longitude }}>
@@ -107,6 +121,8 @@ export default function Map(props: Props) {
   useEffect(() => {
     if (!isLoaded) return
     getDistanceList()
+
+    console.log(categorizedActivities)
   }, [isLoaded])
 
   return (
@@ -156,7 +172,12 @@ export default function Map(props: Props) {
           </Center>
         </Grid.Col>
         <Grid.Col span='auto'>
-          <ActivityList activityList={activityList} distanceList={distanceList} />
+          <Activities
+            activityList={categorizedActivities[activeTab]}
+            distanceList={distanceList}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
         </Grid.Col>
       </Grid>
     </>

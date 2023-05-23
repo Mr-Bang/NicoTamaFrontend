@@ -6,4 +6,5 @@ export type ActivityList = {
   latitude: number
   url: string
   region: string
+  category_id: number
 }[]
