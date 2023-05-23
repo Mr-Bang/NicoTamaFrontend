@@ -41,7 +41,7 @@ class SearchSchema(Schema):
 class RoomSchema(Schema):
     room_id = fields.Int(dump_only=True)
     hotel_id = fields.Int(required=True)
-    room_number = fields.Int(required=True)
+    room_type = fields.Str(required=True)
     price = fields.Int(required=True)
     available = fields.Bool(required=True)
     image = fields.Str(required=False)
