@@ -147,6 +147,16 @@ export default function HotelList(props: Props) {
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const { area } = context.query
+
+  if (area !== "都心" && area !== "副都心" && area !== "東部" && area !== "北西部" && area !== "南西部") {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/404",
+      },
+    }
+  }
+
   const resHotelList: HotelList = await getHotelList(area as string)
   const resActivityList: ActivityList = await getActivityList(area as string)
 

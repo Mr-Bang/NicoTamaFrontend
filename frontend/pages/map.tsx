@@ -79,7 +79,7 @@ export default function Map(props: Props) {
   })
   categorizedActivities[0] = activityList
 
-  const Markers = categorizedActivities[activeTab].map((activity, index) => (
+  const activityMarkers = categorizedActivities[activeTab].map((activity, index) => (
     <>
       <MarkerF key={index} position={{ lat: activity.latitude, lng: activity.longitude }} />
       {/* <InfoWindowF key={index} position={{ lat: activity.latitude, lng: activity.longitude }}>
@@ -121,8 +121,6 @@ export default function Map(props: Props) {
   useEffect(() => {
     if (!isLoaded) return
     getDistanceList()
-
-    console.log(categorizedActivities)
   }, [isLoaded])
 
   return (
@@ -153,7 +151,7 @@ export default function Map(props: Props) {
                   position={{ lat: hotel.latitude, lng: hotel.longitude }}
                   icon={{
                     path: faHotel.icon[4] as string,
-                    fillColor: "#ff0066",
+                    fillColor: "#0000ff",
                     fillOpacity: 1,
                     anchor: new google.maps.Point(
                       faHotel.icon[0] / 2, // width
@@ -164,7 +162,7 @@ export default function Map(props: Props) {
                     scale: 0.055,
                   }}
                 />
-                {Markers}
+                {activityMarkers}
               </GoogleMap>
             ) : (
               <></>
