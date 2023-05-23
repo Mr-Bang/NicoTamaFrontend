@@ -84,7 +84,7 @@ export default function HotelList(props: Props) {
 
   return (
     <>
-      <Breadcrumbs separator='>' mt='xs'>
+      <Breadcrumbs separator=">" mt="xs">
         {breadcrumbs}
       </Breadcrumbs>
       <Box
@@ -101,10 +101,10 @@ export default function HotelList(props: Props) {
           <SimpleGrid cols={3}>
             {hotelList.map((hotel, index) => (
               <UnstyledButton key={index} className={classes.item}>
-                <Card shadow='sm' padding='lg' radius='md' withBorder>
+                <Card shadow="sm" padding="lg" radius="md" withBorder>
                   <Card.Section
                     sx={{ height: 250 }}
-                    component='a'
+                    component="a"
                     onClick={() => {
                       router.push({
                         pathname: "/hotel/[hotel_id]",
@@ -125,10 +125,10 @@ export default function HotelList(props: Props) {
                       <Image src={hotel.image} alt={hotel.name} />
                     </AspectRatio>
                     <Flex direction={"column"} justify={"flex-end"}>
-                      <Text ta='center' fw={700} fz='lg'>
+                      <Text ta="center" fw={700} fz="lg">
                         {hotel.name}
                       </Text>
-                      <Text ta='center' fz='md'>
+                      <Text ta="center" fz="md">
                         ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
                       </Text>
                     </Flex>
