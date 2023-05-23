@@ -1558,700 +1558,700 @@ activities = [
 rooms = [
     {
     'hotel_id': 0,
-    'room_number': 100,
+    'room_type': "ツインルーム★禁煙",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/184778/LARGE/1c7f60f3ccce2add9da9817c2219e40b02bb86cc.47.9.26.3.jpg',
     'price': '15546'
 },
 {
     'hotel_id': 1,
-    'room_number': 101,
+    'room_type': "デラックスツインルーム",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/168725/LARGE/6b725b79069cfc6d9e6cce14a4f9e83a1e704469.47.1.26.2.jpg',
     'price': '78505'
 },
 {
     'hotel_id': 2,
-    'room_number': 102,
+    'room_type': "【禁煙】ファミリールーム（３名様利用）",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/167606/LARGE/1e656b58f7dc58242c6cf2442e59b2991eea6702.47.9.26.3.jpg',
     'price': '10728'
 },
 {
     'hotel_id': 3,
-    'room_number': 103,
+    'room_type': "【禁煙】セミダブル（1〜2名）",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/130006/LARGE/68a5db3c6019743c69463e6cb0910b318491cdc5.47.9.26.3.jpg',
     'price': '9637'
 },
 {
     'hotel_id': 4,
-    'room_number': 104,
+    'room_type': "禁煙セミダブルルーム【ベッド幅：120cm】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/858/LARGE/5364f428c4fd2a051bed524efe82d01fb24c3db6.47.9.26.3.jpg',
     'price': '18546'
 },
 {
     'hotel_id': 5,
-    'room_number': 105,
+    'room_type': "スーペリアトリプル｜23.9平米｜120cmベッド",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/183846/LARGE/75a450936dfd086f63d6e149604bec9f17433d20.47.9.26.3.jpg',
     'price': '11360'
 },
 {
     'hotel_id': 6,
-    'room_number': 106,
+    'room_type': "デラックスツイン（27平米）【禁煙】",
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/172974/LARGE/b606ad989e66eec8e4dd6136177641f68bdc57d2.47.9.26.3.jpg',
-    'price': '24000'
+    'image': 'https://trvimg.r10s.jp/share/image_up/172974/LARGE/1cce42548607cfa79f06688bb78e374dff3be2fe.47.1.26.2.jpg',
+    'price': '31637'
 },
 {
     'hotel_id': 7,
-    'room_number': 107,
+    'room_type': "《禁煙2名利用》●セミダブルルーム●新宿駅徒歩10分",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/38126/LARGE/869085ab371ed9c86a52e9d52576d67648764a84.47.9.26.3.jpg',
     'price': '8773'
 },
 {
     'hotel_id': 8,
-    'room_number': 108,
+    'room_type': "◆喫煙◆セミダブル(広さ13.0平米/ベッド幅1.4)",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/658/LARGE/176a3de9961b9d272b5dcc3fc09b241cf3ea6b92.47.9.26.3.jpg',
     'price': '9587'
 },
 {
     'hotel_id': 9,
-    'room_number': 109,
+    'room_type': "禁煙セミダブルルーム",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/172443/LARGE/f1f39e432c2b9330656491e9293cdfd2579bb640.47.9.26.3.jpg',
     'price': '14182'
 },
 {
     'hotel_id': 10,
-    'room_number': 100,
+    'room_type': "スタンダードトリプル【禁煙】ベッド幅100cm",
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/176773/LARGE/229d5eaa1180c2a6f0353aee35f03fb6d0faad09.47.1.26.2.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/176773/LARGE/d23fd51337386643fb6eed150b9fbc35b0cc3e75.47.1.26.2.jpg',
     'price': '20382'
 },
 {
     'hotel_id': 11,
-    'room_number': 101,
+    'room_type': "【禁煙】Grandeスタンダードルーム◇２名利用",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/147101/LARGE/e3410e5fa86f11fe9cb451119efa876a5d805f98.47.9.26.3.jpg',
     'price': '10910'
 },
 {
     'hotel_id': 12,
-    'room_number': 102,
+    'room_type': "◇喫煙◇スタンダードダブル（2名利用）",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/172591/LARGE/8b8f622cca272197f0db22b639a001b8e8fbd702.47.1.26.2.jpg',
     'price': '11455'
 },
 {
     'hotel_id': 13,
-    'room_number': 103,
+    'room_type': "スーペリアシングル＜禁煙＞角部屋",
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/172650/LARGE/ee93322782b14a595bc06db3efae47ed5de2540b.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/172650/LARGE/244fe6555ec17ec06ae492e5a6672793a4b31209.47.9.26.3.jpg',
     'price': '8550'
 },
 {
     'hotel_id': 14,
-    'room_number': 104,
+    'room_type': "【禁煙】スタンダードセミダブル（2名利用）",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/168419/LARGE/1096bb302f48b7cdae77d3e1630baff7fcfffc09.47.9.26.3.jpg',
     'price': '11091'
 },
 {
     'hotel_id': 15,
-    'room_number': 105,
+    'room_type': "【素泊まり】お部屋タイプお任せ【当日までのお楽しみ】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/168701/LARGE/a2d0c66a112839f9b872b7500029ae89b1af7848.47.9.26.3.jpg',
     'price': '15091'
 },
 {
     'hotel_id': 16,
-    'room_number': 106,
+    'room_type': "【禁煙】部屋タイプ指定なし2名利用",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/166220/LARGE/c2f71a7b7dd3ef4243f3d828c8ac91fa0923fc86.47.9.26.3.jpg',
     'price': '11428'
 },
 {
     'hotel_id': 17,
-    'room_number': 107,
+    'room_type': "スタンダード ダブル（禁煙）",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/398/LARGE/bf7023116223150c396f4f18db603d3b5ebd212a.47.1.26.2.jpg',
     'price': '14273'
 },
 {
     'hotel_id': 18,
-    'room_number': 108,
+    'room_type': "【ベイビューフロア】デラックスルーム",
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/1917/LARGE/2cd1f104f729b652a3fcffc1fc8b44253a566b06.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/1917/LARGE/794aff0f8afa9c5bbf7e8adae7cd4421ea1f943f.47.9.26.3.jpg',
     'price': '15432'
 },
 {
     'hotel_id': 19,
-    'room_number': 109,
+    'room_type': "本館スーペリアダブル（140ｃｍベッド）☆禁煙☆〈14平米〉",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/140984/LARGE/c82340198f03ce06763ffa7a4511ec830b39da1f.47.9.26.3.jpg',
     'price': '20619'
 },
 {
     'hotel_id': 20,
-    'room_number': 100,
+    'room_type': "【禁煙】デラックスツイン＜最大3名様＞",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/136122/LARGE/ea42b59ff775187a6d28ccd6c7e3e280a91c8e90.47.9.26.3.jpg',
     'price': '17800'
 },
 {
     'hotel_id': 21,
-    'room_number': 101,
+    'room_type': "モデレートツインルーム16平米＜禁煙＞",
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/80757/LARGE/3fd50f7f838bc589989f062cabf2e0a7e07b822d.47.1.26.2.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/80757/LARGE/2a3172ce4e914cdea78cb814e91b7f3c72416ae3.47.1.26.2.jpg',
     'price': '18000'
 },
 {
     'hotel_id': 22,
-    'room_number': 102,
+    'room_type': "☆禁煙（キンエン）シングル-B☆",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/3092/LARGE/1eb460090b69060de88fe3a27fa3fea207079b10.47.1.26.2.jpg',
     'price': '9091'
 },
 {
     'hotel_id': 23,
-    'room_number': 103,
+    'room_type': "□喫煙□スーペリアルーム〜ダブルベッド＋ロフトベッド〜",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/135551/LARGE/25d6d712a9454a5be58832ebec0df93d3c191c39.47.9.26.3.jpg',
     'price': '11546'
 },
 {
     'hotel_id': 24,
-    'room_number': 104,
+    'room_type': "ダブルルーム 禁煙室【眺望なし】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/176595/LARGE/ac0097e4e23d46ccdd6f2e9b60c1b4f54b099bf8.47.9.26.3.jpg',
     'price': '22637'
 },
 {
     'hotel_id': 25,
-    'room_number': 105,
+    'room_type': "【禁煙】スタンダードルーム【140cm幅ダブルベッド１台】",
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/141609/LARGE/3f2c1a62db2d203b6d5ce0a86853030917297f50.47.1.26.2.jpg',
-    'price': '8182'
+    'image': 'https://trvimg.r10s.jp/share/image_up/141609/LARGE/8e3e85498a3a8859482083958171eac63cbce86b.47.1.26.2.jpg',
+    'price': '8591'
 },
 {
     'hotel_id': 26,
-    'room_number': 106,
+    'room_type': "【禁煙】セミダブル(123cmベッド)☆浄水システム使用☆",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/163073/LARGE/7e5878f9ff85faf8682b95efafb3e3499987c507.47.1.26.2.jpg',
     'price': '10000'
 },
 {
     'hotel_id': 27,
-    'room_number': 107,
+    'room_type': "スーパールーム【上下型ツイン 定員１〜３名幼児含む】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/147874/LARGE/Zl4szc.jpeg',
     'price': '19091'
 },
 {
     'hotel_id': 28,
-    'room_number': 108,
+    'room_type': "【禁煙】お部屋タイプお任せ【部屋タイプは当日までのお楽しみ】",
     'available': True,
-    'image': 'https://trvimg.r10s.jp/share/image_up/106147/LARGE/92a997787de27a9d57b4babb00c062c4a2cc5d95.47.9.26.3.jpg',
-    'price': '25400'
+    'image': 'https://trvimg.r10s.jp/share/image_up/106147/LARGE/ab80bc711ecc86e464feb649a2067dc3ed4249a6.47.9.26.3.jpg',
+    'price': '14351'
 },
 {
     'hotel_id': 29,
-    'room_number': 109,
+    'room_type': "禁煙スタンダードダブル　シティビュー",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/570/LARGE/825bf4268a36bd08df4e1c3126a508c215a57224.47.9.26.3.jpg',
     'price': '28600'
 },
 {
     'hotel_id': 30,
-    'room_number': 100,
+    'room_type': "フォース喫煙",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/128577/LARGE/54194accd89c800ad5e36478cf50d31ee9fa9943.47.9.26.3.jpg',
     'price': '7160'
 },
 {
     'hotel_id': 31,
-    'room_number': 101,
+    'room_type': "エコノミー・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/179391/LARGE/6a1599ff9cde9cb09108b72b11bbd877baa6834a.47.9.26.3.jpg',
     'price': '17091'
 },
 {
     'hotel_id': 32,
-    'room_number': 102,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/715/LARGE/986360c3141ca5ef4a0cec04ade85ab0a9ceeb4e.47.9.26.3.jpg',
     'price': '12228'
 },
 {
     'hotel_id': 33,
-    'room_number': 103,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/74636/LARGE/9a80480ef59ddef560b9784ef970827a3113fe52.47.9.26.3.jpg',
     'price': '14364'
 },
 {
     'hotel_id': 34,
-    'room_number': 104,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/19908/LARGE/04ca659d7c5993c13bda06f4559d820ab28063b4.47.1.26.2.jpg',
     'price': '11200'
 },
 {
     'hotel_id': 35,
-    'room_number': 105,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/183871/LARGE/2fe2f65ae13caeac738fd463f0284030108f4609.47.9.26.3.jpg',
     'price': '11755'
 },
 {
     'hotel_id': 36,
-    'room_number': 106,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/147074/LARGE/d74b4a7202e8308c79bd8798787b19b1a7235807.47.9.26.3.jpg',
     'price': '27364'
 },
 {
     'hotel_id': 37,
-    'room_number': 107,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/51870/LARGE/0b12d57d010e7e27add633a81f734c79e035e174.47.9.26.3.jpg',
     'price': '6437'
 },
 {
     'hotel_id': 38,
-    'room_number': 108,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/149010/LARGE/854170940f5a94191e2c4c3744875042211659ee.47.9.26.3.jpg',
     'price': '22091'
 },
 {
     'hotel_id': 39,
-    'room_number': 109,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/19455/LARGE/1f0a6f0e68b8b9f55c6e5a4ca6dcc1c6db70baea.47.1.26.2.jpg',
     'price': '48191'
 },
 {
     'hotel_id': 40,
-    'room_number': 1010,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/32083/LARGE/2e97b585891982a46468d0d6e0d630749a11df4e.47.9.26.3.jpg',
     'price': '4773'
 },
 {
     'hotel_id': 41,
-    'room_number': 1011,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/2116/LARGE/1d8aafb2fbcc9e4cf1e9b54dc9d53f35b48c67b5.47.9.26.3.jpg',
     'price': '23455'
 },
 {
     'hotel_id': 42,
-    'room_number': 102,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/37928/LARGE/2a179732a1b4961f7f15d63316087cb7da1b3bcd.47.9.26.3.jpg',
     'price': '8137'
 },
 {
     'hotel_id': 43,
-    'room_number': 103,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/108993/LARGE/593ae456eedb86bb876c187fac0af1b1252db2a2.47.9.26.3.jpg',
     'price': '4091'
 },
 {
     'hotel_id': 44,
-    'room_number': 104,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/168764/LARGE/c67874c30a0b2d171a32cb91c06fb5e64e6b49d8.47.9.26.3.jpg',
     'price': '6800'
 },
 {
     'hotel_id': 45,
-    'room_number': 105,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/181415/LARGE/3282362ec830f0b01003a2233b777b9dc7030112.47.9.26.3.jpg',
     'price': '18182'
 },
 {
     'hotel_id': 46,
-    'room_number': 106,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/183777/LARGE/415b95de91bf54a1ca774f4b190b3ea449b97079.47.9.26.3.jpg',
     'price': '6546'
 },
 {
     'hotel_id': 47,
-    'room_number': 107,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/165554/LARGE/cb829377430065a49a1f530e126a13bf6d25ff4f.47.1.26.2.jpg',
     'price': '8600'
 },
 {
     'hotel_id': 48,
-    'room_number': 108,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/172058/LARGE/cea7dafff7559048d58be5eb6d06b60a2cc91b10.47.9.26.3.jpg',
     'price': '7999'
 },
 {
     'hotel_id': 49,
-    'room_number': 109,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': True,
     'image': 'https://trvimg.r10s.jp/share/image_up/5692/LARGE/61e18a895a95c0561fd2ad64c5c580fd17a47cb0.47.1.26.2.jpg',
     'price': '8000'
 },
   {
     'hotel_id': 0,
-    'room_number': 101,
+    'room_type': "ダブルルーム★禁煙",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/184778/LARGE/1c7f60f3ccce2add9da9817c2219e40b02bb86cc.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/184778/LARGE/c3c4b6b3316dae91c1b0e65804cf6350881058c6.47.9.26.3.jpg',
     'price': '15546'
 },
 {
     'hotel_id': 1,
-    'room_number': 102,
+    'room_type': "トリプルルーム",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/168725/LARGE/6b725b79069cfc6d9e6cce14a4f9e83a1e704469.47.1.26.2.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/168725/LARGE/ff501275f83ac6d7cb78930c4de58d9ef28b7549.47.1.26.2.jpg',
     'price': '78505'
 },
 {
     'hotel_id': 2,
-    'room_number': 103,
+    'room_type': "【禁煙】スタンダードダブル（２名様利用）",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/167606/LARGE/1e656b58f7dc58242c6cf2442e59b2991eea6702.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/167606/LARGE/eac22a84cfb26418f5921f6a3d1eeb57fd80d877.47.9.26.3.jpg',
     'price': '10728'
 },
 {
     'hotel_id': 3,
-    'room_number': 104,
+    'room_type': "【喫煙】セミダブル（1〜2名）",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/130006/LARGE/68a5db3c6019743c69463e6cb0910b318491cdc5.47.9.26.3.jpg',
     'price': '9637'
 },
 {
     'hotel_id': 4,
-    'room_number': 105,
+    'room_type': "喫煙セミダブルルーム【ベッド幅：120cm】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/858/LARGE/5364f428c4fd2a051bed524efe82d01fb24c3db6.47.9.26.3.jpg',
     'price': '18546'
 },
 {
     'hotel_id': 5,
-    'room_number': 106,
+    'room_type': "スタンダードダブル｜14.5平米｜140cmベッド",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/183846/LARGE/75a450936dfd086f63d6e149604bec9f17433d20.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/183846/LARGE/c03654370c9f27f2704196cf7d576c57c202e34a.47.9.26.3.jpg',
     'price': '11360'
 },
 {
     'hotel_id': 6,
-    'room_number': 107,
+    'room_type': "モデレートダブル（12平米）【禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/172974/LARGE/b606ad989e66eec8e4dd6136177641f68bdc57d2.47.9.26.3.jpg',
     'price': '24000'
 },
 {
     'hotel_id': 7,
-    'room_number': 108,
+    'room_type': "《喫煙2名利用》●セミダブルルーム●新宿駅徒歩10分",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/38126/LARGE/869085ab371ed9c86a52e9d52576d67648764a84.47.9.26.3.jpg',
     'price': '8773'
 },
 {
     'hotel_id': 8,
-    'room_number': 109,
+    'room_type': "◆禁煙◆セミダブル(広さ13.0平米/ベッド幅1.4)",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/658/LARGE/176a3de9961b9d272b5dcc3fc09b241cf3ea6b92.47.9.26.3.jpg',
     'price': '9587'
 },
 {
     'hotel_id': 9,
-    'room_number': 110,
+    'room_type': "禁煙セミダブルルーム（高層階）",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/172443/LARGE/f1f39e432c2b9330656491e9293cdfd2579bb640.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/172443/LARGE/8ac8f866d91c71f9cb13ca2db393f567a3388d76.47.9.26.3.jpg',
     'price': '14182'
 },
 {
     'hotel_id': 10,
-    'room_number': 101,
+    'room_type': "スタンダードダブル【禁煙】ベッド幅140cm",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/176773/LARGE/229d5eaa1180c2a6f0353aee35f03fb6d0faad09.47.1.26.2.jpg',
     'price': '20382'
 },
 {
     'hotel_id': 11,
-    'room_number': 102,
+    'room_type': "【禁煙】Grandeスタンダードルーム◇２名利用",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/147101/LARGE/e3410e5fa86f11fe9cb451119efa876a5d805f98.47.9.26.3.jpg',
     'price': '10910'
 },
 {
     'hotel_id': 12,
-    'room_number': 103,
+    'room_type': "◇禁煙◇スタンダードダブル（2名利用）",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/172591/LARGE/8b8f622cca272197f0db22b639a001b8e8fbd702.47.1.26.2.jpg',
     'price': '11455'
 },
 {
     'hotel_id': 13,
-    'room_number': 104,
+    'room_type': "スタンダード シングル＜禁煙＞",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/172650/LARGE/ee93322782b14a595bc06db3efae47ed5de2540b.47.9.26.3.jpg',
     'price': '8550'
 },
 {
     'hotel_id': 14,
-    'room_number': 105,
+    'room_type': "【禁煙】【バス・トイレ別】EXツイン（3名利用）",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/168419/LARGE/1096bb302f48b7cdae77d3e1630baff7fcfffc09.47.9.26.3.jpg',
     'price': '11091'
 },
 {
     'hotel_id': 15,
-    'room_number': 106,
+    'room_type': "【素泊まり】スタンダードルーム【150cm幅ダブルベッド】",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/168701/LARGE/a2d0c66a112839f9b872b7500029ae89b1af7848.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/168701/LARGE/a587a5a456748548b8d8b5c9653ddecd46f8df52.47.1.26.2.jpg',
     'price': '15091'
 },
 {
     'hotel_id': 16,
-    'room_number': 107,
+    'room_type': "【禁煙】スタンダードダブル2名利用",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/166220/LARGE/c2f71a7b7dd3ef4243f3d828c8ac91fa0923fc86.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/166220/LARGE/34d6e448170dff7e3a8f7f294a8f48c0e451264f.47.1.26.2.jpg',
     'price': '11428'
 },
 {
     'hotel_id': 17,
-    'room_number': 108,
+    'room_type': "スタンダード ダブル（喫煙）",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/398/LARGE/bf7023116223150c396f4f18db603d3b5ebd212a.47.1.26.2.jpg',
     'price': '14273'
 },
 {
     'hotel_id': 18,
-    'room_number': 109,
+    'room_type': "【レギュラーフロア】デラックスルーム（リニューアル）",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/1917/LARGE/2cd1f104f729b652a3fcffc1fc8b44253a566b06.47.9.26.3.jpg',
     'price': '15432'
 },
 {
     'hotel_id': 19,
-    'room_number': 110,
+    'room_type': "本館ダブル（140ｃｍベッド）☆禁煙☆〈13平米〉",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/140984/LARGE/c82340198f03ce06763ffa7a4511ec830b39da1f.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/140984/LARGE/aac7a480c5d561aa534b76e48496ed48b3702899.47.9.26.3.jpg',
     'price': '20619'
 },
 {
     'hotel_id': 20,
-    'room_number': 101,
+    'room_type': "＜新館＞【禁煙】スカイツリービューツイン+布団（3名利用時）",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/136122/LARGE/ea42b59ff775187a6d28ccd6c7e3e280a91c8e90.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/136122/LARGE/e9d25db3be284ea31d8710c1a4aff74d2f4faae6.47.9.26.3.jpg',
     'price': '17800'
 },
 {
     'hotel_id': 21,
-    'room_number': 100,
+    'room_type': "お部屋タイプおまかせ",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/80757/LARGE/3fd50f7f838bc589989f062cabf2e0a7e07b822d.47.1.26.2.jpg',
     'price': '18000'
 },
 {
     'hotel_id': 22,
-    'room_number': 101,
+    'room_type': "★喫煙シングルルーム-B★",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/3092/LARGE/1eb460090b69060de88fe3a27fa3fea207079b10.47.1.26.2.jpg',
     'price': '9091'
 },
 {
     'hotel_id': 23,
-    'room_number': 102,
+    'room_type': "□禁煙□スーペリアルーム〜ダブルベッド＋ロフトベッド〜",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/135551/LARGE/25d6d712a9454a5be58832ebec0df93d3c191c39.47.9.26.3.jpg',
     'price': '11546'
 },
 {
     'hotel_id': 24,
-    'room_number': 103,
+    'room_type': "ダブルルーム 禁煙室",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/176595/LARGE/ac0097e4e23d46ccdd6f2e9b60c1b4f54b099bf8.47.9.26.3.jpg',
     'price': '22637'
 },
 {
     'hotel_id': 25,
-    'room_number': 104,
+    'room_type': "【禁煙】お部屋タイプお任せ【部屋タイプは当日までのお楽しみ】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/141609/LARGE/3f2c1a62db2d203b6d5ce0a86853030917297f50.47.1.26.2.jpg',
     'price': '8182'
 },
 {
     'hotel_id': 26,
-    'room_number': 105,
+    'room_type': "【禁煙】ダブル(１４０cmベッド)☆浄水システム使用☆",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/163073/LARGE/7e5878f9ff85faf8682b95efafb3e3499987c507.47.1.26.2.jpg',
     'price': '10000'
 },
 {
     'hotel_id': 27,
-    'room_number': 106,
+    'room_type': "スタンダードルーム【150cm幅ダブルベッド１台】",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/147874/LARGE/Zl4szc.jpeg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/147874/LARGE/p2kQYf.jpeg',
     'price': '19091'
 },
 {
     'hotel_id': 28,
-    'room_number': 107,
+    'room_type': "【禁煙】トリプルルーム【上下型ツイン 定員2〜3名幼児含む】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/106147/LARGE/92a997787de27a9d57b4babb00c062c4a2cc5d95.47.9.26.3.jpg',
     'price': '25400'
 },
 {
     'hotel_id': 29,
-    'room_number': 110,
+    'room_type': "喫煙スタンダードダブル　シティビュー",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/570/LARGE/825bf4268a36bd08df4e1c3126a508c215a57224.47.9.26.3.jpg',
     'price': '28600'
 },
 {
     'hotel_id': 30,
-    'room_number': 101,
+    'room_type': "フォース禁煙",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/128577/LARGE/54194accd89c800ad5e36478cf50d31ee9fa9943.47.9.26.3.jpg',
     'price': '7160'
 },
 {
     'hotel_id': 31,
-    'room_number': 102,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': False,
-    'image': 'https://trvimg.r10s.jp/share/image_up/179391/LARGE/6a1599ff9cde9cb09108b72b11bbd877baa6834a.47.9.26.3.jpg',
+    'image': 'https://trvimg.r10s.jp/share/image_up/179391/LARGE/26176b060e967b4ed882c96e5a3d0d70d8fe8252.47.9.26.3.jpg',
     'price': '17091'
 },
 {
     'hotel_id': 32,
-    'room_number': 103,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/715/LARGE/986360c3141ca5ef4a0cec04ade85ab0a9ceeb4e.47.9.26.3.jpg',
     'price': '12228'
 },
 {
     'hotel_id': 33,
-    'room_number': 104,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/74636/LARGE/9a80480ef59ddef560b9784ef970827a3113fe52.47.9.26.3.jpg',
     'price': '14364'
 },
 {
     'hotel_id': 34,
-    'room_number': 105,
+    'room_type': "スタンダード・ダブル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/19908/LARGE/04ca659d7c5993c13bda06f4559d820ab28063b4.47.1.26.2.jpg',
     'price': '11200'
 },
 {
     'hotel_id': 35,
-    'room_number': 106,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/183871/LARGE/2fe2f65ae13caeac738fd463f0284030108f4609.47.9.26.3.jpg',
     'price': '11755'
 },
 {
     'hotel_id': 36,
-    'room_number': 107,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/147074/LARGE/d74b4a7202e8308c79bd8798787b19b1a7235807.47.9.26.3.jpg',
     'price': '27364'
 },
 {
     'hotel_id': 37,
-    'room_number': 108,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/51870/LARGE/0b12d57d010e7e27add633a81f734c79e035e174.47.9.26.3.jpg',
     'price': '6437'
 },
 {
     'hotel_id': 38,
-    'room_number': 109,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/149010/LARGE/854170940f5a94191e2c4c3744875042211659ee.47.9.26.3.jpg',
     'price': '22091'
 },
 {
     'hotel_id': 39,
-    'room_number': 110,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/19455/LARGE/1f0a6f0e68b8b9f55c6e5a4ca6dcc1c6db70baea.47.1.26.2.jpg',
     'price': '48191'
 },
 {
     'hotel_id': 40,
-    'room_number': 1011,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/32083/LARGE/2e97b585891982a46468d0d6e0d630749a11df4e.47.9.26.3.jpg',
     'price': '4537'
 },
 {
     'hotel_id': 41,
-    'room_number': 1012,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/2116/LARGE/1d8aafb2fbcc9e4cf1e9b54dc9d53f35b48c67b5.47.9.26.3.jpg',
     'price': '23455'
 },
 {
     'hotel_id': 42,
-    'room_number': 103,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/37928/LARGE/2a179732a1b4961f7f15d63316087cb7da1b3bcd.47.9.26.3.jpg',
     'price': '8137'
 },
 {
     'hotel_id': 43,
-    'room_number': 104,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/108993/LARGE/593ae456eedb86bb876c187fac0af1b1252db2a2.47.9.26.3.jpg',
     'price': '4091'
 },
 {
     'hotel_id': 44,
-    'room_number': 105,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/168764/LARGE/c67874c30a0b2d171a32cb91c06fb5e64e6b49d8.47.9.26.3.jpg',
     'price': '6800'
 },
 {
     'hotel_id': 45,
-    'room_number': 106,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/181415/LARGE/3282362ec830f0b01003a2233b777b9dc7030112.47.9.26.3.jpg',
     'price': '18182'
 },
 {
     'hotel_id': 46,
-    'room_number': 107,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/183777/LARGE/415b95de91bf54a1ca774f4b190b3ea449b97079.47.9.26.3.jpg',
     'price': '6546'
 },
 {
     'hotel_id': 47,
-    'room_number': 108,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/165554/LARGE/cb829377430065a49a1f530e126a13bf6d25ff4f.47.1.26.2.jpg',
     'price': '8600'
 },
 {
     'hotel_id': 48,
-    'room_number': 109,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/172058/LARGE/cea7dafff7559048d58be5eb6d06b60a2cc91b10.47.9.26.3.jpg',
     'price': '7999'
 },
 {
     'hotel_id': 49,
-    'room_number': 110,
+    'room_type': "スタンダード・シングル【全室禁煙】",
     'available': False,
     'image': 'https://trvimg.r10s.jp/share/image_up/5692/LARGE/61e18a895a95c0561fd2ad64c5c580fd17a47cb0.47.1.26.2.jpg',
     'price': '8000'
