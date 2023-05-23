@@ -104,6 +104,7 @@ export default function Map(props: Props) {
       text: "0.5 km",
       value: 501,
     }))
+    console.log(activityList.length)
     setDistanceList(objects)
   }
 
