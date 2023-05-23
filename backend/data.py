@@ -1102,17 +1102,6 @@ activities = [
   "url": "https://experiences.travel.rakuten.co.jp/experiences/25512"
  },
  {
-  "name": "東京シティビュー入館券とTokyo Subway Ticket(24時間券)とのセット【最大400円お得！】",
-  "price": 2500,
-  "description": "六本木ヒルズ森タワー52階の屋内展望台「東京シティビュー」の入館券と、都営地下鉄線全線と東京メトロ全線が乗り放題の「Tokyo Subway Ticket（24時間券）」がセットになったプランです。",
-  "image": "https://d2izacsg13mtms.cloudfront.net/RFNM76/images/eafc4f18750f2a793192c208123601303fcc162b25400a409d4b459944e5e54b.jpg",
-  "region": "都心",
-  "longitude": 139.7267158,
-  "latitude": 35.6600712,
-  "category_id": 3,
-  "url": "https://experiences.travel.rakuten.co.jp/experiences/31258"
- },
- {
   "name": "東京 春花園BONSAI美術館 入館Eチケット＋お茶＜当日購入可能＞",
   "price": 1000,
   "description": "東京都江戸川区にある春花園盆栽美術館（春花園BONSAI美術館）は、盆栽界の巨匠・小林國雄さんが館長を務める美術館です。",
@@ -1219,17 +1208,6 @@ activities = [
   "region": "東部",
   "longitude": 139.7895,
   "latitude": 35.7158,
-  "category_id": 3,
-  "url": "https://experiences.travel.rakuten.co.jp/"
- },
- {
-  "name": "東京サマーランド・ウォータースライダー",
-  "price": 4000,
-  "description": "ウォータースライダーで楽しむ水のアトラクションです。水しぶきと笑顔で一緒に遊びましょう！",
-  "image": "https://www.summerland.co.jp/wp-content/uploads/2020/07/DEKASLA_thumbnail.jpg",
-  "region": "都心",
-  "longitude": 139.7525,
-  "latitude": 35.6938,
   "category_id": 3,
   "url": "https://experiences.travel.rakuten.co.jp/"
  },

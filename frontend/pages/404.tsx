@@ -1,4 +1,5 @@
 import { createStyles, Title, Text, Button, Container, Group, rem } from "@mantine/core"
+import { useRouter } from "next/router"
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -40,6 +41,7 @@ const useStyles = createStyles((theme) => ({
 
 export default function NotFoundTitle() {
   const { classes } = useStyles()
+  const router = useRouter()
 
   return (
     <Container className={classes.root}>
@@ -50,7 +52,7 @@ export default function NotFoundTitle() {
         URL.
       </Text>
       <Group position='center'>
-        <Button variant='subtle' size='md'>
+        <Button variant='subtle' size='md' onClick={() => router.push("/")}>
           Take me back to home page
         </Button>
       </Group>

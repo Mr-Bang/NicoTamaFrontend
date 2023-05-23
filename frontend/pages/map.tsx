@@ -14,6 +14,7 @@ import { ActivityList } from "@/types/activityList"
 import { useRouter } from "next/router"
 import NextImage from "next/image"
 import HealthIcon from "../public/rakuten_healthcare_icon.png"
+import { calcDistance } from "@/services/calcDistance"
 
 const containerStyle = {
   width: "100%",
@@ -92,13 +93,12 @@ export default function Map(props: Props) {
 
   async function getDistanceList() {
     // 計算量すごいから、DEMOのときだけ有効にする (使う時相談して！！)
-    //   const distances = await calcDistance({
-    //     origin: [{ lat: hotel.latitude, lng: hotel.longitude }],
-    //     destinations: destinations,
-    //   })
-    //   setDistanceList(distances.distanceList)
-    //   console.log(distances.distanceList)
-
+    // const distances = await calcDistance({
+    //   origin: [{ lat: hotel.latitude, lng: hotel.longitude }],
+    //   destinations: destinations,
+    // })
+    // setDistanceList(distances.distanceList)
+    // console.log(distances.distanceList)
     const objects = activityList.map((activity) => ({
       durationText: "7 mins",
       text: "0.5 km",
