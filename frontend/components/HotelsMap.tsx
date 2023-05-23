@@ -21,6 +21,7 @@ import {
 import { useRouter } from "next/router"
 import { RoomList } from "@/types/roomList"
 import { useState } from "react"
+import { posix } from "path"
 
 const containerStyle = {
   width: "100%",
@@ -88,6 +89,7 @@ export default function HotelsMap(props: Props) {
   })
 
   const [indexShowActivityInfo, setIndexShowActivityInfo] = useState<number>(-1)
+  const [indexShowHotelInfo, setIndexShowHotelInfo] = useState<number>(-1)
 
   const getPriceList = (roomList: RoomList) => {
     let priceList: number[] = []
@@ -101,6 +103,9 @@ export default function HotelsMap(props: Props) {
   function onClickActivityMarker(index: number) {
     setIndexShowActivityInfo(index)
   }
+  function onClickHotelMarker(index: number) {
+    setIndexShowHotelInfo(index)
+  }
 
   const HotelMarkers = hotelList.map((hotel, index) => (
     <>
@@ -111,48 +116,50 @@ export default function HotelsMap(props: Props) {
           path: faHotel.icon[4] as string,
           fillColor: "#0000ff",
           fillOpacity: 1,
-
           strokeWeight: 1,
           strokeColor: "#ffffff",
           scale: 0.055,
         }}
+        onClick={() => onClickHotelMarker(index)}
       />
-      <InfoWindowF key={index} position={{ lat: Number(hotel.latitude), lng: Number(hotel.longitude) }}>
-        <UnstyledButton>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
-            <Card.Section
-              component="a"
-              onClick={() => {
-                router.push({
-                  pathname: "/hotel/[hotel_id]",
-                  query: {
-                    hotel_id: hotel.hotel_id,
-                    name: hotel.name,
-                    description: hotel.description,
-                    latitude: hotel.latitude,
-                    longitude: hotel.longitude,
-                    image: hotel.image,
-                    region: hotel.region,
-                    roomList: JSON.stringify(hotel.roomList),
-                  },
-                })
-              }}
-            >
-              <AspectRatio ratio={1920 / 1080}>
-                <Image maw={300} src={hotel.image} alt={hotel.name} />
-              </AspectRatio>
-              <Flex direction={"column"} justify={"flex-end"}>
-                <Text ta="center" fw={700} fz="lg">
-                  {hotel.name}
-                </Text>
-                <Text ta="center" fz="md">
-                  ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
-                </Text>
-              </Flex>
-            </Card.Section>
-          </Card>
-        </UnstyledButton>
-      </InfoWindowF>
+      {index == indexShowHotelInfo && (
+        <InfoWindowF key={index} position={{ lat: Number(hotel.latitude + 0.0015), lng: Number(hotel.longitude) }}>
+          <UnstyledButton>
+            <Card shadow="sm" padding="lg" radius="md" withBorder>
+              <Card.Section
+                component="a"
+                onClick={() => {
+                  router.push({
+                    pathname: "/hotel/[hotel_id]",
+                    query: {
+                      hotel_id: hotel.hotel_id,
+                      name: hotel.name,
+                      description: hotel.description,
+                      latitude: hotel.latitude,
+                      longitude: hotel.longitude,
+                      image: hotel.image,
+                      region: hotel.region,
+                      roomList: JSON.stringify(hotel.roomList),
+                    },
+                  })
+                }}
+              >
+                <AspectRatio ratio={1920 / 1080}>
+                  <Image maw={300} src={hotel.image} alt={hotel.name} />
+                </AspectRatio>
+                <Flex direction={"column"} justify={"flex-end"}>
+                  <Text ta="center" fw={700} fz="lg">
+                    {hotel.name}
+                  </Text>
+                  <Text ta="center" fz="md">
+                    ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
+                  </Text>
+                </Flex>
+              </Card.Section>
+            </Card>
+          </UnstyledButton>
+        </InfoWindowF>
+      )}
     </>
   ))
 
@@ -199,7 +206,7 @@ export default function HotelsMap(props: Props) {
           options={SimpleMapOptions}
         >
           {activityMarkers}
-          {/* {HotelMarkers} */}
+          {HotelMarkers}
         </GoogleMap>
       ) : (
         <></>
