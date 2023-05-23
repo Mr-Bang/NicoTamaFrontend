@@ -111,7 +111,7 @@ export default function HotelsMap(props: Props) {
     <>
       <MarkerF
         key={index}
-        position={{ lat: hotel.latitude, lng: hotel.longitude }}
+        position={{ lat: hotel.latitude, lng: hotel.longitude - 0.0023 }}
         icon={{
           path: faHotel.icon[4] as string,
           fillColor: "#0000ff",
@@ -123,7 +123,7 @@ export default function HotelsMap(props: Props) {
         onClick={() => onClickHotelMarker(index)}
       />
       {index == indexShowHotelInfo && (
-        <InfoWindowF key={index} position={{ lat: Number(hotel.latitude + 0.0015), lng: Number(hotel.longitude) }}>
+        <InfoWindowF key={index} position={{ lat: Number(hotel.latitude), lng: Number(hotel.longitude) }}>
           <UnstyledButton>
             <Card shadow="sm" padding="lg" radius="md" withBorder>
               <Card.Section
