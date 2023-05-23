@@ -22,11 +22,11 @@ export default function SampleHotel(props: Props) {
           <Grid.Col span={4} key={index}>
             <Card shadow='sm' padding='lg' radius='md' withBorder>
               <Card.Section>
-                <Image src={room.image} height={260} width={550} alt={room.room_number.toString()} />
+                <Image src={room.image} height={260} width={550} alt={room.room_type.toString()} />
               </Card.Section>
 
               <Group position='apart' mt='md' mb='xs'>
-                <Text weight={500}>{room.room_number.toString()} 号室</Text>
+                <Text weight={500}>{room.room_type.toString()}</Text>
                 {room.available ? (
                   <Badge color='blue' variant='light'>
                     空室あり
@@ -63,3 +63,4 @@ export default function SampleHotel(props: Props) {
     </Grid>
   )
 }
+
