@@ -137,7 +137,10 @@ export default function Map(props: Props) {
         onClick={() => onClickActivityMarker(index)}
       />
       {index == indexShowActivityInfo && (
-        <InfoWindowF position={{ lat: Number(activity.latitude + 0.0015), lng: Number(activity.longitude) }}>
+        <InfoWindowF
+          position={{ lat: Number(activity.latitude + 0.0015), lng: Number(activity.longitude) }}
+          onCloseClick={() => setIndexShowActivityInfo(-1)}
+        >
           <Card
             style={{ width: "200px" }}
             padding='1'

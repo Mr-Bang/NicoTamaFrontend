@@ -123,11 +123,15 @@ export default function HotelsMap(props: Props) {
         onClick={() => onClickHotelMarker(index)}
       />
       {index == indexShowHotelInfo && (
-        <InfoWindowF key={index} position={{ lat: Number(hotel.latitude), lng: Number(hotel.longitude) }}>
+        <InfoWindowF
+          key={index}
+          position={{ lat: Number(hotel.latitude), lng: Number(hotel.longitude) }}
+          onCloseClick={() => setIndexShowHotelInfo(-1)}
+        >
           <UnstyledButton>
-            <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Card shadow='sm' padding='lg' radius='md' withBorder>
               <Card.Section
-                component="a"
+                component='a'
                 onClick={() => {
                   router.push({
                     pathname: "/hotel/[hotel_id]",
@@ -148,10 +152,10 @@ export default function HotelsMap(props: Props) {
                   <Image maw={300} src={hotel.image} alt={hotel.name} />
                 </AspectRatio>
                 <Flex direction={"column"} justify={"flex-end"}>
-                  <Text ta="center" fw={700} fz="lg">
+                  <Text ta='center' fw={700} fz='lg'>
                     {hotel.name}
                   </Text>
-                  <Text ta="center" fz="md">
+                  <Text ta='center' fz='md'>
                     ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
                   </Text>
                 </Flex>
@@ -171,23 +175,26 @@ export default function HotelsMap(props: Props) {
         onClick={() => onClickActivityMarker(index)}
       />
       {index == indexShowActivityInfo && (
-        <InfoWindowF position={{ lat: Number(activity.latitude + 0.0015), lng: Number(activity.longitude) }}>
+        <InfoWindowF
+          position={{ lat: Number(activity.latitude + 0.0015), lng: Number(activity.longitude) }}
+          onCloseClick={() => setIndexShowActivityInfo(-1)}
+        >
           <Card
             style={{ width: "200px" }}
-            padding="1"
-            shadow="sm"
+            padding='1'
+            shadow='sm'
             key={index}
-            radius="md"
-            component="a"
-            href="#"
+            radius='md'
+            component='a'
+            href='#'
             onClick={() => router.push(activity.url)}
           >
             <AspectRatio ratio={1920 / 1080}>
-              <Image maw={300} mx="auto" src={activity.image} alt={activity.name} fit={"contain"} />
+              <Image maw={300} mx='auto' src={activity.image} alt={activity.name} fit={"contain"} />
             </AspectRatio>
 
             <Text mt={5}>{activity.name}</Text>
-            <Text color="dimmed" size="sm" transform="uppercase" weight={700} mt="md">
+            <Text color='dimmed' size='sm' transform='uppercase' weight={700} mt='md'>
               ¥ {activity.price.toLocaleString()}
             </Text>
           </Card>
