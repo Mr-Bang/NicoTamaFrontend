@@ -29,7 +29,7 @@ import Adv4 from "../public/advertisements4.svg"
 import Adv5 from "../public/advertisements5.svg"
 
 import Register from "../public/register.jpg"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useMediaQuery } from "@mantine/hooks"
 
 export default function Home() {

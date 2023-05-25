@@ -1,4 +1,15 @@
-export const calcDistance = async ({ origin, destinations }) => {
+type Props = {
+  origin: {
+    lat: number
+    lng: number
+  }[]
+  destinations: {
+    lat: number
+    lng: number
+  }[]
+}
+
+export const calcDistance = async ({ origin, destinations }: Props) => {
   let distanceList: {
     text: string
     value: number
@@ -10,12 +21,12 @@ export const calcDistance = async ({ origin, destinations }) => {
     {
       origins: origin,
       destinations: destinations,
-      travelMode: "WALKING",
+      travelMode: "WALKING" as google.maps.TravelMode,
     },
     callback
   )
 
-  function callback(response, status) {
+  function callback(response: any, status: any) {
     if (status == "OK") {
       let origins = response.originAddresses
       let destinations = response.destinationAddresses
