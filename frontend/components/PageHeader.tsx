@@ -7,7 +7,7 @@ import { useMediaQuery } from "@mantine/hooks"
 export default function PageHeader() {
   const smallScreen = useMediaQuery("(max-width: 700px)")
 
-  if (smallScreen) return
+  if (smallScreen) return <></>
 
   return (
     <Box>
