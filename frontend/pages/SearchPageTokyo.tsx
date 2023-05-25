@@ -46,36 +46,36 @@ export default function Home() {
   const { classes } = useStyles()
 
   const areaInfoList = [
-    { name: "板橋", top: "465px", left: largeScreen ? "750px" : "650px", area: "北西部" },
-    { name: "練馬", top: "505px", left: "610px", area: "北西部" },
-    { name: "北区", top: "485px", left: "850px", area: "北西部" },
-    { name: "中野", top: "615px", left: "700px", area: "北西部" },
-    { name: "杉並", top: "665px", left: "620px", area: "北西部" },
-    { name: "世田谷", top: "805px", left: "630px", area: "南西部" },
-    { name: "目黒", top: "825px", left: "760px", area: "南西部" },
-    { name: "品川", top: "875px", left: "840px", area: "南西部" },
-    { name: "大田", top: "985px", left: "820px", area: "南西部" },
-    { name: "足立", top: "455px", left: "990px", area: "東部" },
-    { name: "葛飾", top: "525px", left: "1100px", area: "東部" },
-    { name: "江戸川", top: "665px", left: "1160px", area: "東部" },
-    { name: "荒川", top: "555px", left: "960px", area: "東部" },
-    { name: "台東", top: "605px", left: "960px", area: "東部" },
-    { name: "墨田", top: "635px", left: "1020px", area: "東部" },
-    { name: "江東", top: "725px", left: "1030px", area: "東部" },
-    { name: "豊島", top: "565px", left: "800px", area: "副都心" },
-    { name: "文京", top: "595px", left: "875px", area: "副都心" },
-    { name: "新宿", top: "675px", left: "800px", area: "副都心" },
-    { name: "中央", top: "735px", left: "940px", area: "都心" },
-    { name: "港区", top: "795px", left: "865px", area: "都心" },
-    { name: "渋谷", top: "735px", left: "750px", area: "副都心" },
-    { name: "千代田", top: "685px", left: "890px", area: "都心" },
+    { name: "板橋", top: largeScreen ? "465px" : "440px", left: largeScreen ? "785px" : "620px", area: "北西部" },
+    { name: "練馬", top: largeScreen ? "510px" : "470px", left: largeScreen ? "630px" : "505px", area: "北西部" },
+    { name: "北区", top: largeScreen ? "485px" : "450px", left: largeScreen ? "890px" : "700px", area: "北西部" },
+    { name: "中野", top: largeScreen ? "625px" : "570px", left: largeScreen ? "720px" : "580px", area: "北西部" },
+    { name: "杉並", top: largeScreen ? "675px" : "600px", left: largeScreen ? "650px" : "500px", area: "北西部" },
+    { name: "世田谷", top: largeScreen ? "825px" : "720px", left: largeScreen ? "670px" : "510px", area: "南西部" },
+    { name: "目黒", top: largeScreen ? "855px" : "750px", left: largeScreen ? "810px" : "610px", area: "南西部" },
+    { name: "品川", top: largeScreen ? "920px" : "790px", left: largeScreen ? "905px" : "705px", area: "南西部" },
+    { name: "大田", top: largeScreen ? "1030px" : "880px", left: largeScreen ? "870px" : "705px", area: "南西部" },
+    { name: "足立", top: largeScreen ? "460px" : "420px", left: largeScreen ? "1050px" : "820px", area: "東部" },
+    { name: "葛飾", top: largeScreen ? "530px" : "480px", left: largeScreen ? "1180px" : "920px", area: "東部" },
+    { name: "江戸川", top: largeScreen ? "680px" : "600px", left: largeScreen ? "1250px" : "970px", area: "東部" },
+    { name: "荒川", top: largeScreen ? "555px" : "510px", left: largeScreen ? "1000px" : "780px", area: "東部" },
+    { name: "台東", top: largeScreen ? "620px" : "540px", left: largeScreen ? "1020px" : "800px", area: "東部" },
+    { name: "墨田", top: largeScreen ? "655px" : "570px", left: largeScreen ? "1080px" : "850px", area: "東部" },
+    { name: "江東", top: largeScreen ? "760px" : "670px", left: largeScreen ? "1090px" : "860px", area: "東部" },
+    { name: "豊島", top: largeScreen ? "585px" : "520px", left: largeScreen ? "845px" : "660px", area: "副都心" },
+    { name: "文京", top: largeScreen ? "620px" : "550px", left: largeScreen ? "925px" : "715px", area: "副都心" },
+    { name: "新宿", top: largeScreen ? "660px" : "585px", left: largeScreen ? "845px" : "660px", area: "副都心" },
+    { name: "中央", top: largeScreen ? "760px" : "660px", left: largeScreen ? "995px" : "780px", area: "都心" },
+    { name: "港区", top: largeScreen ? "810px" : "680px", left: largeScreen ? "920px" : "705px", area: "都心" },
+    { name: "渋谷", top: largeScreen ? "760px" : "660px", left: largeScreen ? "805px" : "620px", area: "副都心" },
+    { name: "千代田", top: largeScreen ? "700px" : "620px", left: largeScreen ? "945px" : "745px", area: "都心" },
   ]
   const area23InfoList = [
-    { name: "都心", left: "860px", top: "720px" },
-    { name: "副都心", left: "785px", top: "610px" },
-    { name: "北西部", left: "600px", top: "540px" },
-    { name: "南西部", left: "680px", top: "860px" },
-    { name: "東部", left: "1120px", top: "570px" },
+    { name: "都心", left: largeScreen ? "910px" : "740px", top: largeScreen ? "740px" : "700px" },
+    { name: "副都心", left: largeScreen ? "810px" : "632px", top: largeScreen ? "690px" : "610px" },
+    { name: "北西部", left: largeScreen ? "600px" : "500px", top: largeScreen ? "540px" : "510px" },
+    { name: "南西部", left: largeScreen ? "680px" : "580px", top: largeScreen ? "860px" : "780px" },
+    { name: "東部", left: largeScreen ? "1120px" : "930px", top: largeScreen ? "570px" : "520px" },
   ]
 
   const stationInfoList = [
@@ -142,7 +142,7 @@ export default function Home() {
 
   return (
     <>
-      <Breadcrumbs separator='>' mt='xs'>
+      <Breadcrumbs separator=">" mt="xs">
         {breadcrumbs}
       </Breadcrumbs>
       <Box
@@ -154,7 +154,7 @@ export default function Home() {
         <Title order={1}>東京23区</Title>
       </Box>
       <Grid>
-        <Grid.Col span='auto'>
+        <Grid.Col span="auto">
           <Container>
             <Box
               sx={{
@@ -163,7 +163,7 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title pl={"sm"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
                 地域名から探す
               </Title>
               <Container>
@@ -172,8 +172,8 @@ export default function Home() {
                     <div key={index}>
                       <Anchor
                         className={classes.root3}
-                        variant='default'
-                        component='a'
+                        variant="default"
+                        component="a"
                         onClick={() => router.push("/" + area23Info.name)}
                       >
                         {area23Info.name}
@@ -184,7 +184,7 @@ export default function Home() {
               </Container>
             </Box>
 
-            <Space h='xl' />
+            <Space h="xl" />
 
             <Box
               sx={{
@@ -193,18 +193,18 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title pl={"sm"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
                 主要駅・主要空港周辺から探す
               </Title>
 
               <Container>
-                <SimpleGrid cols={2} verticalSpacing='xs'>
+                <SimpleGrid cols={2} verticalSpacing="xs">
                   {stationInfoList.map((stationInfo, index) => (
                     <div key={index}>
                       <Anchor
                         className={classes.root3}
-                        variant='default'
-                        component='a'
+                        variant="default"
+                        component="a"
                         onClick={() => router.push("/" + stationInfo.region)}
                       >
                         {stationInfo.name}
@@ -214,7 +214,7 @@ export default function Home() {
                 </SimpleGrid>
               </Container>
             </Box>
-            <Space h='xl' />
+            <Space h="xl" />
             <Box
               sx={{
                 background: "76AE25",
@@ -222,17 +222,17 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title pl={"sm"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
                 人気スポットから探す
               </Title>
               <Container>
-                <SimpleGrid cols={2} verticalSpacing='xs'>
+                <SimpleGrid cols={2} verticalSpacing="xs">
                   {popularInfoList.map((popularInfo, index) => (
                     <div key={index}>
                       <Anchor
                         className={classes.root3}
-                        variant='default'
-                        component='a'
+                        variant="default"
+                        component="a"
                         onClick={() => router.push("/" + popularInfo.region)}
                       >
                         {popularInfo.name}
@@ -252,43 +252,55 @@ export default function Home() {
               borderRadius: "5px",
             }}
           >
-            <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
+            <Title pl={"sm"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
               地図から探す
             </Title>
-            <Image width={834} height={824} alt={"mapoftokyo"} src={mapoftokyo} />
+            <Container>
+              <Image
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                alt={"mapoftokyo"}
+                src={mapoftokyo}
+              />
+
+              {areaInfoList.map((areaInfo, index) => (
+                <Button
+                  key={index}
+                  className={classes.root}
+                  variant="default"
+                  component="a"
+                  radius="5px"
+                  style={{
+                    position: "absolute",
+                    width: largeScreen ? "79px" : "76px",
+                    height: "26px",
+                    left: areaInfo.left,
+                    top: areaInfo.top,
+                  }}
+                  onClick={() => router.push("/" + areaInfo.area)}
+                >
+                  <Text weight={700}>{areaInfo.name}</Text>
+                </Button>
+              ))}
+
+              {area23InfoList.map((area23Info, index) => (
+                <Text
+                  key={index}
+                  className={classes.root2}
+                  variant="default"
+                  component="a"
+                  weight={700}
+                  size={largeScreen ? "45px" : "35px"}
+                  style={{ position: "absolute", left: area23Info.left, top: area23Info.top }}
+                  onClick={() => router.push("/" + area23Info.name)}
+                >
+                  {area23Info.name}
+                </Text>
+              ))}
+            </Container>
           </Box>
         </Grid.Col>
-        <Grid.Col span='auto'></Grid.Col>
+        <Grid.Col span="auto"></Grid.Col>
       </Grid>
-
-      {areaInfoList.map((areaInfo, index) => (
-        <Button
-          key={index}
-          className={classes.root}
-          variant='default'
-          component='a'
-          radius='5px'
-          style={{ position: "absolute", width: "79px", height: "26px", left: areaInfo.left, top: areaInfo.top }}
-          onClick={() => router.push("/" + areaInfo.area)}
-        >
-          <Text weight={700}>{areaInfo.name}</Text>
-        </Button>
-      ))}
-
-      {area23InfoList.map((area23Info, index) => (
-        <Text
-          key={index}
-          className={classes.root2}
-          variant='default'
-          component='a'
-          weight={700}
-          size={"45px"}
-          style={{ position: "absolute", left: area23Info.left, top: area23Info.top }}
-          onClick={() => router.push("/" + area23Info.name)}
-        >
-          {area23Info.name}
-        </Text>
-      ))}
     </>
   )
 }
