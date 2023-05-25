@@ -1,10 +1,25 @@
 import { useRouter } from "next/router"
 import Image from "next/image"
-import { Box, Breadcrumbs, Title, Grid, Container, Space, Text, SimpleGrid, Button, createStyles, rem, Anchor } from "@mantine/core"
+import {
+  Box,
+  Breadcrumbs,
+  Title,
+  Grid,
+  Container,
+  Space,
+  Text,
+  SimpleGrid,
+  Button,
+  createStyles,
+  rem,
+  Anchor,
+} from "@mantine/core"
 import mapoftokyo from "../public/mapoftokyo.svg"
+import { useMediaQuery } from "@mantine/hooks"
 
 export default function Home() {
   const router = useRouter()
+  const largeScreen = useMediaQuery("(min-width: 1600px)")
 
   const useStyles = createStyles((theme) => ({
     root: {
@@ -31,7 +46,7 @@ export default function Home() {
   const { classes } = useStyles()
 
   const areaInfoList = [
-    { name: "板橋", top: "465px", left: "750px", area: "北西部" },
+    { name: "板橋", top: "465px", left: largeScreen ? "750px" : "650px", area: "北西部" },
     { name: "練馬", top: "505px", left: "610px", area: "北西部" },
     { name: "北区", top: "485px", left: "850px", area: "北西部" },
     { name: "中野", top: "615px", left: "700px", area: "北西部" },
@@ -139,7 +154,7 @@ export default function Home() {
         <Title order={1}>東京23区</Title>
       </Box>
       <Grid>
-        <Grid.Col span="auto">
+        <Grid.Col span='auto'>
           <Container>
             <Box
               sx={{
@@ -148,7 +163,7 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 地域名から探す
               </Title>
               <Container>
@@ -157,8 +172,8 @@ export default function Home() {
                     <div key={index}>
                       <Anchor
                         className={classes.root3}
-                        variant="default"
-                        component="a"
+                        variant='default'
+                        component='a'
                         onClick={() => router.push("/" + area23Info.name)}
                       >
                         {area23Info.name}
@@ -169,7 +184,7 @@ export default function Home() {
               </Container>
             </Box>
 
-            <Space h="xl" />
+            <Space h='xl' />
 
             <Box
               sx={{
@@ -178,18 +193,18 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 主要駅・主要空港周辺から探す
               </Title>
 
               <Container>
-                <SimpleGrid cols={2} verticalSpacing="xs">
+                <SimpleGrid cols={2} verticalSpacing='xs'>
                   {stationInfoList.map((stationInfo, index) => (
                     <div key={index}>
                       <Anchor
                         className={classes.root3}
-                        variant="default"
-                        component="a"
+                        variant='default'
+                        component='a'
                         onClick={() => router.push("/" + stationInfo.region)}
                       >
                         {stationInfo.name}
@@ -199,7 +214,7 @@ export default function Home() {
                 </SimpleGrid>
               </Container>
             </Box>
-            <Space h="xl" />
+            <Space h='xl' />
             <Box
               sx={{
                 background: "76AE25",
@@ -207,25 +222,23 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 人気スポットから探す
               </Title>
               <Container>
-                <SimpleGrid cols={2} verticalSpacing="xs">
-                  {popularInfoList.map((popularInfo, index) =>
-		    (
-                      <div key={index}>
-                        <Anchor
-                          className={classes.root3}
-                          variant="default"
-                          component="a"
-                          onClick={() => router.push("/" + popularInfo.region)}
-                        >
-                          {popularInfo.name}
-                        </Anchor>
-                      </div>
-		    )
-                  )}
+                <SimpleGrid cols={2} verticalSpacing='xs'>
+                  {popularInfoList.map((popularInfo, index) => (
+                    <div key={index}>
+                      <Anchor
+                        className={classes.root3}
+                        variant='default'
+                        component='a'
+                        onClick={() => router.push("/" + popularInfo.region)}
+                      >
+                        {popularInfo.name}
+                      </Anchor>
+                    </div>
+                  ))}
                 </SimpleGrid>
               </Container>
             </Box>
@@ -239,22 +252,22 @@ export default function Home() {
               borderRadius: "5px",
             }}
           >
-            <Title size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+            <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
               地図から探す
             </Title>
             <Image width={834} height={824} alt={"mapoftokyo"} src={mapoftokyo} />
           </Box>
         </Grid.Col>
-        <Grid.Col span="auto"></Grid.Col>
+        <Grid.Col span='auto'></Grid.Col>
       </Grid>
 
       {areaInfoList.map((areaInfo, index) => (
         <Button
           key={index}
           className={classes.root}
-          variant="default"
-          component="a"
-          radius="5px"
+          variant='default'
+          component='a'
+          radius='5px'
           style={{ position: "absolute", width: "79px", height: "26px", left: areaInfo.left, top: areaInfo.top }}
           onClick={() => router.push("/" + areaInfo.area)}
         >
@@ -266,8 +279,8 @@ export default function Home() {
         <Text
           key={index}
           className={classes.root2}
-          variant="default"
-          component="a"
+          variant='default'
+          component='a'
           weight={700}
           size={"45px"}
           style={{ position: "absolute", left: area23Info.left, top: area23Info.top }}
