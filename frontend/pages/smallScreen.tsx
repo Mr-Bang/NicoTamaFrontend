@@ -1,4 +1,4 @@
-import { createStyles, Title, Text, Button, Container, Group, rem } from "@mantine/core"
+import { createStyles, Title, Text, Button, Container, Group, rem, Header, Flex, Center } from "@mantine/core"
 import { useRouter } from "next/router"
 
 const useStyles = createStyles((theme) => ({
@@ -45,6 +45,11 @@ export default function SmallScreen() {
 
   return (
     <Container className={classes.root}>
+      <Flex align={"center"} justify={"center"} mt={"md"}>
+        <Title color={"green"}>Rakuten Travel X </Title>
+        <Title ml='sm'>からのお願い</Title>
+      </Flex>
+
       <div className={classes.label}> This window size is too small</div>
       <Title className={classes.title}>大きなwindow画面で開いてください</Title>
       <Text color='dimmed' size='lg' align='center' className={classes.description}>

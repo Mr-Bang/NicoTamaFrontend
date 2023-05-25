@@ -2,8 +2,13 @@ import { Box } from "@mantine/core"
 
 import resets from "@/styles/_resets.module.css"
 import classes from "@/styles/PageHeader.module.css"
+import { useMediaQuery } from "@mantine/hooks"
 
 export default function PageHeader() {
+  const smallScreen = useMediaQuery("(max-width: 700px)")
+
+  if (smallScreen) return
+
   return (
     <Box>
       <div className={`${resets.clapyResets} ${classes.banner}`}>

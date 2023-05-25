@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth
-      if (windowWidth <= 768) {
+      if (windowWidth <= 700) {
         // iPadサイズ以下の場合
         router.push("/smallScreen") // 別のページにリダイレクト
       }
