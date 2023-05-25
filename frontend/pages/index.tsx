@@ -265,7 +265,7 @@ export default function Home() {
             </Container>
           </Box>
         </Stack>
-
+        {largeScreen && <Space w={"xl"} />}
         {/*  center */}
         <Stack>
           <Container>
