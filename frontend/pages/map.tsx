@@ -3,7 +3,8 @@ import HotelBreadcrumb from "@/components/hotel/HotelBreadcrumb"
 import MapLeftBar from "@/components/map/MapLeftBar"
 import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
-import { AspectRatio, Box, Card, Center, Flex, Grid, Image, Text, Title } from "@mantine/core"
+import { AspectRatio, Box, Card, Container, Flex, Image, Text, Title } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import { InfoWindowF, MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
@@ -57,6 +58,8 @@ interface Props {
 }
 
 export default function Map(props: Props) {
+  const largeScreen = useMediaQuery('(min-width: 1600px)');
+
   const [indexShowActivityInfo, setIndexShowActivityInfo] = useState<number>(-1)
   const [activeTab, setActiveTab] = useState<number>(0)
 
@@ -109,7 +112,6 @@ export default function Map(props: Props) {
       text: "0.5 km",
       value: 501,
     }))
-    console.log(activityList.length)
     setDistanceList(objects)
   }
 
@@ -188,51 +190,47 @@ export default function Map(props: Props) {
       >
         <Title order={2}>{hotel.name}</Title>
       </Box>
-      <Grid>
-        <Grid.Col span='auto'>
-          <MapLeftBar />
-        </Grid.Col>
-        <Grid.Col span={7}>
+      <Flex>
+        <MapLeftBar />
+	<Box sx={(theme) =>({ width: largeScreen ? 3200 : 1200, padding: theme.spacing.xs})}>
           <HotelTab hotel={hotel} rooms={roomList} />
-          <Center>
-            {isLoaded ? (
-              <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={{ lat: hotel.latitude, lng: hotel.longitude }}
-                zoom={13}
-                options={SimpleMapOptions}
-              >
-                <MarkerF
-                  position={{ lat: hotel.latitude, lng: hotel.longitude }}
-                  icon={{
-                    path: faHotel.icon[4] as string,
-                    fillColor: "#0000ff",
-                    fillOpacity: 1,
-                    anchor: new google.maps.Point(
-                      faHotel.icon[0] / 2, // width
-                      faHotel.icon[1] // height
-                    ),
-                    strokeWeight: 1,
-                    strokeColor: "#ffffff",
-                    scale: 0.055,
-                  }}
-                />
-                {activityMarkers}
-              </GoogleMap>
-            ) : (
-              <></>
-            )}
-          </Center>
-        </Grid.Col>
-        <Grid.Col span='auto'>
+          {isLoaded ? (
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={{ lat: hotel.latitude, lng: hotel.longitude }}
+              zoom={13}
+              options={SimpleMapOptions}
+            >
+              <MarkerF
+                position={{ lat: hotel.latitude, lng: hotel.longitude }}
+                icon={{
+                  path: faHotel.icon[4] as string,
+                  fillColor: "#0000ff",
+                  fillOpacity: 1,
+                  anchor: new google.maps.Point(
+                    faHotel.icon[0] / 2, // width
+                    faHotel.icon[1] // height
+                  ),
+                  strokeWeight: 1,
+                  strokeColor: "#ffffff",
+                  scale: 0.055,
+                }}
+              />
+              {activityMarkers}
+            </GoogleMap>
+          ) : (
+            <></>
+          )}
+	</Box>
+	<Box sx={{ width: largeScreen ? 400 : 340 }}>
           <Activities
             activityList={categorizedActivities[activeTab]}
             distanceList={distanceList}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
-        </Grid.Col>
-      </Grid>
+	</Box>
+      </Flex>
     </>
   )
 }

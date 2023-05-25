@@ -1,6 +1,7 @@
 import { Hotel } from "@/types/hotel"
 import { RoomList } from "@/types/roomList"
 import { Box, Badge, Button, Card, Image, Grid, Group, SimpleGrid, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 
 type Props = {
   hotel: Hotel
@@ -10,18 +11,21 @@ type Props = {
 export default function SampleHotel(props: Props) {
   const { hotel, roomList } = props
 
+  const largeScreen = useMediaQuery('(min-width: 1600px)');
+
   return (
     <Grid grow>
       <Grid.Col span={4}>
-        <Box sx={{ width: 890 }}>
+        <Box sx={{ width: largeScreen ? 1100 : 930 }}>
           <Image radius='md' src={hotel.image} alt={hotel.name} />
         </Box>
       </Grid.Col>
+      <Box sx={{ width: largeScreen ? 1100 : 930 }}>
       <SimpleGrid cols={2} spacing='xs'>
         {roomList.map((room, index) => (
-            <Card shadow='sm' padding='lg' radius='md' withBorder key={index}>
+            <Card sx={{ width: largeScreen ? 540 : 470 }} shadow='sm' padding='lg' radius='md' withBorder key={index}>
               <Card.Section>
-                <Image src={room.image} height={260} width={445} alt={room.room_type} />
+                <Image src={room.image} height={260} width={largeScreen ? 550 : 480} alt={room.room_type} />
               </Card.Section>
 
               <Group position='apart' mt='md' mb='xs'>
@@ -59,6 +63,7 @@ export default function SampleHotel(props: Props) {
             </Card>
         ))}
       </SimpleGrid>
+      </Box>
     </Grid>
   )
 }

@@ -1,12 +1,14 @@
 import { Box, Button, Flex, Input, MantineTheme, NumberInput, Radio, Text, Title, rem } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 
 export default function MapLeftBar() {
+  const largeScreen = useMediaQuery('(min-width: 1600px)');
   return (
     <Box
       sx={(theme: MantineTheme) => ({
         height: "105vh",
-        width: 350,
-        minWidth: 350,
+        width: largeScreen ? 350 : 190,
+        minWidth: largeScreen ? 350 : 190,
         border: `${rem(2)} solid #73AB23`,
         borderRadius: theme.radius.md,
         boxShadow: theme.shadows.md,

@@ -47,11 +47,11 @@ export default function Hotel(props: Props) {
       </Box>
       <Flex>
         <MapLeftBar />
-        <Container sx={{ width: 3200 }}>
+        <Container>
           <HotelTab hotel={hotel} rooms={roomList} />
           <HotelContent hotel={hotel} roomList={roomList} />
 	</Container>
-        <Box sx={{ width: 1000 }} />
+        <Box sx={{ width: 600 }} />
       </Flex>
     </>
   )
