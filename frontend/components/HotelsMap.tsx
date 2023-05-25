@@ -4,24 +4,16 @@ import { ActivityList } from "@/types/activityList"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
 import { SimpleMapStyle } from "@/components/map/SimpleMapStyle"
 import {
-  Box,
-  Container,
-  Breadcrumbs,
   Card,
-  Anchor,
   Flex,
-  SimpleGrid,
   Image,
   Text,
-  Title,
-  createStyles,
   UnstyledButton,
   AspectRatio,
 } from "@mantine/core"
 import { useRouter } from "next/router"
 import { RoomList } from "@/types/roomList"
 import { useState } from "react"
-import { posix } from "path"
 
 const containerStyle = {
   width: "100%",

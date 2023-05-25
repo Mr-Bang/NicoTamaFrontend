@@ -13,16 +13,15 @@ export default function SampleHotel(props: Props) {
   return (
     <Grid grow>
       <Grid.Col span={4}>
-        <Box maw={1200} mx='auto'>
+        <Box sx={{ width: 890 }}>
           <Image radius='md' src={hotel.image} alt={hotel.name} />
         </Box>
       </Grid.Col>
-      <SimpleGrid cols={2}>
+      <SimpleGrid cols={2} spacing='xs'>
         {roomList.map((room, index) => (
-          <Grid.Col span={4} key={index}>
-            <Card shadow='sm' padding='lg' radius='md' withBorder>
+            <Card shadow='sm' padding='lg' radius='md' withBorder key={index}>
               <Card.Section>
-                <Image src={room.image} height={260} width={550} alt={room.room_type} />
+                <Image src={room.image} height={260} width={445} alt={room.room_type} />
               </Card.Section>
 
               <Group position='apart' mt='md' mb='xs'>
@@ -58,7 +57,6 @@ export default function SampleHotel(props: Props) {
                 </Button>
               )}
             </Card>
-          </Grid.Col>
         ))}
       </SimpleGrid>
     </Grid>

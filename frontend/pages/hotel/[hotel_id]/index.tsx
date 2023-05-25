@@ -1,5 +1,5 @@
 import MapLeftBar from "@/components/map/MapLeftBar"
-import { Box, Center, Grid, Title } from "@mantine/core"
+import { Box, Container, Flex, Title } from "@mantine/core"
 import HotelTab from "@/components/hotel/HotelTab"
 import HotelContent from "@/components/hotel/HotelContent"
 import HotelBreadcrumb from "@/components/hotel/HotelBreadcrumb"
@@ -45,20 +45,14 @@ export default function Hotel(props: Props) {
       >
         <Title order={2}>{hotel.name}</Title>
       </Box>
-      <Grid>
-        <Grid.Col span='auto'>
-          <MapLeftBar />
-        </Grid.Col>
-        <Grid.Col span={7}>
+      <Flex>
+        <MapLeftBar />
+        <Container sx={{ width: 3200 }}>
           <HotelTab hotel={hotel} rooms={roomList} />
-          <Center>
-            <HotelContent hotel={hotel} roomList={roomList} />
-          </Center>
-        </Grid.Col>
-        <Grid.Col span='auto'>
-          <Box sx={{ width: 400 }}></Box>
-        </Grid.Col>
-      </Grid>
+          <HotelContent hotel={hotel} roomList={roomList} />
+	</Container>
+        <Box sx={{ width: 1000 }} />
+      </Flex>
     </>
   )
 }

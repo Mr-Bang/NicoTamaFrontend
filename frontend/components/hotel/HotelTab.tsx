@@ -33,7 +33,7 @@ export default function HotelTab(props: Props) {
   const { hotel, rooms } = props
 
   return (
-    <Group position='center'>
+    <Group position='left' sx={{ width: 1400 }}>
       <Button
         className={"/hotel/[hotel_id]" == path ? classes.active : classes.root}
         variant='default'
@@ -62,7 +62,7 @@ export default function HotelTab(props: Props) {
         部屋一覧
       </Button>
       <Button variant='default' component='a' className={classes.root}>
-        写真・動画(76)
+        写真・動画
       </Button>
       <Button
         className={"/map" == path ? classes.active : classes.root}
@@ -87,7 +87,7 @@ export default function HotelTab(props: Props) {
         地図・アクセス
       </Button>
       <Button variant='default' component='a' className={classes.root}>
-        お客様の声(567)
+        お客様の声
       </Button>
       <Button variant='default' component='a' className={classes.root}>
         クーポン一覧
