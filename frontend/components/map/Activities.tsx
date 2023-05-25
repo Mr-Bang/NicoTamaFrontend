@@ -12,14 +12,14 @@ import {
   rem,
   Flex,
   Tabs,
-  BackgroundImage,
   TabsValue,
   Title,
 } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import { useRouter } from "next/router"
 import NextImage from "next/image"
 import HealthIcon from "../../public/rakuten_healthcare_icon.png"
-import { Dispatch, SetStateAction, useState } from "react"
+import { Dispatch, SetStateAction } from "react"
 import { ActivityList } from "@/types/activityList"
 
 const useStyles = createStyles((theme) => ({
@@ -54,6 +54,8 @@ export default function Activities(props: Props) {
   const { classes } = useStyles()
   const { activityList, distanceList, activeTab, setActiveTab } = props
   const router = useRouter()
+
+  const largeScreen = useMediaQuery('(min-width: 1600px)');
 
   function changeCategoryIdToValue(value: string) {
     switch (value) {
@@ -147,7 +149,7 @@ export default function Activities(props: Props) {
       <Box
         sx={(theme: MantineTheme) => ({
           height: "105vh",
-          width: 400,
+          width: largeScreen ? 400 : 340,
           border: `${rem(2)} solid #73AB23`,
           borderRadius: theme.radius.md,
           boxShadow: theme.shadows.md,

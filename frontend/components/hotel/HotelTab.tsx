@@ -1,6 +1,7 @@
 import { Hotel } from "@/types/hotel"
 import { RoomList } from "@/types/roomList"
 import { Button, Group, createStyles, rem } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import { useRouter } from "next/router"
 
 const useStyles = createStyles((theme) => ({
@@ -32,8 +33,10 @@ export default function HotelTab(props: Props) {
   const path = router.pathname
   const { hotel, rooms } = props
 
+  const largeScreen = useMediaQuery('(min-width: 1600px)');
+
   return (
-    <Group position='center'>
+    <Group position='center' sx={{ width: largeScreen ? 1100 : 930 }}>
       <Button
         className={"/hotel/[hotel_id]" == path ? classes.active : classes.root}
         variant='default'
@@ -62,7 +65,7 @@ export default function HotelTab(props: Props) {
         部屋一覧
       </Button>
       <Button variant='default' component='a' className={classes.root}>
-        写真・動画(76)
+        写真・動画
       </Button>
       <Button
         className={"/map" == path ? classes.active : classes.root}
@@ -87,7 +90,7 @@ export default function HotelTab(props: Props) {
         地図・アクセス
       </Button>
       <Button variant='default' component='a' className={classes.root}>
-        お客様の声(567)
+        お客様の声
       </Button>
       <Button variant='default' component='a' className={classes.root}>
         クーポン一覧
