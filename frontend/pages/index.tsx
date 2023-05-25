@@ -30,11 +30,14 @@ import Adv5 from "../public/advertisements5.svg"
 
 import Register from "../public/register.jpg"
 import { useState } from "react"
+import { useMediaQuery } from "@mantine/hooks"
 
 export default function Home() {
   const router = useRouter()
 
   const [searchWord, setSeachWord] = useState<string>()
+
+  const largeScreen = useMediaQuery("(min-width: 1600px)")
 
   const useStyles = createStyles((theme) => ({
     root: {
@@ -87,7 +90,7 @@ export default function Home() {
               background: "76AE25",
               border: "1px solid #76AE25",
               borderRadius: "5px",
-              width: "320px",
+              width: largeScreen ? "320px" : "310px",
               height: 130,
             }}
           >
@@ -130,7 +133,7 @@ export default function Home() {
               background: "76AE25",
               border: "1px solid #76AE25",
               borderRadius: "5px",
-              width: "320px",
+              width: largeScreen ? "320px" : "310px",
               height: "661px",
               left: "0px",
               top: "122px",
@@ -282,12 +285,12 @@ export default function Home() {
               radius='xl'
               size='xs'
               compact
-              style={{ top: "22%", right: "37%" }}
+              style={{ top: "22%", right: "35%" }}
               onClick={() => router.push("/SearchPageMetropolitan")}
             >
               首都圏
             </Button>
-            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "32%", right: "20%" }}>
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "30%", right: "19%" }}>
               北海道
             </Button>
             <Button color='dark' radius='xl' size='xs' compact style={{ right: "37%" }}>
@@ -299,70 +302,28 @@ export default function Home() {
             <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "36%", left: "49%" }}>
               北関東
             </Button>
-            <Button color='dark' radius='xl' size='xs' compact style={{ top: "27%", left: "37%" }}>
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "20%", left: "37%" }}>
               伊豆・箱根
             </Button>
-            <Button
-              color='dark'
-              radius='xl'
-              size='xs'
-              compact
-              style={{ position: "absolute", left: "820px", top: "620px", height: "25px" }}
-            >
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "40%", left: "30%" }}>
               甲信越
             </Button>
-            <Button
-              color='dark'
-              radius='xl'
-              size='xs'
-              compact
-              style={{ position: "absolute", left: "820px", top: "670px", height: "25px" }}
-            >
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "26%", left: "18%" }}>
               東海
             </Button>
-            <Button
-              color='dark'
-              radius='xl'
-              size='xs'
-              compact
-              style={{ position: "absolute", left: "770px", top: "600px", height: "25px" }}
-            >
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "28%", left: "5%" }}>
               近畿
             </Button>
-            <Button
-              color='dark'
-              radius='xl'
-              size='xs'
-              compact
-              style={{ position: "absolute", left: "640px", top: "615px", height: "25px" }}
-            >
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "35%", right: "11%" }}>
               山陽・山陰
             </Button>
-            <Button
-              color='dark'
-              radius='xl'
-              size='xs'
-              compact
-              style={{ position: "absolute", left: "670px", top: "730px", height: "25px" }}
-            >
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "24%", right: "17%" }}>
               四国
             </Button>
-            <Button
-              color='dark'
-              radius='xl'
-              size='xs'
-              compact
-              style={{ position: "absolute", left: "530px", top: "575px", height: "25px" }}
-            >
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "24%", right: "33%" }}>
               九州
             </Button>
-            <Button
-              color='dark'
-              radius='xl'
-              size='xs'
-              compact
-              style={{ position: "absolute", left: "460px", top: "760px", height: "25px" }}
-            >
+            <Button color='dark' radius='xl' size='xs' compact style={{ bottom: "8%", right: "45%" }}>
               沖縄
             </Button>
           </Container>
@@ -478,16 +439,20 @@ export default function Home() {
             </Flex>
           </Box>
         </Stack>
-        <Space w={"lg"} />
-        <ScrollArea>
-          <Image alt={"Register"} src={Register} />
-        </ScrollArea>
-        <Space w={"lg"} />
-        {/* <Image alt={"Adv2"} src={Adv2} style={{ width: "1712px" }} /> */}
+        {largeScreen && <Space w={"xl"} />}
 
-        <Image alt={"Adv"} src={Adv} />
-        <Space w={"lg"} />
+        <Image alt={"Register"} src={Register} />
+        {largeScreen && (
+          <>
+            <Space w={"xl"} />
+            <ScrollArea h={"90vh"}>
+              <Image alt={"Adv"} src={Adv} />
+            </ScrollArea>
+            <Space w={"lg"} />
+          </>
+        )}
       </Flex>
+      <Image alt={"Adv2"} src={Adv2} style={{ width: "1712px" }} />
       <Image alt={"Adv3"} src={Adv3} />
 
       <Image alt={"Adv4"} src={Adv4} />
