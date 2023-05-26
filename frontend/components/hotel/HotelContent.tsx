@@ -16,18 +16,18 @@ export default function SampleHotel(props: Props) {
   return (
     <Grid grow>
       <Grid.Col span={4}>
-        <Box sx={{ width: largeScreen ? 1100 : 930 }}>
-          <Image radius='md' src={hotel.image} alt={hotel.name} />
+        <Box sx={{ width: largeScreen ? 1000 : 910 }}>
+          <Image radius="md" src={hotel.image} alt={hotel.name} />
         </Box>
       </Grid.Col>
-      <Box sx={{ width: largeScreen ? 1100 : 930 }}>
+      <Box sx={{ width: largeScreen ? 1000 : 910 }}>
         <Flex>
           {roomList.map((room, index) => (
             <Card
-              sx={{ width: largeScreen ? 540 : 470 }}
-              shadow='sm'
-              padding='lg'
-              radius='md'
+              sx={{ width: largeScreen ? 500 : 450 }}
+              shadow="sm"
+              padding="lg"
+              radius="md"
               withBorder
               key={index}
               ml={"md"}
@@ -36,32 +36,32 @@ export default function SampleHotel(props: Props) {
                 <Image src={room.image} height={260} width={largeScreen ? 550 : 480} alt={room.room_type} />
               </Card.Section>
 
-              <Group position='apart' mt='md' mb='xs'>
+              <Group position="apart" mt="md" mb="xs">
                 <Text weight={500}>{room.room_type}</Text>
                 {room.available ? (
-                  <Badge color='blue' variant='light'>
+                  <Badge color="blue" variant="light">
                     空室あり
                   </Badge>
                 ) : (
-                  <Badge color='pink' variant='light'>
+                  <Badge color="pink" variant="light">
                     満室
                   </Badge>
                 )}
               </Group>
 
-              <Text size='sm' color='dimmed'></Text>
+              <Text size="sm" color="dimmed"></Text>
 
               {room.available ? (
-                <Button variant='outline' fullWidth mt='md' radius='md'>
+                <Button variant="outline" fullWidth mt="md" radius="md">
                   予約する
                 </Button>
               ) : (
                 <Button
                   data-disabled
-                  variant='outline'
+                  variant="outline"
                   fullWidth
-                  mt='md'
-                  radius='md'
+                  mt="md"
+                  radius="md"
                   sx={{ "&[data-disabled]": { pointerEvents: "all" } }}
                   onClick={(event) => event.preventDefault()}
                 >
