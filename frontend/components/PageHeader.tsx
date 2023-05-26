@@ -3,11 +3,13 @@ import { Box } from "@mantine/core"
 import resets from "@/styles/_resets.module.css"
 import classes from "@/styles/PageHeader.module.css"
 import { useMediaQuery } from "@mantine/hooks"
+import { useRouter } from "next/router"
 
 export default function PageHeader() {
   const smallScreen = useMediaQuery("(max-width: 700px)")
+  const router = useRouter()
 
-  if (smallScreen) return <></>
+  if (smallScreen || router.pathname == "/auth") return <></>
 
   return (
     <Box>

@@ -50,7 +50,7 @@ export default function Hotel(props: Props) {
         <Container>
           <HotelTab hotel={hotel} rooms={roomList} />
           <HotelContent hotel={hotel} roomList={roomList} />
-	</Container>
+        </Container>
         <Box sx={{ width: 600 }} />
       </Flex>
     </>

@@ -20,6 +20,7 @@ import {
   createStyles,
   Stack,
   ScrollArea,
+  PasswordInput,
 } from "@mantine/core"
 import Map from "../public/searchmap.jpg"
 import Adv from "../public/advertizements.png"

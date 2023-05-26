@@ -9,6 +9,10 @@ import { useRouter } from "next/router"
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
   useEffect(() => {
+    const accessKey = sessionStorage.getItem("accessKey")
+    if (!accessKey) {
+      router.push("/auth")
+    }
     const handleResize = () => {
       const windowWidth = window.innerWidth
       if (windowWidth <= 700) {
