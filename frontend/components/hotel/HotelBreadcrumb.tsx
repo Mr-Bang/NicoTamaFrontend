@@ -9,7 +9,7 @@ type Props = {
 export default function HotelBreadcrumb(props: Props) {
   const { hotel } = props
   const breadcrumbs = [
-    { name: "楽天トラベルトップ", href: "/" },
+    { name: "楽天トラベルプラストップ", href: "/" },
     { name: "首都圏", href: "/SearchPageMetropolitan" },
     { name: "東京23区", href: "/SearchPageTokyo" },
     { name: areaDetail[hotel.region as Area], href: "/" + hotel.region },

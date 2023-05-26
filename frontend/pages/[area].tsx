@@ -68,7 +68,7 @@ export default function HotelList(props: Props) {
 
   const area: Area = hotelList[0].region as Area
   const breadcrumbs = [
-    { name: "楽天トラベルトップ", href: "/" },
+    { name: "楽天トラベルプラストップ", href: "/" },
     { name: "首都圏", href: "/SearchPageMetropolitan" },
     { name: "東京23区", href: "/SearchPageTokyo" },
     { name: areaDetail[area] },

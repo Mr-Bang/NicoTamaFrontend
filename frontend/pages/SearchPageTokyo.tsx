@@ -125,7 +125,7 @@ export default function Home() {
   ]
 
   const breadcrumbs = [
-    { name: "楽天トラベルトップ", href: "/" },
+    { name: "楽天トラベルプラストップ", href: "/" },
     { name: "首都圏", href: "/SearchPageMetropolitan" },
     { name: "東京23区" },
   ].map((breadcrumb, index) =>
@@ -142,7 +142,7 @@ export default function Home() {
 
   return (
     <>
-      <Breadcrumbs separator=">" mt="xs">
+      <Breadcrumbs separator='>' mt='xs'>
         {breadcrumbs}
       </Breadcrumbs>
       <Box
@@ -154,7 +154,7 @@ export default function Home() {
         <Title order={1}>東京23区</Title>
       </Box>
       <Grid>
-        <Grid.Col span="auto">
+        <Grid.Col span='auto'>
           <Container>
             <Box
               sx={{
@@ -163,7 +163,7 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title pl={"sm"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title pl={"sm"} size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 地域名から探す
               </Title>
               <Container>
@@ -172,8 +172,8 @@ export default function Home() {
                     <div key={index}>
                       <Anchor
                         className={classes.root3}
-                        variant="default"
-                        component="a"
+                        variant='default'
+                        component='a'
                         onClick={() => router.push("/" + area23Info.name)}
                       >
                         {area23Info.name}
@@ -184,7 +184,7 @@ export default function Home() {
               </Container>
             </Box>
 
-            <Space h="xl" />
+            <Space h='xl' />
 
             <Box
               sx={{
@@ -193,18 +193,18 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title pl={"sm"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title pl={"sm"} size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 主要駅・主要空港周辺から探す
               </Title>
 
               <Container>
-                <SimpleGrid cols={2} verticalSpacing="xs">
+                <SimpleGrid cols={2} verticalSpacing='xs'>
                   {stationInfoList.map((stationInfo, index) => (
                     <div key={index}>
                       <Anchor
                         className={classes.root3}
-                        variant="default"
-                        component="a"
+                        variant='default'
+                        component='a'
                         onClick={() => router.push("/" + stationInfo.region)}
                       >
                         {stationInfo.name}
@@ -214,7 +214,7 @@ export default function Home() {
                 </SimpleGrid>
               </Container>
             </Box>
-            <Space h="xl" />
+            <Space h='xl' />
             <Box
               sx={{
                 background: "76AE25",
@@ -222,17 +222,17 @@ export default function Home() {
                 borderRadius: "5px",
               }}
             >
-              <Title pl={"sm"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+              <Title pl={"sm"} size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
                 人気スポットから探す
               </Title>
               <Container>
-                <SimpleGrid cols={2} verticalSpacing="xs">
+                <SimpleGrid cols={2} verticalSpacing='xs'>
                   {popularInfoList.map((popularInfo, index) => (
                     <div key={index}>
                       <Anchor
                         className={classes.root3}
-                        variant="default"
-                        component="a"
+                        variant='default'
+                        component='a'
                         onClick={() => router.push("/" + popularInfo.region)}
                       >
                         {popularInfo.name}
@@ -252,7 +252,7 @@ export default function Home() {
               borderRadius: "5px",
             }}
           >
-            <Title pl={"sm"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
+            <Title pl={"sm"} size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
               地図から探す
             </Title>
             <Container>
@@ -266,9 +266,9 @@ export default function Home() {
                 <Button
                   key={index}
                   className={classes.root}
-                  variant="default"
-                  component="a"
-                  radius="5px"
+                  variant='default'
+                  component='a'
+                  radius='5px'
                   style={{
                     position: "absolute",
                     width: largeScreen ? "79px" : "76px",
@@ -286,8 +286,8 @@ export default function Home() {
                 <Text
                   key={index}
                   className={classes.root2}
-                  variant="default"
-                  component="a"
+                  variant='default'
+                  component='a'
                   weight={700}
                   size={largeScreen ? "45px" : "35px"}
                   style={{ position: "absolute", left: area23Info.left, top: area23Info.top }}
@@ -299,7 +299,7 @@ export default function Home() {
             </Container>
           </Box>
         </Grid.Col>
-        <Grid.Col span="auto"></Grid.Col>
+        <Grid.Col span='auto'></Grid.Col>
       </Grid>
     </>
   )
