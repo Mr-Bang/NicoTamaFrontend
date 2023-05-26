@@ -1,5 +1,5 @@
 import { Box } from "@mantine/core"
-
+import Link from "next/link"
 import resets from "@/styles/_resets.module.css"
 import classes from "@/styles/PageHeader.module.css"
 import { useMediaQuery } from "@mantine/hooks"
@@ -25,9 +25,11 @@ export default function PageHeader() {
         </div>
         <div className={classes.divRtServiceBar}>
           <div className={classes.Point}></div>
-          <div className={classes.rakutenTravel}>
-            <div className={classes.unnamed4}>楽天トラベル+</div>
-          </div>
+	  <Link href={"/"}>
+            <div className={classes.rakutenTravel}>
+              <div className={classes.unnamed4}>楽天トラベル+</div>
+            </div>
+	  </Link>
 
           <div className={classes.divRtUtility}>
             <div className={classes.ulRtHelpLink}>
@@ -67,7 +69,9 @@ export default function PageHeader() {
             <div className={classes.unnamed20}>旅行ガイド</div>
           </div>
         </div>
-        <div className={classes.plus}>+</div>
+	<Link href={"/"}>
+          <div className={classes.plus}>+</div>
+	</Link>
       </div>
     </Box>
   )
