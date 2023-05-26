@@ -19,7 +19,7 @@ import { useMediaQuery } from "@mantine/hooks"
 import { useRouter } from "next/router"
 import NextImage from "next/image"
 import HealthIcon from "../../public/rakuten_healthcare_icon.png"
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { ActivityList } from "@/types/activityList"
 
 const useStyles = createStyles((theme) => ({
@@ -48,14 +48,22 @@ interface Props {
   activityList: ActivityList
   activeTab: number
   setActiveTab: Dispatch<SetStateAction<number>>
+  setActivityPinAnimation?: Dispatch<
+    SetStateAction<
+      | {
+          key: number
+          animation: google.maps.Animation | null
+        }
+      | undefined
+    >
+  >
 }
 
 export default function Activities(props: Props) {
   const { classes } = useStyles()
-  const { activityList, distanceList, activeTab, setActiveTab } = props
+  const { activityList, distanceList, activeTab, setActiveTab, setActivityPinAnimation } = props
   const router = useRouter()
-
-  const largeScreen = useMediaQuery('(min-width: 1600px)');
+  const largeScreen = useMediaQuery("(min-width: 1600px)")
 
   function changeCategoryIdToValue(value: string) {
     switch (value) {
@@ -95,15 +103,23 @@ export default function Activities(props: Props) {
     setActiveTab(changeCategoryIdToValue(value as string))
   }
 
+  function onMouseEnter(index: number) {
+    setActivityPinAnimation && setActivityPinAnimation({ key: index, animation: google.maps.Animation.BOUNCE })
+  }
+  function onMouseLeave(index: number) {
+    setActivityPinAnimation && setActivityPinAnimation({ key: index, animation: null })
+  }
+
   const cards = activityList.map((activity, index) => (
     <Card
       key={index}
       p='md'
       radius='md'
       component='a'
-      href='#'
       className={classes.card}
-      onClick={() => router.push(activity.url)}
+      onClick={() => window.open(activity.url, "_blank")}
+      onMouseEnter={() => onMouseEnter(index)}
+      onMouseLeave={() => onMouseLeave(index)}
     >
       <AspectRatio ratio={1920 / 1080}>
         <Image src={activity.image} alt={activity.name} fit={"contain"} />

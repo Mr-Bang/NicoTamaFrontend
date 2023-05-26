@@ -29,6 +29,7 @@ import { faHotel, faLocationDot } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState } from "react"
 import AreaTab from "@/components/area/areaTab"
+import { useJsApiLoader } from "@react-google-maps/api"
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -59,12 +60,28 @@ type Props = {
 
 const itemsPerPage = 9
 
+const googleMapsApiKey: string = process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string
+
 export default function HotelList(props: Props) {
   const { hotelList, activityList } = props
   const { classes } = useStyles()
   const router = useRouter()
   const [viewMode, setViewMode] = useState<"hotel" | "activity">("hotel")
   const [activePage, setActivePage] = useState(1)
+
+  const [hotelPinAnimation, setHotelPinAnimation] = useState<{
+    key: number
+    animation: google.maps.Animation | null
+  }>()
+  const [activityPinAnimation, setActivityPinAnimation] = useState<{
+    key: number
+    animation: google.maps.Animation | null
+  }>()
+
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: googleMapsApiKey,
+  })
 
   const area: Area = hotelList[0].region as Area
   const breadcrumbs = [
@@ -92,7 +109,12 @@ export default function HotelList(props: Props) {
   }
 
   const hotelCards = hotelList.map((hotel, index) => (
-    <UnstyledButton key={index} className={classes.item}>
+    <UnstyledButton
+      key={index}
+      className={classes.item}
+      onMouseEnter={() => onMouseEnterHotelCard(index)}
+      onMouseLeave={() => onMouseLeaveHotelCard(index)}
+    >
       <Card shadow='sm' padding='lg' radius='md' withBorder>
         <Card.Section
           sx={{ height: 250 }}
@@ -130,7 +152,12 @@ export default function HotelList(props: Props) {
   ))
 
   const activityCards = activityList.map((activity, index) => (
-    <UnstyledButton key={index} className={classes.item}>
+    <UnstyledButton
+      key={index}
+      className={classes.item}
+      onMouseEnter={() => onMouseEnterActivtyCard(index)}
+      onMouseLeave={() => onMouseLeaveActivityCard(index)}
+    >
       <Card shadow='sm' padding='lg' radius='md' withBorder>
         <Card.Section
           sx={{ height: 250 }}
@@ -162,6 +189,20 @@ export default function HotelList(props: Props) {
 
   const total = Math.ceil(viewMode == "hotel" ? hotelCards.length / itemsPerPage : activityCards.length / itemsPerPage)
 
+  function onMouseEnterHotelCard(index: number) {
+    setHotelPinAnimation({ key: index, animation: google.maps.Animation.BOUNCE })
+  }
+  function onMouseLeaveHotelCard(index: number) {
+    setHotelPinAnimation({ key: index, animation: null })
+  }
+
+  function onMouseEnterActivtyCard(index: number) {
+    setActivityPinAnimation({ key: index, animation: google.maps.Animation.BOUNCE })
+  }
+  function onMouseLeaveActivityCard(index: number) {
+    setActivityPinAnimation({ key: index, animation: null })
+  }
+
   return (
     <>
       <Breadcrumbs separator='>' mt='xs'>
@@ -188,7 +229,7 @@ export default function HotelList(props: Props) {
         <MapLeftBar />
         <Container sx={{ width: 3200 }}>
           <AreaTab viewMode={viewMode} setViewMode={setViewMode} setActivePage={setActivePage} />
-          <SimpleGrid cols={3}>{displayedCards}</SimpleGrid>
+          <SimpleGrid cols={3}>{isLoaded && displayedCards}</SimpleGrid>
           <Pagination
             mt={"xl"}
             position='right'
@@ -199,7 +240,13 @@ export default function HotelList(props: Props) {
           />
         </Container>
 
-        <HotelsMap hotelList={hotelList} activityList={activityList} />
+        <HotelsMap
+          hotelList={hotelList}
+          activityList={activityList}
+          hotelPinAnimation={hotelPinAnimation}
+          activityPinAnimation={activityPinAnimation}
+          isLoaded={isLoaded}
+        />
       </Flex>
     </>
   )

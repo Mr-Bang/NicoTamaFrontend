@@ -5,7 +5,7 @@ import { getActivityList } from "@/services/activity"
 import { Hotel } from "@/types/hotel"
 import { AspectRatio, Box, Card, Container, Flex, Image, Text, Title } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
-import { InfoWindowF, MarkerF, useJsApiLoader } from "@react-google-maps/api"
+import { InfoWindowF, Marker, MarkerF, useJsApiLoader } from "@react-google-maps/api"
 import { GoogleMap } from "@react-google-maps/api"
 import { GetServerSidePropsContext } from "next"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
@@ -58,10 +58,15 @@ interface Props {
 }
 
 export default function Map(props: Props) {
-  const largeScreen = useMediaQuery('(min-width: 1600px)');
+  const largeScreen = useMediaQuery("(min-width: 1600px)")
 
   const [indexShowActivityInfo, setIndexShowActivityInfo] = useState<number>(-1)
   const [activeTab, setActiveTab] = useState<number>(0)
+
+  const [activityPinAnimation, setActivityPinAnimation] = useState<{
+    key: number
+    animation: google.maps.Animation | null
+  }>()
 
   const router = useRouter()
   const { activityList, query } = props
@@ -137,6 +142,9 @@ export default function Map(props: Props) {
         key={index}
         position={{ lat: activity.latitude, lng: activity.longitude }}
         onClick={() => onClickActivityMarker(index)}
+        options={{
+          animation: activityPinAnimation?.key == index ? activityPinAnimation.animation : undefined,
+        }}
       />
       {index == indexShowActivityInfo && (
         <InfoWindowF
@@ -192,7 +200,7 @@ export default function Map(props: Props) {
       </Box>
       <Flex>
         <MapLeftBar />
-	<Box sx={(theme) =>({ width: largeScreen ? 3200 : 1200, padding: theme.spacing.xs})}>
+        <Box sx={(theme) => ({ width: largeScreen ? 3200 : 1200, padding: theme.spacing.xs })}>
           <HotelTab hotel={hotel} rooms={roomList} />
           {isLoaded ? (
             <GoogleMap
@@ -215,21 +223,25 @@ export default function Map(props: Props) {
                   strokeColor: "#ffffff",
                   scale: 0.055,
                 }}
+                options={{
+                  animation: google.maps.Animation.DROP,
+                }}
               />
               {activityMarkers}
             </GoogleMap>
           ) : (
             <></>
           )}
-	</Box>
-	<Box sx={{ width: largeScreen ? 400 : 340 }}>
+        </Box>
+        <Box sx={{ width: largeScreen ? 400 : 340 }}>
           <Activities
             activityList={categorizedActivities[activeTab]}
             distanceList={distanceList}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
+            setActivityPinAnimation={setActivityPinAnimation}
           />
-	</Box>
+        </Box>
       </Flex>
     </>
   )

@@ -3,14 +3,7 @@ import { GoogleMap } from "@react-google-maps/api"
 import { ActivityList } from "@/types/activityList"
 import { faHotel } from "@fortawesome/free-solid-svg-icons"
 import { SimpleMapStyle } from "@/components/map/SimpleMapStyle"
-import {
-  Card,
-  Flex,
-  Image,
-  Text,
-  UnstyledButton,
-  AspectRatio,
-} from "@mantine/core"
+import { Card, Flex, Image, Text, UnstyledButton, AspectRatio } from "@mantine/core"
 import { useRouter } from "next/router"
 import { RoomList } from "@/types/roomList"
 import { useState } from "react"
@@ -51,8 +44,6 @@ const areaCenter: {
   },
 }
 
-const googleMapsApiKey: string = process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string
-
 const SimpleMapOptions = {
   styles: SimpleMapStyle,
 }
@@ -70,15 +61,27 @@ interface Props {
   }[]
 
   activityList: ActivityList
+
+  isLoaded: boolean
+
+  hotelPinAnimation:
+    | {
+        key: number
+        animation: google.maps.Animation | null
+      }
+    | undefined
+
+  activityPinAnimation:
+    | {
+        key: number
+        animation: google.maps.Animation | null
+      }
+    | undefined
 }
 
 export default function HotelsMap(props: Props) {
   const router = useRouter()
-  const { hotelList, activityList } = props
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: googleMapsApiKey,
-  })
+  const { hotelList, activityList, hotelPinAnimation, activityPinAnimation, isLoaded } = props
 
   const [indexShowActivityInfo, setIndexShowActivityInfo] = useState<number>(-1)
   const [indexShowHotelInfo, setIndexShowHotelInfo] = useState<number>(-1)
@@ -113,6 +116,9 @@ export default function HotelsMap(props: Props) {
           scale: 0.055,
         }}
         onClick={() => onClickHotelMarker(index)}
+        options={{
+          animation: hotelPinAnimation?.key == index ? hotelPinAnimation.animation : null,
+        }}
       />
       {index == indexShowHotelInfo && (
         <InfoWindowF
@@ -165,6 +171,9 @@ export default function HotelsMap(props: Props) {
         key={index}
         position={{ lat: Number(activity.latitude), lng: Number(activity.longitude) }}
         onClick={() => onClickActivityMarker(index)}
+        options={{
+          animation: activityPinAnimation?.key == index ? activityPinAnimation.animation : null,
+        }}
       />
       {index == indexShowActivityInfo && (
         <InfoWindowF
