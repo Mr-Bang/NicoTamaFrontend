@@ -72,7 +72,7 @@ export default function Home() {
   ]
   const area23InfoList = [
     { name: "都心", left: largeScreen ? "910px" : "740px", top: largeScreen ? "740px" : "700px" },
-    { name: "副都心", left: largeScreen ? "810px" : "632px", top: largeScreen ? "690px" : "610px" },
+    { name: "副都心", left: largeScreen ? "810px" : "632px", top: largeScreen ? "680px" : "610px" },
     { name: "北西部", left: largeScreen ? "600px" : "500px", top: largeScreen ? "540px" : "510px" },
     { name: "南西部", left: largeScreen ? "680px" : "580px", top: largeScreen ? "860px" : "780px" },
     { name: "東部", left: largeScreen ? "1120px" : "930px", top: largeScreen ? "570px" : "520px" },
