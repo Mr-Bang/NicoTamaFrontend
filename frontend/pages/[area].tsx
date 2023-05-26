@@ -189,9 +189,14 @@ export default function HotelList(props: Props) {
         <Container sx={{ width: 3200 }}>
           <AreaTab viewMode={viewMode} setViewMode={setViewMode} setActivePage={setActivePage} />
           <SimpleGrid cols={3}>{displayedCards}</SimpleGrid>
-          <Flex justify={"flex-end"} mt={"xl"}>
-            <Pagination color='green' value={activePage} onChange={setActivePage} total={total} />
-          </Flex>
+          <Pagination
+            mt={"xl"}
+            position='right'
+            color='green'
+            value={activePage}
+            onChange={setActivePage}
+            total={total}
+          />
         </Container>
 
         <HotelsMap hotelList={hotelList} activityList={activityList} />
