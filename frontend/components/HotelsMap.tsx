@@ -179,7 +179,7 @@ export default function HotelsMap(props: Props) {
             radius='md'
             component='a'
             href='#'
-            onClick={() => router.push(activity.url)}
+            onClick={() => window.open(activity.url, "_blank")}
           >
             <AspectRatio ratio={1920 / 1080}>
               <Image maw={300} mx='auto' src={activity.image} alt={activity.name} fit={"contain"} />

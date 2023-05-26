@@ -136,7 +136,7 @@ export default function HotelList(props: Props) {
           sx={{ height: 250 }}
           component='a'
           onClick={() => {
-            router.push(activity.url)
+            window.open(activity.url, "_blank")
           }}
         >
           <AspectRatio ratio={1920 / 1080}>
