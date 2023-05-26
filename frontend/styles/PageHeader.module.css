@@ -136,7 +136,7 @@
   position: absolute;
   left: -9999px;
   top: 0;
-  width: 97.7px;
+  width: 104.7px;
   height: 17px;
   justify-content: center;
   flex-direction: column;
@@ -166,7 +166,7 @@
   position: absolute;
   left: 287.03px;
   top: 3px;
-  width: 121.89px;
+  width: 127.89px;
   height: 14px;
   text-align: end;
   align-items: end;
@@ -272,7 +272,7 @@
   position: absolute;
   left: 50.66px;
   top: 6px;
-  width: 146.73px;
+  width: 153.73px;
   height: 14px;
   text-align: end;
   align-items: end;
@@ -487,12 +487,11 @@
   justify-content: center;
   flex-direction: column;
 }
-.x {
+.plus {
   color: #3cc74a;
   font-size: 32px;
   line-height: 21px;
   font-weight: bold;
-  font-style: italic;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     "Liberation Sans", sans-serif;
   position: absolute;
