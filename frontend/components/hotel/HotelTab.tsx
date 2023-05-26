@@ -36,10 +36,10 @@ export default function HotelTab(props: Props) {
   const largeScreen = useMediaQuery("(min-width: 1600px)")
 
   return (
-    <Group position='center' sx={{ width: largeScreen ? 1100 : 930 }}>
+    <Group position="center" sx={{ width: largeScreen ? 1040 : 905 }}>
       <Button
         className={"/hotel/[hotel_id]" == path ? classes.active : classes.root}
-        variant='default'
+        variant="default"
         onClick={() => {
           router.push({
             pathname: "/hotel/[hotel_id]",
@@ -60,8 +60,8 @@ export default function HotelTab(props: Props) {
       </Button>
       <Button
         className={"/map" == path ? classes.active : classes.root}
-        variant='default'
-        component='a'
+        variant="default"
+        component="a"
         onClick={() => {
           router.push({
             pathname: "/map",
@@ -80,20 +80,20 @@ export default function HotelTab(props: Props) {
       >
         地図・アクセス
       </Button>
-      <Button className={classes.root} variant='default' component='a'>
+      <Button className={classes.root} variant="default" component="a">
         プラン一覧
       </Button>
-      <Button variant='default' component='a' className={classes.root}>
+      <Button variant="default" component="a" className={classes.root}>
         部屋一覧
       </Button>
-      <Button variant='default' component='a' className={classes.root}>
+      <Button variant="default" component="a" className={classes.root}>
         写真・動画
       </Button>
 
-      <Button variant='default' component='a' className={classes.root}>
+      <Button variant="default" component="a" className={classes.root}>
         お客様の声
       </Button>
-      <Button variant='default' component='a' className={classes.root}>
+      <Button variant="default" component="a" className={classes.root}>
         クーポン一覧
       </Button>
     </Group>

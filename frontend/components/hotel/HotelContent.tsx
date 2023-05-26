@@ -16,15 +16,15 @@ export default function SampleHotel(props: Props) {
   return (
     <Grid grow>
       <Grid.Col span={4}>
-        <Box sx={{ width: largeScreen ? 1000 : 910 }}>
+        <Box sx={{ width: largeScreen ? 1050 : 905 }}>
           <Image radius="md" src={hotel.image} alt={hotel.name} />
         </Box>
       </Grid.Col>
-      <Box sx={{ width: largeScreen ? 1000 : 910 }}>
+      <Box sx={{ width: largeScreen ? 1050 : 905 }}>
         <Flex>
           {roomList.map((room, index) => (
             <Card
-              sx={{ width: largeScreen ? 500 : 450 }}
+              sx={{ width: largeScreen ? 520 : 460 }}
               shadow="sm"
               padding="lg"
               radius="md"

@@ -100,10 +100,10 @@ export default function Hotel(props: Props) {
       </Box>
       <Flex>
         <MapLeftBar />
-        <Container>
+        <Box pl={largeScreen ? "44px" : "xl"}>
           <HotelTab hotel={hotel} rooms={roomList} />
           <HotelContent hotel={hotel} roomList={roomList} />
-        </Container>
+        </Box>
         {/* <Box sx={{ width: 600 }} /> */}
         <Box sx={{ width: largeScreen ? 400 : 340 }}>
           <Activities
