@@ -33,7 +33,7 @@ export default function HotelTab(props: Props) {
   const path = router.pathname
   const { hotel, rooms } = props
 
-  const largeScreen = useMediaQuery('(min-width: 1600px)');
+  const largeScreen = useMediaQuery("(min-width: 1600px)")
 
   return (
     <Group position='center' sx={{ width: largeScreen ? 1100 : 930 }}>
@@ -58,15 +58,6 @@ export default function HotelTab(props: Props) {
       >
         施設紹介
       </Button>
-      <Button className={classes.root} variant='default' component='a'>
-        プラン一覧
-      </Button>
-      <Button variant='default' component='a' className={classes.root}>
-        部屋一覧
-      </Button>
-      <Button variant='default' component='a' className={classes.root}>
-        写真・動画
-      </Button>
       <Button
         className={"/map" == path ? classes.active : classes.root}
         variant='default'
@@ -89,6 +80,16 @@ export default function HotelTab(props: Props) {
       >
         地図・アクセス
       </Button>
+      <Button className={classes.root} variant='default' component='a'>
+        プラン一覧
+      </Button>
+      <Button variant='default' component='a' className={classes.root}>
+        部屋一覧
+      </Button>
+      <Button variant='default' component='a' className={classes.root}>
+        写真・動画
+      </Button>
+
       <Button variant='default' component='a' className={classes.root}>
         お客様の声
       </Button>
