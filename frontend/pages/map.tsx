@@ -91,11 +91,6 @@ export default function Map(props: Props) {
     setIndexShowActivityInfo(index)
   }
 
-  const destinations = activityList.map((activity) => ({
-    lat: activity.latitude,
-    lng: activity.longitude,
-  }))
-
   const [distanceList, setDistanceList] = useState<
     {
       text: string
@@ -187,6 +182,8 @@ export default function Map(props: Props) {
     </>
   ))
 
+  useEffect(() => {}, [])
+
   return (
     <>
       <HotelBreadcrumb hotel={hotel} />
@@ -223,9 +220,7 @@ export default function Map(props: Props) {
                   strokeColor: "#ffffff",
                   scale: 0.055,
                 }}
-                options={{
-                  animation: google.maps.Animation.DROP,
-                }}
+                animation={google.maps.Animation.DROP}
               />
               {activityMarkers}
             </GoogleMap>
