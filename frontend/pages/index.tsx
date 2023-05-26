@@ -4,7 +4,6 @@ import {
   Box,
   Input,
   Title,
-  Grid,
   Center,
   Container,
   Space,
@@ -20,7 +19,6 @@ import {
   createStyles,
   Stack,
   ScrollArea,
-  PasswordInput,
 } from "@mantine/core"
 import Map from "../public/searchmap.jpg"
 import Adv from "../public/advertizements.png"
@@ -30,7 +28,7 @@ import Adv4 from "../public/advertisements4.svg"
 import Adv5 from "../public/advertisements5.svg"
 
 import Register from "../public/register.jpg"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useMediaQuery } from "@mantine/hooks"
 
 export default function Home() {
@@ -43,7 +41,7 @@ export default function Home() {
   const useStyles = createStyles((theme) => ({
     root: {
       "&:not([data-disabled])": theme.fn.hover({
-        backgroundColor: theme.fn.darken("#98fb98", 0.05),
+        backgroundColor: theme.fn.darken("#EAEAEA", 0.05),
         border: 0,
       }),
     },
