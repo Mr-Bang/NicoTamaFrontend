@@ -171,7 +171,7 @@ export default function A() {
                           </Center>
                           <Flex align={"center"}>
                             <Text size="12px">大人</Text>
-                            <NumberInput defaultValue={0} placeholder="" size="xs" sx={{ width: "60px" }} required />
+                            <NumberInput defaultValue={1} placeholder="" size="xs" sx={{ width: "60px" }} required />
                             <Text ml={"xs"} size="12px">
                               子供
                             </Text>
@@ -184,7 +184,7 @@ export default function A() {
                               ご利用部屋数
                             </Text>
                           </Center>
-                          <Input size="xs" sx={{ width: "60px" }} />
+                          <Input defaultValue={1} size="xs" sx={{ width: "60px" }} />
                         </Container>
                       </Flex>
                     </Box>

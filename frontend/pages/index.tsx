@@ -178,7 +178,7 @@ export default function Home() {
                 <text>ご利用部屋数</text>
                 <Space w="xs" />
                 <NumberInput
-                  defaultValue={18}
+                  defaultValue={1}
                   placeholder=""
                   label=""
                   // size="xs"
@@ -207,7 +207,7 @@ export default function Home() {
                     <text>子供</text>
                     <Space w="xs" />
                     <NumberInput
-                      defaultValue={1}
+                      defaultValue={0}
                       placeholder=""
                       label=""
                       // size="xs"
