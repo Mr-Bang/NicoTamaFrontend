@@ -19,6 +19,7 @@ import {
   createStyles,
   UnstyledButton,
   AspectRatio,
+  Pagination,
 } from "@mantine/core"
 import { GetServerSidePropsContext } from "next"
 import { useRouter } from "next/router"
@@ -26,6 +27,8 @@ import { ActivityList } from "@/types/activityList"
 import { Area, areaDetail } from "@/types/area"
 import { faHotel, faLocationDot } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useState } from "react"
+import AreaTab from "@/components/area/areaTab"
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -54,10 +57,14 @@ type Props = {
   activityList: ActivityList
 }
 
+const itemsPerPage = 9
+
 export default function HotelList(props: Props) {
   const { hotelList, activityList } = props
   const { classes } = useStyles()
   const router = useRouter()
+  const [viewMode, setViewMode] = useState<"hotel" | "activity">("hotel")
+  const [activePage, setActivePage] = useState(1)
 
   const area: Area = hotelList[0].region as Area
   const breadcrumbs = [
@@ -84,6 +91,77 @@ export default function HotelList(props: Props) {
     return priceList
   }
 
+  const hotelCards = hotelList.map((hotel, index) => (
+    <UnstyledButton key={index} className={classes.item}>
+      <Card shadow='sm' padding='lg' radius='md' withBorder>
+        <Card.Section
+          sx={{ height: 250 }}
+          component='a'
+          onClick={() => {
+            router.push({
+              pathname: "/hotel/[hotel_id]",
+              query: {
+                hotel_id: hotel.hotel_id,
+                name: hotel.name,
+                description: hotel.description,
+                latitude: hotel.latitude,
+                longitude: hotel.longitude,
+                image: hotel.image,
+                region: hotel.region,
+                roomList: JSON.stringify(hotel.roomList),
+              },
+            })
+          }}
+        >
+          <AspectRatio ratio={1920 / 1080}>
+            <Image src={hotel.image} alt={hotel.name} />
+          </AspectRatio>
+          <Flex direction={"column"} justify={"flex-end"}>
+            <Text ta='center' fw={700} fz='lg'>
+              {hotel.name}
+            </Text>
+            <Text ta='center' fz='md'>
+              ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
+            </Text>
+          </Flex>
+        </Card.Section>
+      </Card>
+    </UnstyledButton>
+  ))
+
+  const activityCards = activityList.map((activity, index) => (
+    <UnstyledButton key={index} className={classes.item}>
+      <Card shadow='sm' padding='lg' radius='md' withBorder>
+        <Card.Section
+          sx={{ height: 250 }}
+          component='a'
+          onClick={() => {
+            router.push(activity.url)
+          }}
+        >
+          <AspectRatio ratio={1920 / 1080}>
+            <Image src={activity.image} alt={activity.name} />
+          </AspectRatio>
+          <Flex direction={"column"} justify={"flex-end"}>
+            <Text ta='center' fw={700} fz='lg'>
+              {activity.name}
+            </Text>
+            <Text ta='center' fz='md'>
+              ¥ {activity.price} ~
+            </Text>
+          </Flex>
+        </Card.Section>
+      </Card>
+    </UnstyledButton>
+  ))
+
+  const startIndex = (activePage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const displayedCards =
+    viewMode == "hotel" ? hotelCards.slice(startIndex, endIndex) : activityCards.slice(startIndex, endIndex)
+
+  const total = Math.ceil(viewMode == "hotel" ? hotelCards.length / itemsPerPage : activityCards.length / itemsPerPage)
+
   return (
     <>
       <Breadcrumbs separator='>' mt='xs'>
@@ -109,45 +187,11 @@ export default function HotelList(props: Props) {
       <Flex>
         <MapLeftBar />
         <Container sx={{ width: 3200 }}>
-          <SimpleGrid cols={3}>
-            {hotelList.map((hotel, index) => (
-              <UnstyledButton key={index} className={classes.item}>
-                <Card shadow='sm' padding='lg' radius='md' withBorder>
-                  <Card.Section
-                    sx={{ height: 250 }}
-                    component='a'
-                    onClick={() => {
-                      router.push({
-                        pathname: "/hotel/[hotel_id]",
-                        query: {
-                          hotel_id: hotel.hotel_id,
-                          name: hotel.name,
-                          description: hotel.description,
-                          latitude: hotel.latitude,
-                          longitude: hotel.longitude,
-                          image: hotel.image,
-                          region: hotel.region,
-                          roomList: JSON.stringify(hotel.roomList),
-                        },
-                      })
-                    }}
-                  >
-                    <AspectRatio ratio={1920 / 1080}>
-                      <Image src={hotel.image} alt={hotel.name} />
-                    </AspectRatio>
-                    <Flex direction={"column"} justify={"flex-end"}>
-                      <Text ta='center' fw={700} fz='lg'>
-                        {hotel.name}
-                      </Text>
-                      <Text ta='center' fz='md'>
-                        ¥ {getPriceList(hotel.roomList).sort()[0].toLocaleString()} ~
-                      </Text>
-                    </Flex>
-                  </Card.Section>
-                </Card>
-              </UnstyledButton>
-            ))}
-          </SimpleGrid>
+          <AreaTab viewMode={viewMode} setViewMode={setViewMode} setActivePage={setActivePage} />
+          <SimpleGrid cols={3}>{displayedCards}</SimpleGrid>
+          <Flex justify={"flex-end"} mt={"xl"}>
+            <Pagination color='green' value={activePage} onChange={setActivePage} total={total} />
+          </Flex>
         </Container>
 
         <HotelsMap hotelList={hotelList} activityList={activityList} />
