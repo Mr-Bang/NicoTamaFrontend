@@ -45,6 +45,13 @@ export default function A() {
     },
   }))
 
+  const area = [
+    { name: "東京都", region: "Tokyo" },
+    { name: "埼玉", region: "Saitama" },
+    { name: "神奈川県", region: "Kanagawa" },
+    { name: "千葉県", region: "Chiba" },
+  ]
+
   const { classes } = useStyles()
 
   const breadcrumbs = [{ name: "楽天トラベルプラストップ", href: "/" }, { name: "首都圏" }].map((breadcrumb, index) =>
@@ -61,7 +68,7 @@ export default function A() {
 
   return (
     <div>
-      <Breadcrumbs separator='>' mt='xs'>
+      <Breadcrumbs separator=">" mt="xs">
         {breadcrumbs}
       </Breadcrumbs>
       <Box
@@ -86,19 +93,19 @@ export default function A() {
                     width: "654px",
                   }}
                 >
-                  <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
+                  <Title pl={"xs"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
                     首都圏 キーワードから探す
                   </Title>
                   <Container>
-                    <Radio.Group name='whichtravel' withAsterisk>
-                      <Group mt='xs'>
-                        <Radio value='domestic' label='国内旅行' />
-                        <Radio value='oversea' label='海外旅行' />
+                    <Radio.Group name="whichtravel" withAsterisk>
+                      <Group mt="xs">
+                        <Radio value="domestic" label="国内旅行" />
+                        <Radio value="oversea" label="海外旅行" />
                       </Group>
                     </Radio.Group>
                   </Container>
                 </Box>
-                <Space h='xs' />
+                <Space h="xs" />
                 <Box
                   sx={{
                     background: "76AE25",
@@ -108,24 +115,24 @@ export default function A() {
                     width: "654px",
                   }}
                 >
-                  <Title size='20px' style={{ color: "white", backgroundColor: "#76AE25" }}>
+                  <Title pl={"xs"} size="20px" style={{ color: "white", backgroundColor: "#76AE25" }}>
                     首都圏 日付と地図からから探す
                   </Title>
                   <Container>
-                    <Radio.Group name='typeoftravel' withAsterisk>
-                      <Group mt='xs'>
-                        <Radio value='kokunai' label='国内旅行' />
-                        <Radio value='higaeri' label='日帰り・デイユース' />
-                        <Radio value='ana' label='ANA航空券+宿泊' />
-                        <Radio value='jal' label='JAL航空券+宿泊' />
+                    <Radio.Group name="typeoftravel" withAsterisk>
+                      <Group mt="xs">
+                        <Radio value="kokunai" label="国内旅行" />
+                        <Radio value="higaeri" label="日帰り・デイユース" />
+                        <Radio value="ana" label="ANA航空券+宿泊" />
+                        <Radio value="jal" label="JAL航空券+宿泊" />
                       </Group>
                       <Group>
-                        <Radio value='bus' label='高速バス予約' />
-                        <Radio value='car' label='レンタカー予約' />{" "}
+                        <Radio value="bus" label="高速バス予約" />
+                        <Radio value="car" label="レンタカー予約" />{" "}
                       </Group>
                     </Radio.Group>
 
-                    <Space h='xs' />
+                    <Space h="xs" />
                     <Box
                       sx={{
                         background: "#EBF2D8",
@@ -138,61 +145,66 @@ export default function A() {
                         <Container>
                           <Checkbox
                             mt={"xs"}
-                            label='日付未定'
-                            radius='md'
-                            size='xs'
+                            label="日付未定"
+                            radius="md"
+                            size="xs"
                             sx={{ borderRadius: "5px", width: "80px" }}
                           />
                         </Container>
                         <Flex direction={"column"}>
-                          <Text size='12px' style={{ color: "#437617", textAlign: "center" }}>
+                          <Text size="12px" style={{ color: "#437617", textAlign: "center" }}>
                             チェックイン
                           </Text>
-                          <Input size='xs' placeholder='2023/05/31' sx={{ width: "90px" }} />
+                          <Input size="xs" placeholder="2023/05/31" sx={{ width: "90px" }} />
                         </Flex>
                         <Flex ml={"xs"} direction={"column"}>
-                          <Text size='12px' style={{ color: "#437617", textAlign: "center" }}>
+                          <Text size="12px" style={{ color: "#437617", textAlign: "center" }}>
                             チェックアウト
                           </Text>
-                          <Input size='xs' placeholder='2023/05/31' sx={{ width: "90px" }} />
+                          <Input size="xs" placeholder="2023/05/31" sx={{ width: "90px" }} />
                         </Flex>
                         <Container>
                           <Center>
-                            <Text size='12px' style={{ color: "#437617" }}>
+                            <Text size="12px" style={{ color: "#437617" }}>
                               １部屋ご利用人数
                             </Text>
                           </Center>
                           <Flex align={"center"}>
-                            <Text size='12px'>大人</Text>
-                            <NumberInput defaultValue={0} placeholder='' size='xs' sx={{ width: "60px" }} required />
-                            <Text ml={"xs"} size='12px'>
+                            <Text size="12px">大人</Text>
+                            <NumberInput defaultValue={0} placeholder="" size="xs" sx={{ width: "60px" }} required />
+                            <Text ml={"xs"} size="12px">
                               子供
                             </Text>
-                            <NumberInput defaultValue={0} placeholder='' size='xs' sx={{ width: "60px" }} required />
+                            <NumberInput defaultValue={0} placeholder="" size="xs" sx={{ width: "60px" }} required />
                           </Flex>
                         </Container>
                         <Container>
                           <Center>
-                            <Text size='10px' style={{ color: "#437617" }}>
+                            <Text size="12px" style={{ color: "#437617" }}>
                               ご利用部屋数
                             </Text>
                           </Center>
-                          <Input size='xs' sx={{ width: "60px" }} />
+                          <Input size="xs" sx={{ width: "60px" }} />
                         </Container>
                       </Flex>
                     </Box>
-                    <Space h='xl' />
+                    <Space h="xl" />
 
                     <Container>
                       <Flex>
                         <Container>
-                          <text>埼玉県</text>
-                          <Space />
-                          <text>千葉県</text>
-                          <Space />
-                          <text>東京都</text>
-                          <Space />
-                          <text>神奈川県</text>
+                          {area.map((area, index) => (
+                            <div key={index}>
+                              <Anchor
+                                className={classes.root}
+                                variant="default"
+                                component="a"
+                                onClick={() => router.push("/" + "SearchPage" + area.region)}
+                              >
+                                ▶︎ {area.name}
+                              </Anchor>
+                            </div>
+                          ))}
                         </Container>
                         <div>
                           <Image width={480} height={480} alt={"Map"} src={Map} />
@@ -201,10 +213,10 @@ export default function A() {
                     </Container>
                   </Container>
                 </Box>
-                <Space h='xl' />
+                <Space h="xl" />
                 <Flex>
                   <Image alt={"PR2"} src={PR2} />
-                  <Space w='md' />
+                  <Space w="md" />
                   <Image alt={"PR"} src={PR} />
                 </Flex>
               </Container>
@@ -212,37 +224,39 @@ export default function A() {
               <Container>
                 <Box style={{ width: "930px" }}>
                   <Text
-                    size='20px'
-                    weight='700'
+                    pl={"xs"}
+                    size="20px"
+                    weight="700"
                     sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
                   >
                     首都圏 おすすめ特集
                   </Text>
                 </Box>
-                <Space h='xs' />
+                <Space h="xs" />
                 <Flex>
-                  <Image width={170} height={192.5} alt={"PRbox"} src={PRbox} /> <Space w='xs' />
-                  <Image width={170} height={192.5} alt={"PRbox2"} src={PRbox2} /> <Space w='xs' />
-                  <Image width={170} height={192.5} alt={"PRbox3"} src={PRbox3} /> <Space w='xs' />
-                  <Image width={170} height={192.5} alt={"PRbox4"} src={PRbox4} /> <Space w='xs' />
+                  <Image width={170} height={192.5} alt={"PRbox"} src={PRbox} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox2"} src={PRbox2} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox3"} src={PRbox3} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox4"} src={PRbox4} /> <Space w="xs" />
                 </Flex>
-                <Space h='xs' />
+                <Space h="xs" />
                 <Box style={{ width: "930px" }}>
                   <Text
-                    size='20px'
-                    weight='700'
+                    pl={"xs"}
+                    size="20px"
+                    weight="700"
                     sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
                   >
                     首都圏の遊び・体験
                   </Text>
                 </Box>
-                <Space h='xs' />
+                <Space h="xs" />
                 <Flex>
                   <Button
-                    variant='light'
-                    color='gray'
+                    variant="light"
+                    color="gray"
                     className={classes.root}
-                    component='a'
+                    component="a"
                     sx={{
                       border: "1px solid #CCCCCC",
                       borderRadius: "4px",
@@ -250,16 +264,16 @@ export default function A() {
                       width: "170px",
                     }}
                   >
-                    <Text weight={700} color='dark'>
+                    <Text weight={700} color="dark">
                       埼玉の遊び・体験
                     </Text>
                   </Button>
-                  <Space w='xs' />
+                  <Space w="xs" />
                   <Button
-                    variant='light'
-                    color='gray'
+                    variant="light"
+                    color="gray"
                     className={classes.root}
-                    component='a'
+                    component="a"
                     sx={{
                       border: "1px solid #CCCCCC",
                       borderRadius: "4px",
@@ -267,16 +281,16 @@ export default function A() {
                       width: "170px",
                     }}
                   >
-                    <Text weight={700} color='dark'>
+                    <Text weight={700} color="dark">
                       千葉の遊び・体験
                     </Text>
                   </Button>{" "}
-                  <Space w='xs' />
+                  <Space w="xs" />
                   <Button
-                    variant='light'
-                    color='gray'
+                    variant="light"
+                    color="gray"
                     className={classes.root}
-                    component='a'
+                    component="a"
                     sx={{
                       border: "1px solid #CCCCCC",
                       borderRadius: "4px",
@@ -284,16 +298,16 @@ export default function A() {
                       width: "170px",
                     }}
                   >
-                    <Text weight={700} color='dark'>
+                    <Text weight={700} color="dark">
                       東京の遊び・体験
                     </Text>
                   </Button>{" "}
-                  <Space w='xs' />
+                  <Space w="xs" />
                   <Button
-                    variant='light'
-                    color='gray'
+                    variant="light"
+                    color="gray"
                     className={classes.root}
-                    component='a'
+                    component="a"
                     sx={{
                       border: "1px solid #CCCCCC",
                       borderRadius: "4px",
@@ -301,29 +315,30 @@ export default function A() {
                       width: "170px",
                     }}
                   >
-                    <Text weight={700} color='dark'>
+                    <Text weight={700} color="dark">
                       神奈川の遊び・体験
                     </Text>
                   </Button>{" "}
-                  <Space w='xs' />
+                  <Space w="xs" />
                 </Flex>
-                <Space h='xs' />
+                <Space h="xs" />
 
                 <Box style={{ width: "930px" }}>
                   <Text
-                    size='20px'
-                    weight='700'
+                    pl={"xs"}
+                    size="20px"
+                    weight="700"
                     sx={{ color: "white", background: "#CC6633", borderRadius: "3px", height: "29.84px" }}
                   >
                     首都圏 注目観光スポット
                   </Text>
                 </Box>
-                <Space h='xs' />
+                <Space h="xs" />
                 <Flex>
-                  <Image width={170} height={192.5} alt={"PRbox5"} src={PRbox5} /> <Space w='xs' />
-                  <Image width={170} height={192.5} alt={"PRbox6"} src={PRbox6} /> <Space w='xs' />
-                  <Image width={170} height={192.5} alt={"PRbox7"} src={PRbox7} /> <Space w='xs' />
-                  <Image width={170} height={192.5} alt={"PRbox8"} src={PRbox8} /> <Space w='xs' />
+                  <Image width={170} height={192.5} alt={"PRbox5"} src={PRbox5} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox6"} src={PRbox6} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox7"} src={PRbox7} /> <Space w="xs" />
+                  <Image width={170} height={192.5} alt={"PRbox8"} src={PRbox8} /> <Space w="xs" />
                 </Flex>
               </Container>
 
@@ -344,8 +359,8 @@ export default function A() {
       </Grid>
 
       <Button
-        color='brack'
-        radius='5px'
+        color="brack"
+        radius="5px"
         compact
         style={{ position: "absolute", width: "74px", height: "26px", left: "320px", top: "725px" }}
         onClick={() => router.push("/SearchPageTokyo")}
@@ -353,24 +368,24 @@ export default function A() {
         東京都
       </Button>
       <Button
-        color='brack'
-        radius='5px'
+        color="brack"
+        radius="5px"
         compact
         style={{ position: "absolute", width: "74px", height: "26px", left: "298px", top: "642px" }}
       >
         埼玉県
       </Button>
       <Button
-        color='brack'
-        radius='5px'
+        color="brack"
+        radius="5px"
         compact
         style={{ position: "absolute", width: "74px", height: "26px", left: "505px", top: "770px" }}
       >
         千葉県
       </Button>
       <Button
-        color='brack'
-        radius='5px'
+        color="brack"
+        radius="5px"
         compact
         style={{ position: "absolute", width: "84px", height: "26px", left: "288px", top: "803px" }}
       >
