@@ -1,5 +1,5 @@
 import { Box } from "@mantine/core"
-
+import Link from "next/link"
 import resets from "@/styles/_resets.module.css"
 import classes from "@/styles/PageHeader.module.css"
 import { useMediaQuery } from "@mantine/hooks"
@@ -25,13 +25,15 @@ export default function PageHeader() {
         </div>
         <div className={classes.divRtServiceBar}>
           <div className={classes.Point}></div>
-          <div className={classes.rakutenTravel}>
-            <div className={classes.unnamed4}>楽天トラベル</div>
-          </div>
+	  <Link href={"/"}>
+            <div className={classes.rakutenTravel}>
+              <div className={classes.unnamed4}>楽天トラベル+</div>
+            </div>
+	  </Link>
 
           <div className={classes.divRtUtility}>
             <div className={classes.ulRtHelpLink}>
-              <div className={classes.unnamed5}>楽天トラベルの使い方</div>
+              <div className={classes.unnamed5}>楽天トラベル+の使い方</div>
               <div className={classes.unnamed6}>サイトマップ</div>
               <div className={classes.unnamed7}>ヘルプ</div>
               <div className={classes.languages}>Languages</div>
@@ -41,7 +43,7 @@ export default function PageHeader() {
               <div className={classes.unnamed8}>予約の確認・キャンセル</div>
             </div>
             <div className={classes.dlRtNologin}>
-              <div className={classes.unnamed9}>ようこそ、楽天トラベルへ</div>
+              <div className={classes.unnamed9}>ようこそ、楽天トラベル+へ</div>
               <div className={classes.unnamed10}>
                 <p className={classes.labelWrapper}>
                   <span className={classes.label}>会員登録</span>
@@ -67,7 +69,9 @@ export default function PageHeader() {
             <div className={classes.unnamed20}>旅行ガイド</div>
           </div>
         </div>
-        <div className={classes.x}>X</div>
+	<Link href={"/"}>
+          <div className={classes.plus}>+</div>
+	</Link>
       </div>
     </Box>
   )
