@@ -28,7 +28,7 @@ export default function Auth() {
       <Space h={80} />
       <Flex justify={"center"}>
         <Title color='green' align='center'>
-          Travel X{" "}
+          Travel +{" "}
         </Title>
         <Text color='dimmed' mt={"md"} ml={"md"}>
           created by nicotama
